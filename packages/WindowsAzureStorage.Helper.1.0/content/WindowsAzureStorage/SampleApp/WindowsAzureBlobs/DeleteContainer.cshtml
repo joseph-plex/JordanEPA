@@ -1,0 +1,7 @@
+﻿@{
+    if (IsPost) {
+        WindowsAzureStorage.DeleteBlobContainer(Request["ContainerName"]);
+    }
+
+    Response.Redirect("ListContainers");
+}

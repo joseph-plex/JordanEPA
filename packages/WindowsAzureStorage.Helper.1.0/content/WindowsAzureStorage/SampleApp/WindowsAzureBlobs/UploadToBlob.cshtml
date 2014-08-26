@@ -1,0 +1,9 @@
+﻿@{
+    if (IsPost) {
+        var uploadedFile = Request.Files[0];
+        var fileName = Path.GetFileName(uploadedFile.FileName).Trim();
+        WindowsAzureStorage.UploadBinaryToBlob(Request["ContainerName"] + "/" + fileName, uploadedFile.InputStream);
+    }
+    
+    Response.Redirect(Href("ViewContainer", new { ContainerName = Request["ContainerName"] }));
+} 

@@ -1,0 +1,28 @@
+﻿@{
+    if (WindowsAzureStorage.AccountName.IsEmpty()) {
+        Response.Redirect("SetupAccount");
+    }
+}
+
+@RenderPage("Header.cshtml")
+    
+<div class="start">
+    <h3>Download Blob "@Request["BlobName"]"</h3>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">var bytes = WindowsAzureStorage.DownloadBlobAsByteArray("@Request["BlobName"]");<br /></span>
+        <span class="codeIndent1">...<br /></span>
+        <span class="codeIndent1">Response.BinaryWrite(bytes);<br /></span>
+        }
+    </div>
+    <p>Click <a href="@Href("DownloadBlob", new { BlobName = Request["BlobName"] })">here</a> to download the blob.</p>
+    <h3>Delete Blob "@Request["BlobName"]"</h3>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">WindowsAzureStorage.DeleteBlob("@Request["BlobName"]");<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("DeleteBlob", new { ContainerName = Request["ContainerName"], BlobName = Request["BlobName"] })">
+        <p><input type="submit" value="Delete" /></p>
+    </form>
+</div>

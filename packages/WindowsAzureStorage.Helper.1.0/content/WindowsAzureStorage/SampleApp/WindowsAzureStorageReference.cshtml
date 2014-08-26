@@ -1,0 +1,84 @@
+﻿@{
+    PageData["Title"] = "Windows Azure Storage Helper";    
+}
+
+<h2>@PageData["Title"] </h2>
+<h3>Helper Reference</h3>
+
+<h5>Properties supported by the Windows Azure Storage Helper:</h5>
+
+<table class="memberdecls">
+<tr><td class="memItemLeft">static string</td><td class="memItemRight" valign="bottom"><b>AccountName</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The name of the Windows Azure Storage account. <br/></td></tr>
+<tr><td class="memItemLeft">static string</td><td class="memItemRight" valign="bottom"><b>AccountKey</b></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The shared key of the Windows Azure Storage account. <br/></td></tr>
+<tr><td class="memItemLeft"></td><td class="memItemRight"></td></tr>
+</table>
+
+<h5>List of methods supported by the Windows Azure Storage Helper:</h5>
+
+<table class="memberdecls">
+<tr><td class="memItemLeft"  >static IList&lt; dynamic &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetRows</b> (string tableName, [string whereOptions], [int take])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the rows of a table in the storage account. <br/></td></tr>
+<tr><td class="memItemLeft"  >static dynamic&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetRow</b> (string tableName, string partitionKey, string rowKey)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a single row from a table in the storage account. <br/></td></tr>
+<tr><td class="memItemLeft"  >static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>TableExists</b> (string tableName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks the existence of a table in the storage account. <br/></td></tr>
+<tr><td class="memItemLeft"  >static IList&lt; dynamic &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetTables</b> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves the Tables in the storage account. <br/></td></tr>
+<tr><td class="memItemLeft"  >static dynamic&nbsp;</td><td class="memItemRight" valign="bottom"><b>CreateRow</b> (string partitionKey, string rowKey)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new instance that represents the row of a table. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>CreateTable</b> (string tableName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new table in the storage account. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>DeleteTable</b> (string tableName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes an existing table from the storage account.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>InsertRow</b> (string tableName, dynamic row)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inserts a new row into a table.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>UpdateRow</b> (string tableName, dynamic row)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Updates an existing row in a table. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>DeleteRow</b> (string tableName, string partitionKey, string rowKey)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes an existing row in a table. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>UploadBinaryToBlob</b> (string blobAddress, Stream stream)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uploads binary data to a Blob. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>UploadBinaryToBlob</b> (string blobAddress, byte[] content)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uploads binary data to a Blob.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>UploadBinaryToBlob</b> (string blobAddress, string fileName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uploads binary data to a Blob.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>UploadTextToBlob</b> (string blobAddress, string content)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Uploads a string of text to a Blob.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static string&nbsp;</td><td class="memItemRight" valign="bottom"><b>DownloadBlobAsText</b> (string blobAddress)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Downloads the blob contents as a string of text.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>DownloadBlobAsStream</b> (string blobAddress, Stream stream)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Downloads the blob contents to a stream.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>DownloadBlobToFile</b> (string blobAddress, string fileName)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Downloads the blob contents to a file.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static byte[]&nbsp;</td><td class="memItemRight" valign="bottom"><b>DownloadBlobAsByteArray</b> (string blobAddress)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Downloads the blob contents as an array of bytes. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>CreateBlobContainer</b> (string containerAddress)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new blob container in the storage account.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static IList&lt; string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>ListBlobs</b> (string containerAddress)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a list of all the blobs in a blob container.  <br/></td></tr>
+<tr><td class="memItemLeft"  >static IList&lt; string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>ListBlobContainers</b> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves a list of all the blob containers in the storage account. <br/></td></tr>
+<tr><td class="memItemLeft"  >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>DeleteBlobContainer</b> (string containerAddress)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes an existing blob container from the storage account.  <br/></td></tr>
+<tr><td class="memItemLeft" >static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>DeleteBlob</b> (string blobAddress)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes an existing blob. </td></tr>
+<tr><td class="memItemLeft"></td><td class="memItemRight"></td></tr>
+</table>
+<br/><br/>
+<strong>Note: </strong> The current version of the Windows Azure Storage Helper does not support the following features:
+<ul>
+    <li>Azure Queues</li>    
+    <li>Batch operations (Windows Azure Tables)</li>
+    <li>Pagination and continuation tokens (Windows Azure Tables)</li>
+    <li>Entity group transactions (Windows Azure Tables)</li>
+    <li>Manipulating metadata and properties for Blobs and Containers (Azure Blobs)</li>     
+    <li>Manipulating Containers ACL (Windows Azure Blobs)</li>
+    <li>Lease Blob operations (Windows Azure Blobs)</li>    
+    <li>Snapshot Blob operations (Windows Azure Blobs)</li>    
+    <li>Copy Blob operations (Windows Azure Blobs)</li>    
+    <li>Blobs partial updates - Pages and Blocks (Windows Azure Blobs)</li>    
+</ul>
+
+

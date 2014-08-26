@@ -1,0 +1,61 @@
+﻿@{
+    if (WindowsAzureStorage.AccountName.IsEmpty()) {
+        Response.Redirect("SetupAccount");
+    }
+    
+    var tableCreationError = false;
+    if (IsPost) {                
+        // Remove table if it already exists
+        if (WindowsAzureStorage.TableExists("NewSampleTable")) {
+            WindowsAzureStorage.DeleteTable("NewSampleTable");
+        }
+        
+        // Create table
+        try {
+            WindowsAzureStorage.CreateTable("NewSampleTable");
+        } catch {
+            tableCreationError = true;
+        }
+        
+        if (!tableCreationError) {
+            // Insert rows
+            var row1 = WindowsAzureStorage.CreateRow("partition1", "row1");
+            row1.Name = "John Doe";
+            WindowsAzureStorage.InsertRow("NewSampleTable", row1);
+            
+            var row2 = WindowsAzureStorage.CreateRow("partition1", "row2");
+            row2.Name = "Jessica Anderson";
+            WindowsAzureStorage.InsertRow("NewSampleTable", row2);
+            
+            Response.Redirect("UpdateRow");
+        }
+    }
+}
+    
+@RenderPage("Header.cshtml")
+
+<div class="start">    
+    <h3>Step 1 - Create Tables and Insert Rows</h3>
+    @if(tableCreationError) {
+    <p> <span class="error">An error occured when attempting to re-create the Table for the sample.</span> Please wait a few seconds and click <a href="@Href("CreateTable")">here</a> to try again.</p>   
+    } else {    
+    <span>Use the <b>Execute</b> button from below to execute the following code that creates a Table and insert some rows:</span>
+    <div class="code">
+        
+        @@{<br />
+        <span class="codeIndent1">WindowsAzureStorage.CreateTable("NewSampleTable");<br /></span>
+        <br />
+        <span class="codeIndent1">var row1 = WindowsAzureStorage.CreateRow("partition1", "row1");<br /></span>
+        <span class="codeIndent1">row1.Name = "John Doe";<br /></span>
+        <span class="codeIndent1">WindowsAzureStorage.InsertRow("NewSampleTable", row1);<br /></span>
+        <br />
+        <span class="codeIndent1">var row2 = WindowsAzureStorage.CreateRow("partition1", "row2");<br /></span>
+        <span class="codeIndent1">row2.Name = "Jessica Anderson";<br /></span>
+        <span class="codeIndent1">WindowsAzureStorage.InsertRow("NewSampleTable", row2);<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("CreateTable")">    
+        <p><input type="submit" value="Execute" /></p>
+    </form>
+    }
+</div>

@@ -1,0 +1,7 @@
+﻿@{
+    if (IsPost && !Request["ContainerName"].IsEmpty()) {
+        WindowsAzureStorage.CreateBlobContainer(Request["ContainerName"]);
+    }
+
+    Response.Redirect("ListContainers");
+}

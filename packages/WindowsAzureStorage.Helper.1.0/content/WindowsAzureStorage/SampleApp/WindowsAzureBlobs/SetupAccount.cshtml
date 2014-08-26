@@ -1,0 +1,17 @@
+﻿   
+@RenderPage("Header.cshtml")
+
+<div class="start">
+    <h3>Before Starting...</h3>
+    <form method="post" action="@Href("ListContainers")">
+        <p>To be able to test the Windows Azure Storage Helper with the Blobs Service you first need to provide a set of Windows Azure Storage Credentials.
+        To setup your account name and key, uncomment (or add) the following lines in the <strong>_AppStart.cshtml</strong> page and set your account name and key values:</p>
+        <div class="code">            
+            @@{<br />
+            <span class="codeIndent1">WindowsAzureStorage.AccountName = <i>"yourAccountName"</i>;<br /></span>
+            <span class="codeIndent1">WindowsAzureStorage.AccountKey = <i>"yourAccountKey"</i>;<br /></span>
+            }
+        </div>
+        <input type="submit" value="Continue" />
+    </form>
+</div>

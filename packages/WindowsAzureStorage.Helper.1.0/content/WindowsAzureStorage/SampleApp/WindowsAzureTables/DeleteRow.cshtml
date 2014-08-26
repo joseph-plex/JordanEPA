@@ -1,0 +1,33 @@
+﻿@{
+    if (IsPost) {
+        // Delete the first row
+        WindowsAzureStorage.DeleteRow("NewSampleTable", "partition1" , "row1");
+        
+        Response.Redirect("DeleteTable");
+    }
+    
+    // Retrieve all rows again
+    var rows = WindowsAzureStorage.GetRows("NewSampleTable");
+    var grid = new WebGrid(rows);
+}
+
+@RenderPage("Header.cshtml")
+
+<div class="start">
+    <h3>Step 3 - Delete Rows in a Table</h3>
+    <p>When retrieving the rows again, "Peter Simmons" is now the new value for Name (in the first row):</p>
+    
+    @grid.GetHtml(tableStyle: "dg_table", 
+                    headerStyle: "dg_header", 
+                    alternatingRowStyle: "dg_altrow")
+    <br />
+    <p>Use the <b>Execute</b> button from below to execute the following code that deletes the row of "Peter Simmons" from the table:</p>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">WindowsAzureStorage.DeleteRow("NewSampleTable", "partition1", "row1");<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("DeleteRow")">
+       <p><input type="submit" value="Execute" /></p>
+    </form>
+</div>

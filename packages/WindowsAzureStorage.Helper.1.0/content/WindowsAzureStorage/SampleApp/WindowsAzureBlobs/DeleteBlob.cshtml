@@ -1,0 +1,7 @@
+﻿@{
+    if (IsPost) {
+        WindowsAzureStorage.DeleteBlob(Request["BlobName"]);   
+    }
+    
+    Response.Redirect(Href("ViewContainer", new { ContainerName = Request["ContainerName"] }));
+} 

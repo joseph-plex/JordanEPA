@@ -1,0 +1,44 @@
+﻿@{
+    if (IsPost) {
+        // Update first row
+        var row = WindowsAzureStorage.GetRow("NewSampleTable", "partition1", "row1");
+        row.Name = "Peter Simmons";
+        WindowsAzureStorage.UpdateRow("NewSampleTable", row);
+        
+        Response.Redirect("DeleteRow");
+    }
+
+    // Retrieve all rows
+    var rows = WindowsAzureStorage.GetRows("NewSampleTable");
+    var grid = new WebGrid(rows);
+}
+
+@RenderPage("Header.cshtml")
+
+<div class="start">
+    <h3>Step 2 - Retrieve and Update Rows in a Table</h3>
+    <span>The following code retrieves all the rows in the table previously created:</span>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">var rows = WindowsAzureStorage.GetRows("NewSampleTable");<br /></span>
+        <span class="codeIndent1">var grid = new WebGrid(rows);<br /></span>
+        }
+    </div>
+    <br />
+
+    @grid.GetHtml(tableStyle: "dg_table", 
+                    headerStyle: "dg_header", 
+                    alternatingRowStyle: "dg_altrow")
+    <br/>
+    <p>Use the <b>Execute</b> button from below to execute the following code that updates the first row by replacing the Name value with "Peter Simmons":</p>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">var row = WindowsAzureStorage.GetRow("NewSampleTable", "partition1", "row1");<br /></span>
+        <span class="codeIndent1">row.Name = "Peter Simmons";<br /></span>
+        <span class="codeIndent1">WindowsAzureStorage.UpdateRow("NewSampleTable", row);<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("UpdateRow")">
+    <p><input type="submit" value="Execute" /></p>
+    </form>
+</div>

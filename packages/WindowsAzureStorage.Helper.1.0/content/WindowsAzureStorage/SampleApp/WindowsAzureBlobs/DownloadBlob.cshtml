@@ -1,0 +1,9 @@
+﻿@{
+    var bytes = WindowsAzureStorage.DownloadBlobAsByteArray(Request["BlobName"]);
+    
+    Response.ClearContent();
+    Response.AppendHeader("Content-Type", "application/octet-stream");
+    Response.AppendHeader("Content-Disposition:", String.Format("attachment; filename={0}", HttpUtility.UrlPathEncode(Request["BlobName"])));
+    Response.BinaryWrite(bytes);
+    Response.End();
+}

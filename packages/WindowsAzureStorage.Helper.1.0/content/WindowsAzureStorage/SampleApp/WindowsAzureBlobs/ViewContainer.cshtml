@@ -1,0 +1,53 @@
+﻿@{    
+    if (WindowsAzureStorage.AccountName.IsEmpty()) {
+        Response.Redirect("SetupAccount");
+    }
+}
+
+@RenderPage("Header.cshtml")
+
+<div class="start">
+    <h3>List of Blobs in the "@Request["ContainerName"]" Container</h3>
+    <span>The following code retrieves the list of Blobs in a container:</span>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">var containers = WindowsAzureStorage.ListBlobs("@Request["ContainerName"]");<br /></span>
+        }
+    </div>
+    <h4>Blobs:</h4>    
+    @{
+        var blobs = WindowsAzureStorage.ListBlobs(Request["ContainerName"]);    
+        if (blobs.Count > 0) {
+            <ul>
+            @foreach(var blob in blobs) {
+                <li>@blob (<a href="@Href("ViewBlob", new { ContainerName = Request["ContainerName"], BlobName = blob })">details</a>)</li>
+            }
+            </ul>
+        } else {
+            <p><i>No blobs where found in the container.</i></p>
+        }
+    }
+    <h3>Upload File to a Blob</h3>  
+    <span>The following code uploads a file to a Blob. Select a file and click the <b>Upload</b> button to store it on the Blob:</span>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">var uploadedFile = Request.Files[0];<br /></span>
+        <span class="codeIndent1">WindowsAzureStorage.UploadBinaryToBlob("@Request["ContainerName"]/" + uploadedFile.FileName, uploadedFile.InputStream);<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("UploadToBlob", new { ContainerName = Request["ContainerName"] })" enctype="multipart/form-data">
+        <p><span>File to Upload : </span> <input name="fileUpload" type="file" /></p>
+        <p><input type="submit" value="Upload" /></p>
+    </form>
+    
+    <h3>Delete "@Request["ContainerName"]" Container</h3>
+    <span>The following code deletes the container. Click the <b>Delete</b> button to delete it.</span>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">WindowsAzureStorage.DeleteBlobContainer("@Request["ContainerName"]");<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("DeleteContainer", new { ContainerName = Request["ContainerName"] })">
+        <p><input type="submit" value="Delete" /></p>
+    </form>
+</div>

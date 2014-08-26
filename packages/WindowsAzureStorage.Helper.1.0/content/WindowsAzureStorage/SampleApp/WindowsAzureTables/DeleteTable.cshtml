@@ -1,0 +1,37 @@
+﻿
+@RenderPage("Header.cshtml")
+
+<div class="start">
+@{
+    if (IsPost) {
+        // if exists, delete the table
+        if (WindowsAzureStorage.TableExists("NewSampleTable")) {
+            WindowsAzureStorage.DeleteTable("NewSampleTable");
+        }       
+        
+        <h3>Sample completed!</h3>
+        <p><b>The table was deleted successully!</b> Click <a href="@Href("SetupAccount")">here</a> to start the sample again.</p>   
+    } else {
+        // Retrieve all rows again
+        var rows = WindowsAzureStorage.GetRows("NewSampleTable");
+        var grid = new WebGrid(rows);
+        
+        <h3>Step 4 - Delete Azure Tables</h3>
+        <span>When retrieving the rows again, "Peter Simmons" is no more in the table:</span>
+        
+        @grid.GetHtml(tableStyle: "dg_table", 
+                        headerStyle: "dg_header", 
+                        alternatingRowStyle: "dg_altrow")
+        <br />
+        <p>Use the <b>Execute</b> button from below to execute the following code that removes the table from the storage:</p>    
+        <div class="code">            
+            @@{<br />
+            <span class="codeIndent1">WindowsAzureStorage.DeleteTable("NewSampleTable");<br /></span>
+            }
+        </div>
+        <form method="post" action="@Href("DeleteTable")">
+        <p><input type="submit" value="Execute" /></p>
+        </form>
+    }
+}
+</div>

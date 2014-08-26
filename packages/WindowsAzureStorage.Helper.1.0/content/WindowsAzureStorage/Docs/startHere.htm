@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Windows Azure Storage Helper</title>
+    <link href="content/Site.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="content/images/webx-icon.png" alt="WebMatrix" />
+            <h1>
+                WebMatrix Helpers</h1>
+            <h2>
+                Windows Azure Storage Helper - Start Here</h2>
+        </div>
+        <div class="content">
+            <h3>
+                Introduction</h3>
+            <p>
+                Microsoft WebMatrix provides an easy way to get started with web development, and
+                together with new Razor syntax for ASP.NET Web Pages it includes everything you
+                need to get your web site up, running and integrated with many other sites and networks,
+                in a short period of time. The WebMatrix helpers are designed to make your life
+                easier when creating web sites. They provide you a simple and consistent way of
+                performing common web development tasks that otherwise would require a great deal
+                of custom coding. With a few lines of code you should be able to secure your web
+                site using membership, store information in Windows Azure Storage, integrate your
+                site with Facebook, among others things.
+            </p>
+            <p>
+                Windows Azure storage services provide persistent, redundant storage in the cloud.
+                The Windows Azure Storage helper, allows you to easily retrieve and insert data
+                into Blobs and Tables of Windows Azure Storage Services. For more information on Windows Azure check:
+                <a href="http://www.microsoft.com/windowsazure">http://www.microsoft.com/windowsazure/</a></p>
+            <h3>
+                Getting Started in 60 Seconds</h3>
+            <p>
+                The helper consists mainly of a <strong>Microsoft.Web.Helpers.WindowsAzureStorage.dll</strong> library 
+                located into the <strong>Bin</strong> folder of your WebMatrix site.
+                To use the Windows Azure Storage helper follow these steps:</p>
+            <ol>
+                <li>If you haven’t already got one, sign up for a Windows Azure account in the <a href="http://www.microsoft.com/windowsazure/offers/">Windows Azure Home Page</a>.</li>                
+                <li>Then provide your set of Windows Azure Storage Credentials, by adding the following lines in your <strong>_AppStart.cshtml</strong> WebMatrix page.
+                    <div class="code">                                        
+                        @{<br />
+                        <span class="codeIndent1">WindowsAzureStorage.AccountName = <i>"yourAccountName"</i>;<br />
+                        </span><span class="codeIndent1">WindowsAzureStorage.AccountKey = <i>"yourAccountKey"</i>;<br />
+                        </span>}
+                    </div>
+                </li>
+                <li>Start using Windows Azure Storage Tables and Blobs from WebMatrix with the Helper. Check the samples!</li>
+            </ol>
+            <h3>
+                Running the Samples</h3>
+            <p>
+                The helper package includes a set of WebMatrix pages where you can see the helper in action. To run them follow these steps:</p>
+            <ol>                
+                <li>Provide your set of Windows Azure Storage Credentials, by uncommenting (or adding) the following lines in the <strong>_AppStart.cshtml</strong> WebMatrix page.
+                    <div class="code">                                                
+                        @{<br />
+                        <span class="codeIndent1">WindowsAzureStorage.AccountName = <i>"yourAccountName"</i>;<br />
+                        </span><span class="codeIndent1">WindowsAzureStorage.AccountKey = <i>"yourAccountKey"</i>;<br />
+                        </span>}
+                    </div>
+                </li>
+                <li>In Microsoft WebMatrix, under the Files workspace, right-click the <strong>WindowsAzureStorage\SampleApp</strong> folder and select
+                    '<strong>Launch in browser</strong>'. This will open the sample web site with WebMatrix.</li>                
+                <li>Play with the samples!</li>
+            </ol>
+            <h3>
+                More Info</h3>
+            <p>
+                To explore the helper's implementation you can download its source code from the <a href="http://azurestoragehelper.codeplex.com">Windows Azure Storage Helper CodePlex project</a>; you will also find unit tests for the helpers
+                methods.
+                </p>            
+            <p>
+                Learn more on WebMatrix, ASP.NET Web Pages and the Razor Syntax with <a href="http://www.microsoft.com/web/webmatrix/learn/">
+                    the WebMatrix tutorials.</a></p>
+        </div>
+        <ul class="footer">
+            <li>We're always looking for <a href="mailto:webapp@microsoft.com">bugs, feedback and
+                suggestions!</a></li>
+            <li>&copy; 2010-2011 Microsoft Corporation. Powered by IIS Express.</li>
+        </ul>
+    </div>
+</body>
+</html>

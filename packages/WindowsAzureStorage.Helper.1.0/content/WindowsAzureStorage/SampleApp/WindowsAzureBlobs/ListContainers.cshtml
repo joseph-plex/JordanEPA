@@ -1,0 +1,43 @@
+﻿@{
+    if (WindowsAzureStorage.AccountName.IsEmpty()) {
+        Response.Redirect("SetupAccount");
+    }
+}
+
+@RenderPage("Header.cshtml")
+
+<div class="start">
+    <h3>List of Blob Containers</h3>
+    <span>The following code retrieves the container list from the storage account:</span>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">var containers = WindowsAzureStorage.ListBlobContainers();<br /></span>
+        }
+    </div>
+    <h4>Blob Containers:</h4>
+    <span>Click the details link of a Container see its content and upload a new Blob:</span>
+    @{
+        var containers = WindowsAzureStorage.ListBlobContainers();
+        if (containers.Count > 0) {
+            <ul>
+            @foreach(var container in containers) {
+                <li>@container (<a href="@Href("ViewContainer", new { ContainerName = container })">details</a>)</li>
+            }
+            </ul>
+        }
+        else {
+            <p><i>No containers where found in the storage.</i></p>
+        }
+    }
+    <h3>Create a New Blob Container</h3>
+    <span>Type a container name and click the <b>Create Container</b> button from below to create the container. Use all lowercase letters and keep the name between 3 and 63 characters long.</span>
+    <div class="code">        
+        @@{<br />
+        <span class="codeIndent1">WindowsAzureStorage.CreateBlobContainer(ContainerName);<br /></span>
+        }
+    </div>
+    <form method="post" action="@Href("CreateContainer")">
+        <p><span>Container Name : </span> @Html.TextBox("ContainerName")</p>
+        <p><input type="submit" value="Create Container" /></p>
+    </form>
+</div>
