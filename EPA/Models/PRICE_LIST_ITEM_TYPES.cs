@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EPA
+namespace EPA.Models
 {
     using System;
     using System.Collections.Generic;

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EPA
+namespace EPA.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EPAEntities : DbContext
+    public partial class DbFirstEntities : DbContext
     {
-        public EPAEntities()
-            : base("name=EPAEntities")
+        public DbFirstEntities()
+            : base("name=DbFirstEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace EPA
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<COMPANy> COMPANIES { get; set; }
+        public DbSet<COMPANY> COMPANIES { get; set; }
         public DbSet<COMPANY_SUPPLIERS> COMPANY_SUPPLIERS { get; set; }
         public DbSet<PRICE_LIST_ITEM_TYPES> PRICE_LIST_ITEM_TYPES { get; set; }
         public DbSet<SUPPLIER> SUPPLIERS { get; set; }

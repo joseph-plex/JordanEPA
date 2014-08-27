@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Models.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbFirstModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="COMPANIES">
           <Key>
             <PropertyRef Name="COMPANY_ID" />
@@ -207,7 +207,7 @@ warning 6002: The table/view 'C##EPA.SUPPLIERS' does not have a primary key defi
           <Property Name="VALIDATION_CODE" Type="varchar2" MaxLength="10" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="number" Precision="1" Scale="0" />
         </EntityType>
-        <EntityContainer Name="ModelsStoreContainer">
+        <EntityContainer Name="DbFirstModelStoreContainer">
           <EntitySet Name="COMPANIES" EntityType="Self.COMPANIES" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" Schema="C##EPA" store:Type="Tables" />
@@ -227,12 +227,11 @@ warning 6002: The table/view 'C##EPA.SUPPLIERS' does not have a primary key defi
 FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="COMPANy">
+      <Schema Namespace="DbFirstModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COMPANY">
           <Key>
             <PropertyRef Name="COMPANY_ID" />
           </Key>
@@ -293,8 +292,8 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <Property Name="VALIDATION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="Int16" />
         </EntityType>
-        <EntityContainer Name="EPAEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="COMPANIES" EntityType="Self.COMPANy" />
+        <EntityContainer Name="DbFirstEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COMPANIES" EntityType="DbFirstModel.COMPANY" />
           <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" />
           <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" />
           <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIER" />
@@ -304,9 +303,9 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="EPAEntities">
+        <EntityContainerMapping StorageEntityContainer="DbFirstModelStoreContainer" CdmEntityContainer="DbFirstEntities">
           <EntitySetMapping Name="COMPANIES">
-            <EntityTypeMapping TypeName="Models.COMPANy">
+            <EntityTypeMapping TypeName="DbFirstModel.COMPANY">
               <MappingFragment StoreEntitySet="COMPANIES">
                 <ScalarProperty Name="KEY" ColumnName="KEY" />
                 <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
@@ -322,7 +321,7 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="COMPANY_SUPPLIERS">
-            <EntityTypeMapping TypeName="Models.COMPANY_SUPPLIERS">
+            <EntityTypeMapping TypeName="DbFirstModel.COMPANY_SUPPLIERS">
               <MappingFragment StoreEntitySet="COMPANY_SUPPLIERS">
                 <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
                 <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
@@ -336,7 +335,7 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PRICE_LIST_ITEM_TYPES">
-            <EntityTypeMapping TypeName="Models.PRICE_LIST_ITEM_TYPES">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_LIST_ITEM_TYPES">
               <MappingFragment StoreEntitySet="PRICE_LIST_ITEM_TYPES">
                 <ScalarProperty Name="ITEM_TYPE" ColumnName="ITEM_TYPE" />
                 <ScalarProperty Name="ITEM_TYPE_GROUP" ColumnName="ITEM_TYPE_GROUP" />
@@ -351,7 +350,7 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SUPPLIERS">
-            <EntityTypeMapping TypeName="Models.SUPPLIER">
+            <EntityTypeMapping TypeName="DbFirstModel.SUPPLIER">
               <MappingFragment StoreEntitySet="SUPPLIERS">
                 <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />

@@ -11,7 +11,7 @@ namespace EPA.Models.Interfaces
 
     public interface IEntity 
     {
-       int Id { get; set; }
+       int ID { get; set; }
         DateTime DATE_MADE { get; set; }
 
     }

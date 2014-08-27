@@ -9,11 +9,11 @@ using EPA.Attributes.Validators;
 using EPA.Attributes.Relationships;
 using EPA.Attributes.UHints;
 using System.Linq.Expressions;
-using System.Data.Objects.DataClasses;
+// using System.Data.Objects.DataClasses;
 using EPA.Models.Interfaces;
 
 
-namespace EPA.Models.BaseEntities
+namespace EPA.CodeFirst.BaseEntities
 {
 
  
@@ -64,7 +64,7 @@ namespace EPA.Models.BaseEntities
     }
 
  
-
+    /*
 
     public abstract class EntityCompany : Entity, ICompany
     {
@@ -80,7 +80,7 @@ namespace EPA.Models.BaseEntities
        // public string Company { get; set; }
 
         public int COMPANY_ID { get; set; }
-    }
+    } */
 
 
 

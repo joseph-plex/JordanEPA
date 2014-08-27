@@ -7,20 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EPA
+namespace EPA.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class COMPANY_SUPPLIERS
+    public partial class SUPPLIER
     {
-        public int COMPANY_ID { get; set; }
         public int SUPPLIER_ID { get; set; }
-        public string DESCRIPTION { get; set; }
         public string EMAIL { get; set; }
-        public Nullable<int> ROW_VERSION { get; set; }
-        public Nullable<int> PAYEE_ID { get; set; }
-        public Nullable<short> SEND_PASSWORD { get; set; }
-        public Nullable<short> IS_TRUSTED_BY_SUPPLIER { get; set; }
+        public string FIRST_NAME { get; set; }
+        public string LAST_NAME { get; set; }
+        public string DESCRIPTION { get; set; }
+        public string COMPANY_NAME { get; set; }
+        public string PHONE { get; set; }
+        public string PASSWORD { get; set; }
+        public Nullable<short> STATUS { get; set; }
+        public string VALIDATION_CODE { get; set; }
+        public Nullable<short> VALIDATION_EMAIL_SENT { get; set; }
     }
 }
