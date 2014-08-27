@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="JordanEPAService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ChickenService" />
+      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EPA.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IJordanEPAService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_CompanyFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyFetch" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_CompanyFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_CompanyFetchTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyFetchTest" />
+  </wsdl:message>
+  <wsdl:message name="IJordanEPAService_CompanyFetchTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyFetchTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IJordanEPAService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/GetData" message="tns:IJordanEPAService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/GetDataResponse" message="tns:IJordanEPAService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/GetDataUsingDataContract" message="tns:IJordanEPAService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/GetDataUsingDataContractResponse" message="tns:IJordanEPAService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetch" message="tns:IJordanEPAService_CompanyFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetchResponse" message="tns:IJordanEPAService_CompanyFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyFetchTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetchTest" message="tns:IJordanEPAService_CompanyFetchTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetchTestResponse" message="tns:IJordanEPAService_CompanyFetchTest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IJordanEPAService" type="tns:IJordanEPAService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyFetch">
+      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/CompanyFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyFetchTest">
+      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/CompanyFetchTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="JordanEPAService">
+    <wsdl:port name="BasicHttpBinding_IJordanEPAService" binding="tns:BasicHttpBinding_IJordanEPAService">
+      <soap:address location="http://epa.plexxis.com/Jordan/JordanEPAService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

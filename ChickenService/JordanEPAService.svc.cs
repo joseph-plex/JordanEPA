@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Data;
+using System.Reflection;
+using System.IO;
 
 namespace ChickenService
 {
@@ -28,6 +30,60 @@ namespace ChickenService
                 return db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
             }
         }
+        public string CompanyFetchTest(string key)
+        {
+            if (string.IsNullOrEmpty(key))
+                return null;
+
+            try
+            {
+                using (var db = new EPA.Models.DbFirstEntities())
+                {
+                    var c = db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
+                    if (c != null)
+                        return "description: " + c.DESCRIPTION;
+                    else
+                        return "c is null";
+                }
+            }
+            catch (ReflectionTypeLoadException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (Exception exSub in ex.LoaderExceptions)
+                {
+                    sb.AppendLine(exSub.Message);
+                    FileNotFoundException exFileNotFound = exSub as FileNotFoundException;
+                    if (exFileNotFound != null)
+                    {
+                        if (!string.IsNullOrEmpty(exFileNotFound.FusionLog))
+                        {
+                            sb.AppendLine("Fusion Log:");
+                            sb.AppendLine(exFileNotFound.FusionLog);
+                        }
+                    }
+                    sb.AppendLine();
+                }
+                string errorMessage = sb.ToString();
+                return errorMessage; //Display or log the error based on your application.
+            }
+        
+        }
+
+
+        public EPA.Models.COMPANY[] CompanyFetchArray(string key)
+        {
+            if (string.IsNullOrEmpty(key))
+                return null;
+
+            using (var db = new EPA.Models.DbFirstEntities())
+            {
+                return new EPA.Models.COMPANY[] {
+                    db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault()
+                };
+            }
+        }
+
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
@@ -40,5 +96,6 @@ namespace ChickenService
             }
             return composite;
         }
+
     }
 }

@@ -12,7 +12,7 @@ namespace TempTest
         static void Main(string[] args)
         {
             HostWebService();
-            EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
+           // EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
         }
 
        public static void HostWebService()

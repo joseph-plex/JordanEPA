@@ -7,22 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EPA.Models
+namespace TinyDllTest
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class COMPANY
+    public partial class COMPANY_SUPPLIERS
     {
-        public string KEY { get; set; }
         public int COMPANY_ID { get; set; }
+        public int SUPPLIER_ID { get; set; }
         public string DESCRIPTION { get; set; }
         public string EMAIL { get; set; }
-        public string PHONE1 { get; set; }
-        public string PHONE2 { get; set; }
-        public string FAX { get; set; }
         public Nullable<int> ROW_VERSION { get; set; }
-        public string CODE { get; set; }
-        public Nullable<int> PA_REFERENCE { get; set; }
+        public Nullable<int> PAYEE_ID { get; set; }
+        public Nullable<short> SEND_PASSWORD { get; set; }
+        public Nullable<short> IS_TRUSTED_BY_SUPPLIER { get; set; }
     }
 }

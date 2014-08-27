@@ -20,7 +20,8 @@ namespace ChickenService
         CompositeType GetDataUsingDataContract(CompositeType composite);
         [OperationContract]
         EPA.Models.COMPANY CompanyFetch(string key);
-      
+           [OperationContract]
+        string CompanyFetchTest(string key);
 
         // TODO: Add your service operations here
     }

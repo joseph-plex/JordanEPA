@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EPA.Models
+namespace TinyDllTest
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class COMPANY
+    public partial class COMPANy
     {
         public string KEY { get; set; }
         public int COMPANY_ID { get; set; }

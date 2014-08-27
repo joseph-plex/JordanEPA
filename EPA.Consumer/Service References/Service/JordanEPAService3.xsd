@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EPA.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EPA.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="COMPANY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PA_REFERENCE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PHONE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COMPANY" nillable="true" type="tns:COMPANY" />
+</xs:schema>

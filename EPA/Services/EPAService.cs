@@ -19,9 +19,7 @@ namespace EPA.Services
                 return null;
 
             using (var db = new EPA.Models.DbFirstEntities())
-            {
                 return db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
-            }
         }
     }
 }

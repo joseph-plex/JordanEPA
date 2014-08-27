@@ -3,12 +3,12 @@ using System.Data;
 using System.Configuration;
 using System.Web;
 using System.Collections.Specialized;
-using Ravka.Extensions;
+// using Ravka.Extensions;
 using System.Collections.Generic;
 namespace EPA
 {
 
-   public class Config : Ravka.Config
+   public class Config // : Ravka.Config
     {
  
   

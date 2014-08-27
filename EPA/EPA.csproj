@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{97F59878-363E-4E57-B6BB-277E89C532D6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EPA</RootNamespace>
     <AssemblyName>EPA</AssemblyName>
@@ -49,15 +49,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.1017.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.Oracle, Version=8.4.225.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.Oracle.Entity, Version=8.4.225.6, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack">
-      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Services, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -68,7 +62,6 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,23 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\GetAttributes.cs" />
-    <Compile Include="Attributes\ModelAttributes.cs" />
-    <Compile Include="Attributes\RelationshipAttributes.cs" />
-    <Compile Include="Attributes\Settings.Designer.cs" />
-    <Compile Include="Attributes\Settings1.Designer.cs" />
-    <Compile Include="Attributes\UHintAttributes.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Attributes\ValidateAttributes.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="Data\DataExtensions.cs" />
-    <Compile Include="Data\DataTest.cs" />
-    <Compile Include="Data\Db.cs" />
-    <Compile Include="Data\Logger.cs" />
-    <Compile Include="CodeFirst\BaseEntities.cs" />
-    <Compile Include="CodeFirst\CompanyModelCodeFirst.cs" />
-    <Compile Include="CodeFirst\InterfacesModel.cs" />
     <Compile Include="Models\COMPANY.cs">
       <DependentUpon>TestModel1.tt</DependentUpon>
     </Compile>
@@ -161,15 +138,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Ravka\_Ravka.csproj">
-      <Project>{b78e8625-6cb4-4e9f-a835-437e284d352b}</Project>
-      <Name>_Ravka</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
