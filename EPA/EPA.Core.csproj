@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{97F59878-363E-4E57-B6BB-277E89C532D6}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EPA</RootNamespace>
     <AssemblyName>EPA</AssemblyName>
@@ -49,11 +49,18 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Effort">
+      <HintPath>..\packages\Effort.1.1.0\lib\net45\Effort.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Data.Services, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="NMemory">
+      <HintPath>..\packages\NMemory.1.0.0\lib\net45\NMemory.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -62,6 +69,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,11 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Data\Logger.cs" />
+    <Compile Include="Data\Db.cs" />
     <Compile Include="Models\COMPANY.cs">
-      <DependentUpon>TestModel1.tt</DependentUpon>
+      <DependentUpon>DbFirst.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\COMPANY_SUPPLIERS.cs">
-      <DependentUpon>TestModel1.tt</DependentUpon>
+      <DependentUpon>DbFirst.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DbFirst.Context.cs">
       <AutoGen>True</AutoGen>
@@ -92,20 +102,16 @@
       <DependentUpon>DbFirst.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PRICE_LIST_ITEM_TYPES.cs">
-      <DependentUpon>TestModel1.tt</DependentUpon>
+      <DependentUpon>DbFirst.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUPPLIER.cs">
-      <DependentUpon>TestModel1.tt</DependentUpon>
+      <DependentUpon>DbFirst.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestModel1.tt</DependentUpon>
+    <Compile Include="Program.cs">
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\EPAService.cs" />
-    <Compile Include="Services\IEPAService.cs" />
+    <Compile Include="UnitTests\EFTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
@@ -128,17 +134,17 @@
       <DependentUpon>DbFirst.edmx</DependentUpon>
       <LastGenOutput>DbFirst.cs</LastGenOutput>
     </None>
-    <None Include="Models\TestModel1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TestModel1.cs</LastGenOutput>
-      <DependentUpon>DbFirst.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Plexxis.Helpers\Plexxis.Helpers.csproj">
+      <Project>{a7f5bc45-2837-4800-9ede-c03c75388d51}</Project>
+      <Name>Plexxis.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>

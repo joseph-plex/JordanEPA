@@ -6,23 +6,23 @@ using System.Text;
 
 namespace EPA
 {
-  public  class Logger
+    public class Logger
     {
-    //  private static NLog.Logger logger = LogManager.GetCurrentClassLogger();
-   
+        //  private static NLog.Logger logger = LogManager.GetCurrentClassLogger();
 
-      public static void Info(string message)
-      {
-       // TODO   logger.Info(message);
-      }
 
-      public static void Warn(string message)
-      {
-          // TODO   logger.Warn(message);
-      }
-      public static void Trace(string message)
-      {
-          // TODO logger.Trace(message);
-      }
-  }
+        public static void Info(string message)
+        {
+            // TODO   logger.Info(message);
+        }
+
+        public static void Warn(string message)
+        {
+            // TODO   logger.Warn(message);
+        }
+        public static void Trace(string message)
+        {
+            // TODO logger.Trace(message);
+        }
+    }
 }

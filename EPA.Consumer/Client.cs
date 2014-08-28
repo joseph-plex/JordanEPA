@@ -9,6 +9,8 @@ namespace EPA.Consumer
 {
     public class Client : IJordanEPAService
     {
+        #region Background
+
         ChannelFactory<IJordanEPAService> factory;
         IJordanEPAService channel;
 
@@ -35,7 +37,7 @@ namespace EPA.Consumer
             return channel.GetData(value);
         }
 
-        public  Task<string> GetDataAsync(int value)
+        public Task<string> GetDataAsync(int value)
         {
             return Task<string>.Run(() => GetData(value));
         }
@@ -49,6 +51,10 @@ namespace EPA.Consumer
         {
             throw new NotImplementedException();
         }
+
+
+        #endregion
+
 
         public COMPANY CompanyFetch(string key)
         {

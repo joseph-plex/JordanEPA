@@ -15,7 +15,7 @@ namespace TempTest
             HostJordanWebService();
           //  EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
         }
-
+        /*
        public static void HostWebService()
         {
             // Step 1 Create a URI to serve as the base address.
@@ -52,7 +52,7 @@ namespace TempTest
             }
         }
     
-    
+    */
     
        public static void HostJordanWebService()
         {

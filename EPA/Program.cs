@@ -11,10 +11,28 @@ namespace TempTest
     {
         static void Main(string[] args)
         {
-            HostWebService();
+            Effort.Provider.EffortProviderConfiguration.RegisterProvider();
+            TestMethod1();
+
+            
            // EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
         }
 
+
+        public static void TestMethod1()
+        {
+            using (var db = new EPA.Data.Db())
+            {
+                Console.WriteLine("From Database " + db.COMPANIES.FirstOrDefault().EMAIL);
+            }
+
+            using (var db = new EPA.Data.MockDb())
+            {
+                Console.WriteLine("From Mock Database " + db.COMPANIES.FirstOrDefault().EMAIL);
+            }
+            Console.ReadLine();
+        }
+        /*
        public static void HostWebService()
         {
             // Step 1 Create a URI to serve as the base address.
@@ -49,5 +67,7 @@ namespace TempTest
                 selfHost.Abort();
             }
         }
+   */
+    
     }
 }

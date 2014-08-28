@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA", "EPA\EPA.csproj", "{97F59878-363E-4E57-B6BB-277E89C532D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA.Core", "EPA\EPA.Core.csproj", "{97F59878-363E-4E57-B6BB-277E89C532D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Ravka", "..\Ravka\_Ravka.csproj", "{B78E8625-6CB4-4E9F-A835-437E284D352B}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA.Consumer", "EPA.Consumer\EPA.Consumer.csproj", "{971E70BE-A95F-4A2A-97B2-CC085928251F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA.Consumer.UnitTests", "EPA.Consumer.UnitTests\EPA.Consumer.UnitTests.csproj", "{6DBAF4AD-09B0-4D29-A98F-B5913E05B170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plexxis.Helpers", "..\Plexxis.Helpers\Plexxis.Helpers.csproj", "{A7F5BC45-2837-4800-9EDE-C03C75388D51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,16 @@ Global
 		{6DBAF4AD-09B0-4D29-A98F-B5913E05B170}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6DBAF4AD-09B0-4D29-A98F-B5913E05B170}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6DBAF4AD-09B0-4D29-A98F-B5913E05B170}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
