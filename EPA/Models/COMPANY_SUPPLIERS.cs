@@ -22,5 +22,8 @@ namespace EPA.Models
         public Nullable<int> PAYEE_ID { get; set; }
         public Nullable<short> SEND_PASSWORD { get; set; }
         public Nullable<short> IS_TRUSTED_BY_SUPPLIER { get; set; }
+        public Nullable<int> COMPANY_SUPPLIERS_ID { get; set; }
+    
+        public virtual COMPANY COMPANy { get; set; }
     }
 }

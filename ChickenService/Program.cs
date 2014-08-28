@@ -11,6 +11,7 @@ namespace TempTest
     {
         static void Main(string[] args)
         {
+            TestDb();
             // HostWebService();
             HostJordanWebService();
           //  EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
@@ -53,7 +54,18 @@ namespace TempTest
         }
     
     */
-    
+        public static void TestDb()
+        {
+            string email1, email2;
+            using (var db = new EPA.Data.Db())
+            {
+                email1 = db.COMPANIES.FirstOrDefault().EMAIL;
+
+            }
+
+            Console.WriteLine(email1);
+          //  Console.ReadLine();
+        }
        public static void HostJordanWebService()
         {
             // Step 1 Create a URI to serve as the base address.

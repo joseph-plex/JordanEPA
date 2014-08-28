@@ -7,8 +7,16 @@
       <Diagram DiagramId="72a57ccffb024ebaaa7f0711eb8df392" Name="Diagram1">
         <EntityTypeShape EntityType="DbFirstModel.COMPANY" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbFirstModel.COMPANY_SUPPLIERS" Width="2.625" PointX="2.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbFirstModel.PRICE_LIST_ITEM_TYPES" Width="1.5" PointX="5.5" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbFirstModel.SUPPLIER" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.PRICE_LIST_ITEM_TYPES" Width="1.5" PointX="6.125" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbFirstModel.COMPANY_USER_SUPPLIERS" Width="1.5" PointX="3.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFirstModel.COMPANY_USERS" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFirstModel.PRICE_AGREEMENT" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DbFirstModel.PRICE_AGREEMENT_MATERIALS" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DbFirstModel.PRICE_LIST" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DbFirstModel.PRICE_LIST_MATERIALS" Width="1.5" PointX="9.75" PointY="4.75" />
+        <AssociationConnector Association="DbFirstModel.COMPANIES_COMPANY_ID" />
+        <EntityTypeShape EntityType="DbFirstModel.SUPPLIER" Width="1.5" PointX="10.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

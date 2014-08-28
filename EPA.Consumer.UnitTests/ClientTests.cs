@@ -23,6 +23,8 @@ namespace EPA.Consumer.UnitTests
 
             Client c = new Client("http://epa.plexxis.com/Jordan/JordanEPAService.svc");
             var v = c.GetData(2);
+
+
             v = v;
         }
 

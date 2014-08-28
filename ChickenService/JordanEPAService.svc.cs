@@ -16,19 +16,44 @@ namespace ChickenService
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerCall)]
     public class JordanEPAService : IJordanEPAService
     {
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
+
+        public CompanyDto CompanyFetchDto(string key)
+    {
+        var c = CompanyFetch(key);
+        if (c != null)
+        {
+            return new CompanyDto
+            {
+                COMPANY_ID = c.COMPANY_ID,
+                EMAIL = c.EMAIL,
+                DESCRIPTION = c.DESCRIPTION,
+            };
+        }
+        else
+            return null;
+    }
         public EPA.Models.COMPANY CompanyFetch(string key)
         {
             if (string.IsNullOrEmpty(key))
                 return null;
-
-            using (var db = new EPA.Models.DbFirstEntities())
+            try
             {
-                return db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
+                var db = new EPA.Data.Db(); //  using (var db = new EPA.Data.Db()) // .Models.DbFirstEntities())
+                {
+                    return db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
+                }
             }
+            catch (Exception ex)
+            {
+                return null;
+                throw;
+            }
+  
         }
         public string CompanyFetchTest(string key)
         {
@@ -37,7 +62,7 @@ namespace ChickenService
 
             try
             {
-                using (var db = new EPA.Models.DbFirstEntities())
+                using (var db = new EPA.Data.Db())
                 {
                     var c = db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
                     if (c != null)

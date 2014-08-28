@@ -14,6 +14,11 @@ namespace EPA.Models
     
     public partial class COMPANY
     {
+        public COMPANY()
+        {
+            this.COMPANY_SUPPLIERS = new HashSet<COMPANY_SUPPLIERS>();
+        }
+    
         public string KEY { get; set; }
         public int COMPANY_ID { get; set; }
         public string DESCRIPTION { get; set; }
@@ -24,5 +29,7 @@ namespace EPA.Models
         public Nullable<int> ROW_VERSION { get; set; }
         public string CODE { get; set; }
         public Nullable<int> PA_REFERENCE { get; set; }
+    
+        public virtual ICollection<COMPANY_SUPPLIERS> COMPANY_SUPPLIERS { get; set; }
     }
 }

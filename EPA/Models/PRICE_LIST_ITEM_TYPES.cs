@@ -23,5 +23,6 @@ namespace EPA.Models
         public string PROP_TITLE_5 { get; set; }
         public string PROP_TITLE_6 { get; set; }
         public int PRICE_LIST_ID { get; set; }
+        public Nullable<int> PRICE_LIST_ITEM_TYPES_ID { get; set; }
     }
 }

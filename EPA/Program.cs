@@ -4,28 +4,88 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Description;
-using System.ServiceModel; 
-namespace TempTest
+using System.ServiceModel;
+using AutoMapper;
+namespace EPA
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Effort.Provider.EffortProviderConfiguration.RegisterProvider();
-            TestMethod1();
+            EPA.StartUp.Initialize();
+            TestDtoToModel();
+            // Effort.Provider.EffortProviderConfiguration.RegisterProvider();
+          //  TestMethod1();
 
-            
-           // EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
+
+            // EPA.Data.Test.SetMessage( EPA.Data.Test.AddCompany());
         }
 
+        public static void TestDtoToModel()
+        {
+            EPA.Services.EPAService svc = new Services.EPAService();
+            var companyDto = svc.CompanyFetch("KEY");
+            companyDto.DESCRIPTION = null; // "Updated from Dto - " + companyDto.DESCRIPTION;
+           Console.WriteLine("expecting change... " + companyDto.DESCRIPTION);
+            
+            var resultDto = svc.CompanyModify(companyDto);
+            Console.WriteLine("result dto - " + resultDto.DESCRIPTION);
+
+            var newCompanyDto = svc.CompanyFetch("KEY");
+            Console.WriteLine("new from model - " + resultDto.DESCRIPTION);
+            Console.ReadLine();
+        }
 
         public static void TestMethod1()
         {
             using (var db = new EPA.Data.Db())
             {
-                Console.WriteLine("From Database " + db.COMPANIES.FirstOrDefault().EMAIL);
-            }
+                var company = db.COMPANIES.Where(a => a.CODE == "XXX").FirstOrDefault();
+                if (company != null)
+                {
 
+                    Console.WriteLine("From  Database " + company.EMAIL);
+
+
+                    var companyDto = Mapper.Map<EPA.Dto.COMPANY>(company);
+
+                    Console.WriteLine("From DTO " + companyDto.EMAIL);
+
+
+                    var company_supplier = new EPA.Models.COMPANY_SUPPLIERS()
+                     {
+                         COMPANY_ID = company.COMPANY_ID,
+                         DESCRIPTION = "test description",
+                         EMAIL = "test@mrTesty",
+                         COMPANY_SUPPLIERS_ID = 345,
+
+                     };
+
+                    db.COMPANY_SUPPLIERS.Add(company_supplier);
+                    var outcome = db.Save();
+                    Console.WriteLine(outcome.Message);
+                    //   db.SaveChanges();
+                }
+
+                /*   else
+                   {
+
+                       var c = new EPA.Models.COMPANY()
+                       {
+                            COMPANY_ID = 50,
+                            KEY = "UniqueTestKEY",
+                           CODE = "XXX",
+                           DESCRIPTION = "A test description",
+                           EMAIL = "test@mrTesty.com",
+
+                       };
+                       db.COMPANIES.Add(c);
+                       db.SaveChanges();
+                       // var outcome = db.Save();
+                       // Console.WriteLine(outcome.HasError + " - " + outcome.Message);
+                   } */
+            }
+            Console.ReadLine();
             using (var db = new EPA.Data.MockDb())
             {
                 Console.WriteLine("From Mock Database " + db.COMPANIES.FirstOrDefault().EMAIL);
@@ -68,6 +128,6 @@ namespace TempTest
             }
         }
    */
-    
+
     }
 }

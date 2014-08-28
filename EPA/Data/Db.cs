@@ -4,7 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using Plexxis.Helpers.Extensions;
 using System.Data.Common;
-using Effort.DataLoaders;
+// using Effort.DataLoaders;
 using System.Data.EntityClient;
 
 namespace EPA.Data
@@ -20,6 +20,11 @@ namespace EPA.Data
     public partial class MockDb : Models.DbFirstEntities
     {
         public MockDb()
+            : base()
+        {
+
+        }
+     /*   public MockDb()
             : base(MockConnectionWithData())
         {
 
@@ -29,11 +34,11 @@ namespace EPA.Data
         {
             IDataLoader loader = new EntityDataLoader("name=DbFirstEntities");
 
-            return Effort.EntityConnectionFactory.CreateTransient("name=DbFirstEntities");
+           // return Effort.EntityConnectionFactory.CreateTransient("name=DbFirstEntities");
             return Effort.EntityConnectionFactory.CreateTransient("name=DbFirstEntities", loader);
            //  return Effort.DbConnectionFactory.CreateTransient(loader);
 
-        }
+        } */
     }
 }
 
@@ -79,7 +84,6 @@ namespace EPA.Models
                 {
 
                     // todo : add entity name
-
                     foreach (var validationError in validationErrors.ValidationErrors)
                     {
 
@@ -90,25 +94,54 @@ namespace EPA.Models
                 }
 
             }
+              catch (   System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                if (ex.InnerException != null)
+                {
+                    if (ex.InnerException.InnerException != null)
+                        errorMessage = ex.InnerException.InnerException.Message.ToString();
+                    else
+                        errorMessage = ex.InnerException.ToString();
+                }
+
+                else
+                    errorMessage = ex.ToString();
+            }
             catch (System.Data.UpdateException ex)
             {
 
                 if (ex.InnerException != null)
-                    errorMessage = ex.InnerException.ToString();
+                {
+                    if (ex.InnerException.InnerException != null)
+                        errorMessage = ex.InnerException.InnerException.Message.ToString();
+                    else
+                        errorMessage = ex.InnerException.ToString();
+                }
                 else
                     errorMessage = ex.ToString();
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
                 if (ex.InnerException != null)
-                    errorMessage = ex.InnerException.ToString();
+                {
+                    if (ex.InnerException.InnerException != null)
+                        errorMessage = ex.InnerException.InnerException.Message.ToString();
+                    else
+                        errorMessage = ex.InnerException.ToString();
+                }
+
                 else
                     errorMessage = ex.ToString();
             }
             catch (Exception ex)
             {
                 if (ex.InnerException != null)
-                    errorMessage = ex.InnerException.ToString();
+                {
+                    if (ex.InnerException.InnerException != null)
+                        errorMessage = ex.InnerException.InnerException.Message.ToString();
+                    else
+                        errorMessage = ex.InnerException.ToString();
+                }
                 else
                     errorMessage = ex.ToString();
 

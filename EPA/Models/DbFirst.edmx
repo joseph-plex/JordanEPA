@@ -33,17 +33,21 @@
           <Property Name="PAYEE_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="SEND_PASSWORD" Type="number" Precision="1" Scale="0" />
           <Property Name="IS_TRUSTED_BY_SUPPLIER" Type="number" Precision="1" Scale="0" />
+          <Property Name="COMPANY_SUPPLIERS_ID" Type="number" Precision="10" Scale="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.COMPANY_USER_SUPPLIERS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="COMPANY_USER_SUPPLIERS">
+          <Key>
+            <PropertyRef Name="COMPANY_USER_SUPPLIERS_ID" />
+          </Key>
           <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.COMPANY_USERS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+          <Property Name="COMPANY_USER_SUPPLIERS_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+        </EntityType>
         <EntityType Name="COMPANY_USERS">
-          <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" />
+          <Key>
+            <PropertyRef Name="COMPANY_USER_ID" />
+          </Key>
+          <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="COMPANY_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="DESCRIPTION" Type="varchar2" MaxLength="100" />
           <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
@@ -53,27 +57,12 @@ warning 6013: The table/view 'C##EPA.COMPANY_USERS' does not have a primary key 
           <Property Name="VALIDATION_CODE" Type="varchar2" MaxLength="10" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="number" Precision="1" Scale="0" />
           <Property Name="PHONE" Type="varchar2" MaxLength="20" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.LOG_PARAMS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="LOG_PARAMS">
-          <Property Name="LOG_ID" Type="number" Precision="10" Scale="0" />
-          <Property Name="NAME" Type="varchar2" MaxLength="15" />
-          <Property Name="VALUE" Type="varchar2" MaxLength="100" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.LOGS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="LOGS">
-          <Property Name="LOG_ID" Type="number" Precision="10" Scale="0" />
-          <Property Name="PRIORITY" Type="number" Precision="2" Scale="0" />
-          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="4000" />
-          <Property Name="PERIOD" Type="date" />
-          <Property Name="IS_ERROR" Type="number" Precision="1" Scale="0" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.PRICE_AGREEMENT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        </EntityType>
         <EntityType Name="PRICE_AGREEMENT">
-          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" />
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="IS_SUPPLIER_AWARE_OF_UPDATE" Type="number" Precision="1" Scale="0" />
@@ -91,11 +80,12 @@ warning 6013: The table/view 'C##EPA.PRICE_AGREEMENT' does not have a primary ke
           <Property Name="REFERENCE" Type="varchar2" MaxLength="20" />
           <Property Name="GROUP_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="PROGRESSION" Type="number" Precision="10" Scale="0" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.PRICE_AGREEMENT_ADJUSTMENTS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        </EntityType>
         <EntityType Name="PRICE_AGREEMENT_ADJUSTMENTS">
-          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="number" Precision="10" Scale="0" />
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ADJUSTMENT_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="RECORD_TYPE" Type="number" Precision="1" Scale="0" />
           <Property Name="RATE_TYPE" Type="number" Precision="10" Scale="0" />
@@ -103,12 +93,14 @@ warning 6013: The table/view 'C##EPA.PRICE_AGREEMENT_ADJUSTMENTS' does not have 
           <Property Name="RATE_UOM" Type="varchar2" MaxLength="10" />
           <Property Name="RATE_DATE" Type="date" />
           <Property Name="CODE" Type="varchar2" MaxLength="6" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.PRICE_AGREEMENT_MATERIALS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        </EntityType>
         <EntityType Name="PRICE_AGREEMENT_MATERIALS">
-          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" />
-          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" />
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ID" />
+            <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="RATE" Type="number" Precision="16" Scale="4" />
           <Property Name="RATE_UOM" Type="varchar2" MaxLength="8" />
           <Property Name="RATE_UOM_UNITS" Type="number" Precision="20" Scale="8" />
@@ -132,11 +124,13 @@ warning 6013: The table/view 'C##EPA.PRICE_AGREEMENT_MATERIALS' does not have a 
           <Property Name="STOCKING_CODE" Type="varchar2" MaxLength="8" />
           <Property Name="PA_ADJUSTMENT_ID_STOCKING" Type="number" Precision="10" Scale="0" />
           <Property Name="PA_ADJUSTMENT_ID_INCREASE" Type="number" Precision="10" Scale="0" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.PRICE_LIST' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+          <Property Name="PRICE_AGREEMENT_MATERIAL_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+        </EntityType>
         <EntityType Name="PRICE_LIST">
-          <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" />
+          <Key>
+            <PropertyRef Name="PRICE_LIST_ID" />
+          </Key>
+          <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="DESCRIPTION" Type="varchar2" MaxLength="1000" />
           <Property Name="GROUP_ID" Type="number" Precision="10" Scale="0" />
@@ -150,7 +144,7 @@ warning 6013: The table/view 'C##EPA.PRICE_LIST' does not have a primary key def
           <Property Name="STATUS_DATE" Type="date" />
           <Property Name="REFERENCE" Type="varchar2" MaxLength="20" />
           <Property Name="TERMS" Type="varchar2" MaxLength="1000" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="PRICE_LIST_ITEM_TYPES">
           <Key>
             <PropertyRef Name="ITEM_TYPE" />
@@ -165,11 +159,13 @@ warning 6013: The table/view 'C##EPA.PRICE_LIST' does not have a primary key def
           <Property Name="PROP_TITLE_5" Type="varchar2" MaxLength="50" />
           <Property Name="PROP_TITLE_6" Type="varchar2" MaxLength="50" />
           <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_LIST_ITEM_TYPES_ID" Type="number" Precision="10" Scale="0" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'C##EPA.PRICE_LIST_MATERIALS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="PRICE_LIST_MATERIALS">
-          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" />
+          <Key>
+            <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
+          </Key>
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="ITEM_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="ITEM_CODE" Type="varchar2" MaxLength="100" />
@@ -187,13 +183,11 @@ warning 6013: The table/view 'C##EPA.PRICE_LIST_MATERIALS' does not have a prima
           <Property Name="PROP_4" Type="varchar2" MaxLength="50" />
           <Property Name="PROP_5" Type="varchar2" MaxLength="50" />
           <Property Name="PROP_6" Type="varchar2" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C##EPA.SUPPLIERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+          <Property Name="RATE_UOM" Type="number" Precision="16" Scale="4" />
+        </EntityType>
         <EntityType Name="SUPPLIERS">
           <Key>
             <PropertyRef Name="SUPPLIER_ID" />
-            <PropertyRef Name="EMAIL" />
           </Key>
           <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="EMAIL" Type="varchar2" MaxLength="100" Nullable="false" />
@@ -207,25 +201,34 @@ warning 6002: The table/view 'C##EPA.SUPPLIERS' does not have a primary key defi
           <Property Name="VALIDATION_CODE" Type="varchar2" MaxLength="10" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="number" Precision="1" Scale="0" />
         </EntityType>
+        <Association Name="COMPANIES_COMPANY_ID">
+          <End Role="COMPANIES" Type="Self.COMPANIES" Multiplicity="1" />
+          <End Role="COMPANY_SUPPLIERS" Type="Self.COMPANY_SUPPLIERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANIES">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="COMPANY_SUPPLIERS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DbFirstModelStoreContainer">
           <EntitySet Name="COMPANIES" EntityType="Self.COMPANIES" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="COMPANY_USER_SUPPLIERS" EntityType="Self.COMPANY_USER_SUPPLIERS" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="COMPANY_USERS" EntityType="Self.COMPANY_USERS" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="PRICE_AGREEMENT" EntityType="Self.PRICE_AGREEMENT" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="PRICE_AGREEMENT_ADJUSTMENTS" EntityType="Self.PRICE_AGREEMENT_ADJUSTMENTS" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="PRICE_AGREEMENT_MATERIALS" EntityType="Self.PRICE_AGREEMENT_MATERIALS" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="PRICE_LIST" EntityType="Self.PRICE_LIST" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" Schema="C##EPA" store:Type="Tables" />
-          <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" store:Type="Tables" store:Schema="C##EPA">
-            <DefiningQuery>SELECT 
-"SUPPLIERS"."SUPPLIER_ID" AS "SUPPLIER_ID", 
-"SUPPLIERS"."EMAIL" AS "EMAIL", 
-"SUPPLIERS"."FIRST_NAME" AS "FIRST_NAME", 
-"SUPPLIERS"."LAST_NAME" AS "LAST_NAME", 
-"SUPPLIERS"."DESCRIPTION" AS "DESCRIPTION", 
-"SUPPLIERS"."COMPANY_NAME" AS "COMPANY_NAME", 
-"SUPPLIERS"."PHONE" AS "PHONE", 
-"SUPPLIERS"."PASSWORD" AS "PASSWORD", 
-"SUPPLIERS"."STATUS" AS "STATUS", 
-"SUPPLIERS"."VALIDATION_CODE" AS "VALIDATION_CODE", 
-"SUPPLIERS"."VALIDATION_EMAIL_SENT" AS "VALIDATION_EMAIL_SENT"
-FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="PRICE_LIST_MATERIALS" EntityType="Self.PRICE_LIST_MATERIALS" Schema="C##EPA" store:Type="Tables" />
+          <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" Schema="C##EPA" store:Type="Tables" />
+          <AssociationSet Name="COMPANIES_COMPANY_ID" Association="Self.COMPANIES_COMPANY_ID">
+            <End Role="COMPANIES" EntitySet="COMPANIES" />
+            <End Role="COMPANY_SUPPLIERS" EntitySet="COMPANY_SUPPLIERS" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -245,6 +248,7 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <Property Name="ROW_VERSION" Type="Int32" />
           <Property Name="CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="PA_REFERENCE" Type="Int32" />
+          <NavigationProperty Name="COMPANY_SUPPLIERS" Relationship="DbFirstModel.COMPANIES_COMPANY_ID" FromRole="COMPANY" ToRole="COMPANY_SUPPLIERS" />
         </EntityType>
         <EntityType Name="COMPANY_SUPPLIERS">
           <Key>
@@ -259,6 +263,8 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <Property Name="PAYEE_ID" Type="Int32" />
           <Property Name="SEND_PASSWORD" Type="Int16" />
           <Property Name="IS_TRUSTED_BY_SUPPLIER" Type="Int16" />
+          <Property Name="COMPANY_SUPPLIERS_ID" Type="Int32" />
+          <NavigationProperty Name="COMPANy" Relationship="DbFirstModel.COMPANIES_COMPANY_ID" FromRole="COMPANY_SUPPLIERS" ToRole="COMPANY" />
         </EntityType>
         <EntityType Name="PRICE_LIST_ITEM_TYPES">
           <Key>
@@ -274,14 +280,177 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <Property Name="PROP_TITLE_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PROP_TITLE_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PRICE_LIST_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_LIST_ITEM_TYPES_ID" Type="Int32" />
         </EntityType>
+        <EntityContainer Name="DbFirstEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COMPANIES" EntityType="DbFirstModel.COMPANY" />
+          <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" />
+          <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" />
+          <EntitySet Name="COMPANY_USER_SUPPLIERS" EntityType="DbFirstModel.COMPANY_USER_SUPPLIERS" />
+          <EntitySet Name="COMPANY_USERS" EntityType="DbFirstModel.COMPANY_USERS" />
+          <EntitySet Name="PRICE_AGREEMENT" EntityType="DbFirstModel.PRICE_AGREEMENT" />
+          <EntitySet Name="PRICE_AGREEMENT_ADJUSTMENTS" EntityType="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS" />
+          <EntitySet Name="PRICE_AGREEMENT_MATERIALS" EntityType="DbFirstModel.PRICE_AGREEMENT_MATERIALS" />
+          <EntitySet Name="PRICE_LIST" EntityType="DbFirstModel.PRICE_LIST" />
+          <EntitySet Name="PRICE_LIST_MATERIALS" EntityType="DbFirstModel.PRICE_LIST_MATERIALS" />
+          <AssociationSet Name="COMPANIES_COMPANY_ID" Association="DbFirstModel.COMPANIES_COMPANY_ID">
+            <End Role="COMPANY" EntitySet="COMPANIES" />
+            <End Role="COMPANY_SUPPLIERS" EntitySet="COMPANY_SUPPLIERS" />
+          </AssociationSet>
+          <EntitySet Name="SUPPLIERS" EntityType="DbFirstModel.SUPPLIER" />
+        </EntityContainer>
+        <EntityType Name="COMPANY_USER_SUPPLIERS">
+          <Key>
+            <PropertyRef Name="COMPANY_USER_SUPPLIERS_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="Int32" />
+          <Property Name="COMPANY_USER_ID" Type="Int32" />
+          <Property Name="COMPANY_USER_SUPPLIERS_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMPANY_USERS">
+          <Key>
+            <PropertyRef Name="COMPANY_USER_ID" />
+          </Key>
+          <Property Name="COMPANY_USER_ID" Type="Int32" Nullable="false" />
+          <Property Name="COMPANY_ID" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="Int16" />
+          <Property Name="ROW_VERSION" Type="Int32" />
+          <Property Name="DB_USER_ID" Type="Int32" />
+          <Property Name="VALIDATION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VALIDATION_EMAIL_SENT" Type="Int16" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRICE_AGREEMENT">
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_LIST_ID" Type="Int32" />
+          <Property Name="SUPPLIER_ID" Type="Int32" />
+          <Property Name="IS_SUPPLIER_AWARE_OF_UPDATE" Type="Int16" />
+          <Property Name="HAS_INCREASES" Type="Int16" />
+          <Property Name="COMPANY_SUPPLIER_ID" Type="Int32" />
+          <Property Name="HAS_STOCKING" Type="Int16" />
+          <Property Name="SUPPLIER_NOTES" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="NOTIFY_SUPPLIER" Type="Int16" />
+          <Property Name="DUE_DATE" Type="DateTime" />
+          <Property Name="EXPIRY_DATE" Type="DateTime" />
+          <Property Name="EFFECTIVE_DATE" Type="DateTime" />
+          <Property Name="AGREED_BY_DATE" Type="DateTime" />
+          <Property Name="AGREED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="REFERENCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP_ID" Type="Int32" />
+          <Property Name="PROGRESSION" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRICE_AGREEMENT_ADJUSTMENTS">
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ADJUSTMENT_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" />
+          <Property Name="RECORD_TYPE" Type="Int16" />
+          <Property Name="RATE_TYPE" Type="Int32" />
+          <Property Name="RATE" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="RATE_UOM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RATE_DATE" Type="DateTime" />
+          <Property Name="CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRICE_AGREEMENT_MATERIALS">
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ID" />
+            <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="Int32" Nullable="false" />
+          <Property Name="RATE" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="RATE_UOM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="RATE_UOM_UNITS" Type="Decimal" Precision="20" Scale="8" />
+          <Property Name="RATE_STATUS" Type="Int16" />
+          <Property Name="ROW_VERSION" Type="Int32" />
+          <Property Name="SUPPLIER_ITEM_CODE" Type="Int32" />
+          <Property Name="INCREASE_TYPE" Type="Int16" />
+          <Property Name="INCREASE_RATE" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="INCREASE_DATE" Type="DateTime" />
+          <Property Name="STOCKING_TYPE" Type="Int16" />
+          <Property Name="STOCKING_RATE" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="RATE_DATE" Type="DateTime" />
+          <Property Name="S_RATE" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="S_RATE_UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_RATE_CONVERSION" Type="Decimal" Precision="16" Scale="8" />
+          <Property Name="ITEM_UOM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MANUFACTURER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="S_RATE_DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="S_RATE_NOTES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="INCREASE_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="STOCKING_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="PA_ADJUSTMENT_ID_STOCKING" Type="Int32" />
+          <Property Name="PA_ADJUSTMENT_ID_INCREASE" Type="Int32" />
+          <Property Name="PRICE_AGREEMENT_MATERIAL_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRICE_LIST">
+          <Key>
+            <PropertyRef Name="PRICE_LIST_ID" />
+          </Key>
+          <Property Name="PRICE_LIST_ID" Type="Int32" Nullable="false" />
+          <Property Name="COMPANY_USER_ID" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP_ID" Type="Int32" />
+          <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DESIRED_EFFECTIVE_DATE" Type="DateTime" />
+          <Property Name="DESIRED_EXPIRY_DATE" Type="DateTime" />
+          <Property Name="STATUS" Type="Int16" />
+          <Property Name="NOTES" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="ROW_VERSION" Type="Int32" />
+          <Property Name="NOTIFY_USER" Type="Int16" />
+          <Property Name="STATUS_DATE" Type="DateTime" />
+          <Property Name="REFERENCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TERMS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRICE_LIST_MATERIALS">
+          <Key>
+            <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
+          </Key>
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_LIST_ID" Type="Int32" />
+          <Property Name="ITEM_ID" Type="Int32" />
+          <Property Name="ITEM_CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DIMENSION_ID" Type="Int32" />
+          <Property Name="DIMENSION_CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DIMENSION_CONVERSION" Type="Int32" />
+          <Property Name="QTY" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="QTY_UOM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="MEASURE_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ITEM_TYPE_GROUP" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="ITEM_TYPE" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="PROP_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROP_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROP_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROP_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROP_5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROP_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RATE_UOM" Type="Decimal" Precision="16" Scale="4" />
+        </EntityType>
+        <Association Name="COMPANIES_COMPANY_ID">
+          <End Type="DbFirstModel.COMPANY" Role="COMPANY" Multiplicity="1" />
+          <End Type="DbFirstModel.COMPANY_SUPPLIERS" Role="COMPANY_SUPPLIERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="COMPANY_SUPPLIERS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="SUPPLIER">
           <Key>
             <PropertyRef Name="SUPPLIER_ID" />
-            <PropertyRef Name="EMAIL" />
           </Key>
           <Property Name="SUPPLIER_ID" Type="Int32" Nullable="false" />
-          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -292,12 +461,6 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <Property Name="VALIDATION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="Int16" />
         </EntityType>
-        <EntityContainer Name="DbFirstEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="COMPANIES" EntityType="DbFirstModel.COMPANY" />
-          <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" />
-          <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" />
-          <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIER" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -323,6 +486,7 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <EntitySetMapping Name="COMPANY_SUPPLIERS">
             <EntityTypeMapping TypeName="DbFirstModel.COMPANY_SUPPLIERS">
               <MappingFragment StoreEntitySet="COMPANY_SUPPLIERS">
+                <ScalarProperty Name="COMPANY_SUPPLIERS_ID" ColumnName="COMPANY_SUPPLIERS_ID" />
                 <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
                 <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
@@ -337,6 +501,7 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
           <EntitySetMapping Name="PRICE_LIST_ITEM_TYPES">
             <EntityTypeMapping TypeName="DbFirstModel.PRICE_LIST_ITEM_TYPES">
               <MappingFragment StoreEntitySet="PRICE_LIST_ITEM_TYPES">
+                <ScalarProperty Name="PRICE_LIST_ITEM_TYPES_ID" ColumnName="PRICE_LIST_ITEM_TYPES_ID" />
                 <ScalarProperty Name="ITEM_TYPE" ColumnName="ITEM_TYPE" />
                 <ScalarProperty Name="ITEM_TYPE_GROUP" ColumnName="ITEM_TYPE_GROUP" />
                 <ScalarProperty Name="PROP_TITLE_1" ColumnName="PROP_TITLE_1" />
@@ -349,20 +514,160 @@ FROM "C##EPA"."SUPPLIERS" "SUPPLIERS"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="COMPANY_USER_SUPPLIERS">
+            <EntityTypeMapping TypeName="DbFirstModel.COMPANY_USER_SUPPLIERS">
+              <MappingFragment StoreEntitySet="COMPANY_USER_SUPPLIERS">
+                <ScalarProperty Name="COMPANY_USER_SUPPLIERS_ID" ColumnName="COMPANY_USER_SUPPLIERS_ID" />
+                <ScalarProperty Name="COMPANY_USER_ID" ColumnName="COMPANY_USER_ID" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPANY_USERS">
+            <EntityTypeMapping TypeName="DbFirstModel.COMPANY_USERS">
+              <MappingFragment StoreEntitySet="COMPANY_USERS">
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="VALIDATION_EMAIL_SENT" ColumnName="VALIDATION_EMAIL_SENT" />
+                <ScalarProperty Name="VALIDATION_CODE" ColumnName="VALIDATION_CODE" />
+                <ScalarProperty Name="DB_USER_ID" ColumnName="DB_USER_ID" />
+                <ScalarProperty Name="ROW_VERSION" ColumnName="ROW_VERSION" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+                <ScalarProperty Name="COMPANY_USER_ID" ColumnName="COMPANY_USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_AGREEMENT">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_AGREEMENT">
+              <MappingFragment StoreEntitySet="PRICE_AGREEMENT">
+                <ScalarProperty Name="PROGRESSION" ColumnName="PROGRESSION" />
+                <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+                <ScalarProperty Name="REFERENCE" ColumnName="REFERENCE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="AGREED_BY" ColumnName="AGREED_BY" />
+                <ScalarProperty Name="AGREED_BY_DATE" ColumnName="AGREED_BY_DATE" />
+                <ScalarProperty Name="EFFECTIVE_DATE" ColumnName="EFFECTIVE_DATE" />
+                <ScalarProperty Name="EXPIRY_DATE" ColumnName="EXPIRY_DATE" />
+                <ScalarProperty Name="DUE_DATE" ColumnName="DUE_DATE" />
+                <ScalarProperty Name="NOTIFY_SUPPLIER" ColumnName="NOTIFY_SUPPLIER" />
+                <ScalarProperty Name="SUPPLIER_NOTES" ColumnName="SUPPLIER_NOTES" />
+                <ScalarProperty Name="HAS_STOCKING" ColumnName="HAS_STOCKING" />
+                <ScalarProperty Name="COMPANY_SUPPLIER_ID" ColumnName="COMPANY_SUPPLIER_ID" />
+                <ScalarProperty Name="HAS_INCREASES" ColumnName="HAS_INCREASES" />
+                <ScalarProperty Name="IS_SUPPLIER_AWARE_OF_UPDATE" ColumnName="IS_SUPPLIER_AWARE_OF_UPDATE" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="PRICE_LIST_ID" ColumnName="PRICE_LIST_ID" />
+                <ScalarProperty Name="PRICE_AGREEMENT_ID" ColumnName="PRICE_AGREEMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_AGREEMENT_ADJUSTMENTS">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS">
+              <MappingFragment StoreEntitySet="PRICE_AGREEMENT_ADJUSTMENTS">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="RATE_DATE" ColumnName="RATE_DATE" />
+                <ScalarProperty Name="RATE_UOM" ColumnName="RATE_UOM" />
+                <ScalarProperty Name="RATE" ColumnName="RATE" />
+                <ScalarProperty Name="RATE_TYPE" ColumnName="RATE_TYPE" />
+                <ScalarProperty Name="RECORD_TYPE" ColumnName="RECORD_TYPE" />
+                <ScalarProperty Name="PRICE_AGREEMENT_ID" ColumnName="PRICE_AGREEMENT_ID" />
+                <ScalarProperty Name="PRICE_AGREEMENT_ADJUSTMENT_ID" ColumnName="PRICE_AGREEMENT_ADJUSTMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_AGREEMENT_MATERIALS">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_AGREEMENT_MATERIALS">
+              <MappingFragment StoreEntitySet="PRICE_AGREEMENT_MATERIALS">
+                <ScalarProperty Name="PRICE_AGREEMENT_MATERIAL_ID" ColumnName="PRICE_AGREEMENT_MATERIAL_ID" />
+                <ScalarProperty Name="PA_ADJUSTMENT_ID_INCREASE" ColumnName="PA_ADJUSTMENT_ID_INCREASE" />
+                <ScalarProperty Name="PA_ADJUSTMENT_ID_STOCKING" ColumnName="PA_ADJUSTMENT_ID_STOCKING" />
+                <ScalarProperty Name="STOCKING_CODE" ColumnName="STOCKING_CODE" />
+                <ScalarProperty Name="INCREASE_CODE" ColumnName="INCREASE_CODE" />
+                <ScalarProperty Name="S_RATE_NOTES" ColumnName="S_RATE_NOTES" />
+                <ScalarProperty Name="S_RATE_DESCRIPTION" ColumnName="S_RATE_DESCRIPTION" />
+                <ScalarProperty Name="MANUFACTURER" ColumnName="MANUFACTURER" />
+                <ScalarProperty Name="ITEM_UOM" ColumnName="ITEM_UOM" />
+                <ScalarProperty Name="S_RATE_CONVERSION" ColumnName="S_RATE_CONVERSION" />
+                <ScalarProperty Name="S_RATE_UOM" ColumnName="S_RATE_UOM" />
+                <ScalarProperty Name="S_RATE" ColumnName="S_RATE" />
+                <ScalarProperty Name="RATE_DATE" ColumnName="RATE_DATE" />
+                <ScalarProperty Name="STOCKING_RATE" ColumnName="STOCKING_RATE" />
+                <ScalarProperty Name="STOCKING_TYPE" ColumnName="STOCKING_TYPE" />
+                <ScalarProperty Name="INCREASE_DATE" ColumnName="INCREASE_DATE" />
+                <ScalarProperty Name="INCREASE_RATE" ColumnName="INCREASE_RATE" />
+                <ScalarProperty Name="INCREASE_TYPE" ColumnName="INCREASE_TYPE" />
+                <ScalarProperty Name="SUPPLIER_ITEM_CODE" ColumnName="SUPPLIER_ITEM_CODE" />
+                <ScalarProperty Name="ROW_VERSION" ColumnName="ROW_VERSION" />
+                <ScalarProperty Name="RATE_STATUS" ColumnName="RATE_STATUS" />
+                <ScalarProperty Name="RATE_UOM_UNITS" ColumnName="RATE_UOM_UNITS" />
+                <ScalarProperty Name="RATE_UOM" ColumnName="RATE_UOM" />
+                <ScalarProperty Name="RATE" ColumnName="RATE" />
+                <ScalarProperty Name="PRICE_LIST_MATERIAL_ID" ColumnName="PRICE_LIST_MATERIAL_ID" />
+                <ScalarProperty Name="PRICE_AGREEMENT_ID" ColumnName="PRICE_AGREEMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_LIST">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_LIST">
+              <MappingFragment StoreEntitySet="PRICE_LIST">
+                <ScalarProperty Name="TERMS" ColumnName="TERMS" />
+                <ScalarProperty Name="REFERENCE" ColumnName="REFERENCE" />
+                <ScalarProperty Name="STATUS_DATE" ColumnName="STATUS_DATE" />
+                <ScalarProperty Name="NOTIFY_USER" ColumnName="NOTIFY_USER" />
+                <ScalarProperty Name="ROW_VERSION" ColumnName="ROW_VERSION" />
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DESIRED_EXPIRY_DATE" ColumnName="DESIRED_EXPIRY_DATE" />
+                <ScalarProperty Name="DESIRED_EFFECTIVE_DATE" ColumnName="DESIRED_EFFECTIVE_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="COMPANY_USER_ID" ColumnName="COMPANY_USER_ID" />
+                <ScalarProperty Name="PRICE_LIST_ID" ColumnName="PRICE_LIST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_LIST_MATERIALS">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_LIST_MATERIALS">
+              <MappingFragment StoreEntitySet="PRICE_LIST_MATERIALS">
+                <ScalarProperty Name="RATE_UOM" ColumnName="RATE_UOM" />
+                <ScalarProperty Name="PROP_6" ColumnName="PROP_6" />
+                <ScalarProperty Name="PROP_5" ColumnName="PROP_5" />
+                <ScalarProperty Name="PROP_4" ColumnName="PROP_4" />
+                <ScalarProperty Name="PROP_3" ColumnName="PROP_3" />
+                <ScalarProperty Name="PROP_2" ColumnName="PROP_2" />
+                <ScalarProperty Name="PROP_1" ColumnName="PROP_1" />
+                <ScalarProperty Name="ITEM_TYPE" ColumnName="ITEM_TYPE" />
+                <ScalarProperty Name="ITEM_TYPE_GROUP" ColumnName="ITEM_TYPE_GROUP" />
+                <ScalarProperty Name="MEASURE_TYPE" ColumnName="MEASURE_TYPE" />
+                <ScalarProperty Name="QTY_UOM" ColumnName="QTY_UOM" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="DIMENSION_CONVERSION" ColumnName="DIMENSION_CONVERSION" />
+                <ScalarProperty Name="DIMENSION_CODE" ColumnName="DIMENSION_CODE" />
+                <ScalarProperty Name="DIMENSION_ID" ColumnName="DIMENSION_ID" />
+                <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="PRICE_LIST_ID" ColumnName="PRICE_LIST_ID" />
+                <ScalarProperty Name="PRICE_LIST_MATERIAL_ID" ColumnName="PRICE_LIST_MATERIAL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SUPPLIERS">
             <EntityTypeMapping TypeName="DbFirstModel.SUPPLIER">
               <MappingFragment StoreEntitySet="SUPPLIERS">
-                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
-                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
-                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="VALIDATION_CODE" ColumnName="VALIDATION_CODE" />
                 <ScalarProperty Name="VALIDATION_EMAIL_SENT" ColumnName="VALIDATION_EMAIL_SENT" />
+                <ScalarProperty Name="VALIDATION_CODE" ColumnName="VALIDATION_CODE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

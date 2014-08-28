@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace EPA
 {
 
-   public class Config // : Ravka.Config
+   internal class Config // : Ravka.Config
     {
  
   

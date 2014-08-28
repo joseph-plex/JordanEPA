@@ -20,6 +20,8 @@ namespace ChickenService
         CompositeType GetDataUsingDataContract(CompositeType composite);
         [OperationContract]
         EPA.Models.COMPANY CompanyFetch(string key);
+        [OperationContract]
+        CompanyDto CompanyFetchDto(string key);
            [OperationContract]
         string CompanyFetchTest(string key);
 
@@ -47,5 +49,21 @@ namespace ChickenService
             get { return stringValue; }
             set { stringValue = value; }
         }
+    }
+
+
+   // [DataContract]
+    public class CompanyDto
+    {
+        public string KEY { get; set; }
+        public int COMPANY_ID { get; set; }
+        public string DESCRIPTION { get; set; }
+        public string EMAIL { get; set; }
+        public string PHONE1 { get; set; }
+        public string PHONE2 { get; set; }
+        public string FAX { get; set; }
+        public Nullable<int> ROW_VERSION { get; set; }
+        public string CODE { get; set; }
+        public Nullable<int> PA_REFERENCE { get; set; }
     }
 }

@@ -14,7 +14,20 @@ namespace EPA.Services
         [OperationContract]
         void DoWork();
         [OperationContract]
-        Models.COMPANY CompanyFetch(string key);
-       
+        Dto.COMPANY CompanyFetch(string key);
+
+
+
+
+        #region Company Operations
+        [OperationContract]
+        Dto.COMPANY CompanyCreate(String description);
+        [OperationContract]
+        Dto.COMPANY CompanyModify(Dto.COMPANY company);
+        [OperationContract]
+        void CompanyDelete(Dto.COMPANY company);
+   
+        #endregion
+
     }
 }
