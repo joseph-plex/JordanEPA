@@ -56,6 +56,14 @@ namespace EPA.Models
         }
 
 
+        public void SetToModified<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = System.Data.EntityState.Modified;
+        }
+        public void SetToDeleted<TEntity>(TEntity entity) where TEntity : class
+        {
+            Entry(entity).State = System.Data.EntityState.Deleted;
+        }
         /// <summary>
         /// Overides Save, converts exceptions to Outcome
         /// </summary>

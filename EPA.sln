@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA.Consumer.UnitTests", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plexxis.Helpers", "..\Plexxis.Helpers\Plexxis.Helpers.csproj", "{A7F5BC45-2837-4800-9EDE-C03C75388D51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA.Dto", "EPA.Dto\EPA.Dto.csproj", "{DE2865B8-BF59-4015-8D36-CA454B171954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,16 @@ Global
 		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A7F5BC45-2837-4800-9EDE-C03C75388D51}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DE2865B8-BF59-4015-8D36-CA454B171954}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

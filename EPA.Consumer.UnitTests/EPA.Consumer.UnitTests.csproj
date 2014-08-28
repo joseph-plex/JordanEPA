@@ -35,6 +35,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EPA\bin\Debug\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\EPA\bin\Debug\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="Effort">
       <HintPath>..\packages\Effort.1.1.0\lib\net45\Effort.dll</HintPath>
     </Reference>
@@ -76,6 +83,10 @@
     <ProjectReference Include="..\EPA.Consumer\EPA.Consumer.csproj">
       <Project>{971e70be-a95f-4a2a-97b2-cc085928251f}</Project>
       <Name>EPA.Consumer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EPA.Dto\EPA.Dto.csproj">
+      <Project>{de2865b8-bf59-4015-8d36-ca454b171954}</Project>
+      <Name>EPA.Dto</Name>
     </ProjectReference>
     <ProjectReference Include="..\EPA\EPA.Core.csproj">
       <Project>{97f59878-363e-4e57-b6bb-277e89c532d6}</Project>

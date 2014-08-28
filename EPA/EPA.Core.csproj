@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EPA</RootNamespace>
-    <AssemblyName>EPA</AssemblyName>
+    <AssemblyName>EPA.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
@@ -80,12 +80,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
     <Compile Include="Data\Logger.cs" />
     <Compile Include="Data\Db.cs" />
     <Compile Include="Data\Mappers.cs" />
     <Compile Include="Data\StartUp.cs" />
-    <Compile Include="Dto\DataModels.cs" />
     <Compile Include="Models\COMPANY.cs">
       <DependentUpon>DbFirst.tt</DependentUpon>
     </Compile>
@@ -173,6 +171,10 @@
     <ProjectReference Include="..\..\Plexxis.Helpers\Plexxis.Helpers.csproj">
       <Project>{a7f5bc45-2837-4800-9ede-c03c75388d51}</Project>
       <Name>Plexxis.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EPA.Dto\EPA.Dto.csproj">
+      <Project>{de2865b8-bf59-4015-8d36-ca454b171954}</Project>
+      <Name>EPA.Dto</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
