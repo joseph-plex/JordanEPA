@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EPA.Dto
+namespace EPA.Dto.Models
 {
     public class COMPANY
     {
@@ -90,7 +90,7 @@ namespace EPA.Dto
         public string CODE { get; set; }
     }
 
-    public partial class PRICE_AGREEMENT_MATERIALS
+    public partial class PRICE_AGREEMENT_MATERIALS 
     {
         public int PRICE_AGREEMENT_ID { get; set; }
         public int PRICE_LIST_MATERIAL_ID { get; set; }
@@ -118,6 +118,7 @@ namespace EPA.Dto
         public Nullable<int> PA_ADJUSTMENT_ID_STOCKING { get; set; }
         public Nullable<int> PA_ADJUSTMENT_ID_INCREASE { get; set; }
         public int PRICE_AGREEMENT_MATERIAL_ID { get; set; }
+
     }
 
     public partial class PRICE_LIST

@@ -22,7 +22,7 @@ namespace EPA.Services
         }
 
         #region Company
-        public Dto.COMPANY CompanyFetch(string key)
+        public Dto.Models.COMPANY CompanyFetch(string key)
         {
             if (string.IsNullOrEmpty(key))
                 return null;
@@ -30,24 +30,10 @@ namespace EPA.Services
             using (var db = new EPA.Data.Db())
             {
                 var model = db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).FirstOrDefault();
-                return Mapper.Map<EPA.Dto.COMPANY>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY>(model);
             }
         }
-        public int CompanyIdFetch(string key)
-        {
-            using (var db = new EPA.Data.Db())
-            {
-                return db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).Select(a => a.COMPANY_ID).FirstOrDefault();
-            }
-        }
-        public string CompanyKeyFetch(int companyId)
-        {
-            using (var db = new EPA.Data.Db())
-            {
-                return db.COMPANIES.AsNoTracking().Where(a => a.COMPANY_ID == companyId).Select(a => a.KEY).FirstOrDefault();
-            }
-        }
-        public Dto.COMPANY CompanyFetch(int companyId)
+        public Dto.Models.COMPANY CompanyFetch(int companyId)
         {
             if (companyId == 0)
                 return null;
@@ -55,16 +41,32 @@ namespace EPA.Services
             using (var db = new EPA.Data.Db())
             {
                 var model = db.COMPANIES.AsNoTracking().Where(a => a.COMPANY_ID == companyId).FirstOrDefault();
-                return Mapper.Map<EPA.Dto.COMPANY>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY>(model);
             }
         }
 
-        public Dto.COMPANY CompanyCreate(string description)
+        private int CompanyIdFetch(string key)
         {
-            return CompanyCreate(new Dto.COMPANY { DESCRIPTION = description });
+            using (var db = new EPA.Data.Db())
+            {
+                return db.COMPANIES.AsNoTracking().Where(a => a.KEY == key).Select(a => a.COMPANY_ID).FirstOrDefault();
+            }
+        }
+        private string CompanyKeyFetch(int companyId)
+        {
+            using (var db = new EPA.Data.Db())
+            {
+                return db.COMPANIES.AsNoTracking().Where(a => a.COMPANY_ID == companyId).Select(a => a.KEY).FirstOrDefault();
+            }
         }
 
-        public Dto.COMPANY CompanyCreate(Dto.COMPANY company)
+
+        public Dto.Models.COMPANY CompanyCreate(string description)
+        {
+            return CompanyCreate(new Dto.Models.COMPANY { DESCRIPTION = description });
+        }
+
+        public Dto.Models.COMPANY CompanyCreate(Dto.Models.COMPANY company)
         {
             if (string.IsNullOrEmpty(company.DESCRIPTION))
                 throw new Exception("Description cannot be empty or null");
@@ -80,14 +82,14 @@ namespace EPA.Services
             {
 
                 var model = new EPA.Models.COMPANY();
-                model = Mapper.Map<EPA.Dto.COMPANY, EPA.Models.COMPANY>(company, model);
+                model = Mapper.Map<EPA.Dto.Models.COMPANY, EPA.Models.COMPANY>(company, model);
                 db.COMPANIES.Add(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.COMPANY>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY>(model);
             }
         }
 
-        public Dto.COMPANY CompanyModify(Dto.COMPANY company)
+        public Dto.Models.COMPANY CompanyModify(Dto.Models.COMPANY company)
         {
             if (company == null)
                 throw new Exception("Your model can't be null");
@@ -101,10 +103,10 @@ namespace EPA.Services
                 if (model == null)
                     throw new Exception("Can't find company to modify based on COMPANY_ID " + company.COMPANY_ID);
 
-                model = Mapper.Map<EPA.Dto.COMPANY, EPA.Models.COMPANY>(company, model);
+                model = Mapper.Map<EPA.Dto.Models.COMPANY, EPA.Models.COMPANY>(company, model);
                 db.SetToModified(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.COMPANY>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY>(model);
             }
         }
 
@@ -113,7 +115,7 @@ namespace EPA.Services
         {
             CompanyDelete(CompanyFetch(companyId));
         }
-        public void CompanyDelete(Dto.COMPANY company)
+        public void CompanyDelete(Dto.Models.COMPANY company)
         {
             if (company == null)
                 throw new Exception("Your model can't be null");
@@ -132,11 +134,12 @@ namespace EPA.Services
 
         #endregion
         #region Supplier
-        public Dto.SUPPLIER SupplierCreate(string description, string email)
+        public Dto.Models.SUPPLIER SupplierCreate(string description, string email)
         {
-            return SupplierCreate(new Dto.SUPPLIER { DESCRIPTION = description, EMAIL = email })
+
+            return SupplierCreate(new Dto.Models.SUPPLIER {  DESCRIPTION = description, EMAIL = email });
         }
-        public Dto.SUPPLIER SupplierCreate(Dto.SUPPLIER supplier)
+        public Dto.Models.SUPPLIER SupplierCreate(Dto.Models.SUPPLIER supplier)
         {
 
             if (string.IsNullOrEmpty(supplier.DESCRIPTION))
@@ -148,13 +151,13 @@ namespace EPA.Services
             {
 
                 var model = new EPA.Models.SUPPLIER();
-                model = Mapper.Map<EPA.Dto.SUPPLIER, EPA.Models.SUPPLIER>(supplier, model);
+                model = Mapper.Map<EPA.Dto.Models.SUPPLIER, EPA.Models.SUPPLIER>(supplier, model);
                 db.SUPPLIERS.Add(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.SUPPLIER>(model);
+                return Mapper.Map<EPA.Dto.Models.SUPPLIER>(model);
             }
         }
-        public Dto.SUPPLIER SupplierModify(Dto.SUPPLIER supplier)
+        public Dto.Models.SUPPLIER SupplierModify(Dto.Models.SUPPLIER supplier)
         {
             if (supplier == null)
                 throw new Exception("Your model can't be null");
@@ -168,10 +171,10 @@ namespace EPA.Services
                 if (model == null)
                     throw new Exception("Can't find supplier to modify based on SUPPLIER_ID " + supplier.SUPPLIER_ID);
 
-                model = Mapper.Map<EPA.Dto.SUPPLIER, EPA.Models.SUPPLIER>(supplier, model);
+                model = Mapper.Map<EPA.Dto.Models.SUPPLIER, EPA.Models.SUPPLIER>(supplier, model);
                 db.SetToModified(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.SUPPLIER>(model);
+                return Mapper.Map<EPA.Dto.Models.SUPPLIER>(model);
             }
         }
 
@@ -179,7 +182,7 @@ namespace EPA.Services
         {
             SupplierDelete(SupplierFetch(supplierId));
         }
-        public void SupplierDelete(Dto.SUPPLIER supplier)
+        public void SupplierDelete(Dto.Models.SUPPLIER supplier)
         {
             if (supplier == null)
                 throw new Exception("Your model can't be null");
@@ -195,8 +198,12 @@ namespace EPA.Services
                 db.SaveChanges();
             }
         }
-        public Dto.SUPPLIER SupplierFetch(int? supplierId = null)
+
+        public Dto.Models.SUPPLIER SupplierFetch(int? supplierId = null)
         {
+            // PROBLEM
+            // WHY WOULD IT BE NULL ? SHOULD IT RETURN EVERYTHING?
+
             int useSupplierId = supplierId.ToInt();
             if (useSupplierId == 0)
                 return null;
@@ -204,14 +211,14 @@ namespace EPA.Services
             using (var db = new EPA.Data.Db())
             {
                 var model = db.SUPPLIERS.AsNoTracking().Where(a => a.SUPPLIER_ID == useSupplierId).FirstOrDefault();
-                return Mapper.Map<EPA.Dto.SUPPLIER>(model);
+                return Mapper.Map<EPA.Dto.Models.SUPPLIER>(model);
             }
 
 
         }
         #endregion
         #region Company Supplier
-        public Dto.COMPANY_SUPPLIERS CompanySupplierCreate(string companyKey, int supplierId, string description)
+        public Dto.Models.COMPANY_SUPPLIERS CompanySupplierCreate(string companyKey, int supplierId, string description)
         {
             if (String.IsNullOrWhiteSpace(description))
                 throw new Exception("Description must not be null or empty");
@@ -236,11 +243,11 @@ namespace EPA.Services
 
                 db.COMPANY_SUPPLIERS.Add(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.COMPANY_SUPPLIERS>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY_SUPPLIERS>(model);
             }
         }
 
-        public Dto.COMPANY_SUPPLIERS CompanySupplierModify(Dto.COMPANY_SUPPLIERS companySupplier)
+        public Dto.Models.COMPANY_SUPPLIERS CompanySupplierModify(Dto.Models.COMPANY_SUPPLIERS companySupplier)
         {
             if (companySupplier == null)
                 throw new Exception("Your model can't be null");
@@ -259,10 +266,10 @@ namespace EPA.Services
                 if (model == null)
                     throw new Exception("Can't find company to modify based on primary key " + companySupplier.COMPANY_SUPPLIERS_ID);
 
-                model = Mapper.Map<EPA.Dto.COMPANY_SUPPLIERS, EPA.Models.COMPANY_SUPPLIERS>(companySupplier, model);
+                model = Mapper.Map<EPA.Dto.Models.COMPANY_SUPPLIERS, EPA.Models.COMPANY_SUPPLIERS>(companySupplier, model);
                 db.SetToModified(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.COMPANY_SUPPLIERS>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY_SUPPLIERS>(model);
             }
         }
         public void CompanySupplierDelete(string companyKey, int supplierId)
@@ -286,22 +293,25 @@ namespace EPA.Services
             }
         }
 
-        public Dto.COMPANY_SUPPLIERS[] CompanySuppliersFetch(string companyKey, int? supplierId = null)
+        public Dto.Models.COMPANY_SUPPLIERS[] CompanySuppliersFetch(string companyKey, int? supplierId = null)
         {
             if (string.IsNullOrEmpty(companyKey))
                 return null;
 
+            var companyId = CompanyIdFetch(companyKey);
+            if (companyId == 0)
+                return null; // throw new Exception("Need a valid company key");
 
             using (var db = new EPA.Data.Db())
             {
                 var q = db.COMPANY_SUPPLIERS.AsNoTracking()
-                    .Where(a => a.COMPANy.KEY == companyKey);
+                    .Where(a => a.COMPANY_ID == companyId);
 
                 var supplierIdInt = supplierId.ToInt();
                 if (supplierIdInt != 0)
                     q = q.Where(a => a.SUPPLIER_ID == supplierIdInt);
 
-                return q.ToList().Select(a => Mapper.Map<EPA.Dto.COMPANY_SUPPLIERS>(a)).ToArray();
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.COMPANY_SUPPLIERS>(a)).ToArray();
 
             }
 
@@ -309,11 +319,11 @@ namespace EPA.Services
         }
         #endregion
         #region Company User
-        public Dto.COMPANY_USERS CompanyUserCreate(string companyKey, string descripton, string email)
+        public Dto.Models.COMPANY_USERS CompanyUserCreate(string companyKey, string descripton, string email)
         {
-            return CompanyUserCreate(new Dto.COMPANY_USERS { EMAIL = email, DESCRIPTION = descripton, COMPANY_ID = CompanyIdFetch(companyKey) });
+            return CompanyUserCreate(new Dto.Models.COMPANY_USERS { EMAIL = email, DESCRIPTION = descripton, COMPANY_ID = CompanyIdFetch(companyKey) });
         }
-            public Dto.COMPANY_USERS CompanyUserCreate( Dto.COMPANY_USERS companyUser)
+        public Dto.Models.COMPANY_USERS CompanyUserCreate(Dto.Models.COMPANY_USERS companyUser)
         {
 
             if (String.IsNullOrWhiteSpace(companyUser.DESCRIPTION))
@@ -329,97 +339,440 @@ namespace EPA.Services
             {
 
                 var model = new EPA.Models.COMPANY_USERS();
-                model = Mapper.Map<EPA.Dto.COMPANY_USERS, EPA.Models.COMPANY_USERS>(companyUser, model);
+                model = Mapper.Map<EPA.Dto.Models.COMPANY_USERS, EPA.Models.COMPANY_USERS>(companyUser, model);
                 db.COMPANY_USERS.Add(model);
                 db.SaveChanges();
-                return Mapper.Map<EPA.Dto.COMPANY_USERS>(model);
+                return Mapper.Map<EPA.Dto.Models.COMPANY_USERS>(model);
             }
 
-       
+
         }
 
-        public Dto.COMPANY_USERS CompanyUserModify(string companyKey, Dto.COMPANY_USERS companyUser)
+        public Dto.Models.COMPANY_USERS CompanyUserModify(string companyKey, Dto.Models.COMPANY_USERS companyUser)
         {
-            throw new NotImplementedException();
+
+            var companyId = CompanyIdFetch(companyKey);
+            if (companyId == 0)
+                throw new Exception("No company exists with this company key");
+
+            if (companyUser == null)
+                throw new Exception("Your model can't be null");
+            else if (companyUser.COMPANY_USER_ID == 0)
+                throw new Exception("Need a Primary Key ID to reference");
+            else if (String.IsNullOrWhiteSpace(companyUser.EMAIL))
+                throw new Exception("Email must have a valid value");
+            else if (String.IsNullOrWhiteSpace(companyUser.DESCRIPTION))
+                throw new Exception("Description must have valid value");
+
+
+            using (var db = new EPA.Data.Db())
+            {
+                var model = db.COMPANY_USERS.Where(a => a.COMPANY_USER_ID == companyUser.COMPANY_USER_ID).FirstOrDefault();
+                if (model == null)
+                    throw new Exception("Can't find object to modify based on ID " + companyUser.COMPANY_USER_ID);
+
+                model = Mapper.Map<EPA.Dto.Models.COMPANY_USERS, EPA.Models.COMPANY_USERS>(companyUser, model);
+                db.SetToModified(model);
+                db.SaveChanges();
+                return Mapper.Map<EPA.Dto.Models.COMPANY_USERS>(model);
+            }
         }
 
         public void CompanyUserDelete(string companyKey, int companyUserId)
         {
-            throw new NotImplementedException();
-        }
 
-        public Dto.COMPANY_USERS[] CompanyUserFetch(string companyKey, int? companyUserId = null)
+            var companyUsers = CompanyUserFetch(companyKey, companyUserId);
+
+            if (companyUsers == null || companyUsers.Any() == false)
+                throw new Exception("Can't find the user");
+
+            var companyUser = companyUsers.FirstOrDefault();
+
+            using (var db = new EPA.Data.Db())
+            {
+                var model = db.COMPANY_USERS.Where(a => a.COMPANY_USER_ID == companyUser.COMPANY_USER_ID).FirstOrDefault();
+                if (model == null)
+                    throw new Exception("Invalid Company User");
+                db.SetToDeleted(model);
+                db.SaveChanges();
+            }
+        }
+        public Dto.Models.COMPANY_USERS[] CompanyUserFetch(string companyKey, int? companyUserId = null)
         {
-            throw new NotImplementedException();
-        }
+            
+            if (string.IsNullOrEmpty(companyKey))
+                return null;
 
+            var companyId = CompanyIdFetch(companyKey);
+            if (companyId == 0)
+                return null; // throw new Exception("Need a valid company key");
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.COMPANY_USERS.AsNoTracking()
+                    .Where(a => a.COMPANY_ID == companyId);
+
+                var companyUserIdInt = companyUserId.ToInt();
+                if (companyUserIdInt != 0)
+                    q = q.Where(a => a.COMPANY_USER_ID == companyUserIdInt);
+
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.COMPANY_USERS>(a)).ToArray();
+
+            }
+        }
         public bool CompanyUserExists(string companyKey, string email)
         {
-            throw new NotImplementedException();
+            var companyId = CompanyIdFetch(companyKey);
+            if (companyId == 0)
+                return false; // throw new Exception("Need a valid company key");
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.COMPANY_USERS.AsNoTracking()
+                    .Where(a => a.COMPANY_ID == companyId)
+                    .Where(a => String.Equals(a.EMAIL, email, StringComparison.CurrentCultureIgnoreCase));
+
+                return q.Any();
+            }
+
         }
         #endregion
         #region Company User Suppliers
-        public Dto.COMPANY_USER_SUPPLIERS CompanyUsersSuppliersCreate(string companyKey, int supplierId, int companyUserId)
+        public Dto.Models.COMPANY_USER_SUPPLIERS CompanyUsersSuppliersCreate(string companyKey, int supplierId, int companyUserId)
         {
-            throw new NotImplementedException();
+
+            var companyId = CompanyIdFetch(companyKey);
+            if (companyId == 0)
+                throw new Exception("No company exists with this company key");
+            else if (companyUserId == 0)
+                throw new Exception("Need the company User Id");
+
+
+
+            var companyUser = CompanyUserFetch(companyKey, companyUserId).FirstOrDefault();
+            if (companyUser == null || companyUser.COMPANY_USER_ID == 0)
+                throw new Exception("Invalid Company User Information");
+
+            var supplier = SupplierFetch(supplierId);
+            if (supplier == null || supplier.SUPPLIER_ID == 0)
+                throw new Exception("Invalid Supplier Information");
+
+
+            using (var db = new EPA.Data.Db())
+            {
+
+                var model = new EPA.Models.COMPANY_USER_SUPPLIERS() { COMPANY_USER_ID = companyUserId, SUPPLIER_ID = supplierId };
+                db.COMPANY_USER_SUPPLIERS.Add(model);
+                db.SaveChanges();
+                return Mapper.Map<EPA.Dto.Models.COMPANY_USER_SUPPLIERS>(model);
+            }
+
         }
 
         public void CompanyUsersSuppliersDelete(string companyKey, int supplierId, int companyUserId)
         {
-            throw new NotImplementedException();
+
+            var companyUser = CompanyUserFetch(companyKey, companyUserId).FirstOrDefault();
+            if (companyUser == null || companyUser.COMPANY_USER_ID == 0)
+                throw new Exception("Invalid Company User Information");
+
+            if (companyUser == null)
+                throw new Exception("Unauthorized Request");
+
+
+            using (var db = new EPA.Data.Db())
+            {
+                var model = db.COMPANY_USER_SUPPLIERS.Where(a => a.COMPANY_USER_ID == companyUser.COMPANY_USER_ID && supplierId == a.SUPPLIER_ID).FirstOrDefault();
+                if (model == null)
+                    throw new Exception("Invalid COMPANY_USER_SUPPLIER");
+                db.SetToDeleted(model);
+                db.SaveChanges();
+            }
+
+
+
         }
 
-        public bool CompanyUsersSuppliersExists(string CompanyKey, int supplierId, int companyUserId)
+        public bool CompanyUsersSuppliersExists(string companyKey, int supplierId, int companyUserId)
         {
-            throw new NotImplementedException();
+
+            var companyUser = CompanyUserFetch(companyKey, companyUserId).FirstOrDefault();
+            if (companyUser == null || companyUser.COMPANY_USER_ID == 0)
+                throw new Exception("No CompanyUserId Key for that user");
+
+            var supplier = SupplierFetch(supplierId);
+            if (supplier == null || supplier.SUPPLIER_ID == 0)
+                throw new Exception("Invalid Supplier Id");
+
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.COMPANY_USER_SUPPLIERS.AsNoTracking()
+                    .Where(a => a.SUPPLIER_ID == supplierId)
+                    .Where(a => a.COMPANY_USER_ID == companyUserId);
+                return q.Any();
+            }
+
         }
         #endregion
+
+
         #region PriceList(Material) todo
-        public Dto.PRICE_LIST[] PriceListFetch(string companyKey, int? companyUserId = null, int? priceListId = null)
+        public Dto.Models.PRICE_LIST[] PriceListFetch(string companyKey, int? companyUserId = null, int? priceListId = null)
         {
-            throw new NotImplementedException();
+            
+  
+            /*
+            var companyUserFetch = new CompanyUserFetch { Repositories = Repositories };
+            var companyUsers = companyUserFetch.Strategy(companyKey, companyUserId);
+
+            var priceList = GetRepository<PRICE_LIST>().RetrieveAll();
+            priceList = priceList.Where(p => companyUsers.Any(c => c.COMPANY_USER_ID == p.COMPANY_USER_ID));
+            return ((priceListId != null) ? priceList.Where(p => p.PRICE_LIST_ID == priceListId) : priceList).ToArray();
+            */
+
+
+            var companyId = CompanyIdFetch(companyKey);
+            if (companyId == 0)
+                return null; // throw new Exception("Need a valid company key");
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.PRICE_LIST.AsNoTracking().AsQueryable();
+
+                var companyUsers = CompanyUserFetch(companyKey, companyUserId);
+
+                q = q.Where(a => companyUsers.Any(b => b.COMPANY_USER_ID == a.COMPANY_USER_ID));
+
+                int priceListIdInt = priceListId.ToInt();
+                if (priceListIdInt != 0)
+                    q = q.Where(a => a.PRICE_LIST_ID == priceListIdInt);
+
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.PRICE_LIST>(a)).ToArray();
+
+            }
         }
 
-        public Dto.PRICE_LIST_MATERIALS[] PriceListMaterialFetch(string companyKey, int? companyUserId = null, int? priceListId = null, int? priceListMaterialId = null)
+        public Dto.Models.PRICE_LIST_MATERIALS[] PriceListMaterialFetch(string companyKey, int? companyUserId = null, int? priceListId = null, int? priceListMaterialId = null)
         {
-            throw new NotImplementedException();
+
+           
+            // PROBLEM - allowing to search by primary key should overule everything else
+
+            /* OLD FUNCTION
+             var priceListFetch = new PriceListFetch { Repositories = Repositories };
+            var priceLists = priceListFetch.Strategy(companyKey, companyUserId, priceListId);
+           
+            var priceListMaterials = GetRepository<PRICE_LIST_MATERIALS>().RetrieveAll();
+
+            priceListMaterials = priceListMaterials.Where(p => priceLists.Any(c => c.PRICE_LIST_ID == p.PRICE_LIST_ID));
+            return ((priceListMaterialId != null) ? priceListMaterials.Where(p => p.PRICE_LIST_MATERIAL_ID == priceListMaterialId) : priceListMaterials).ToArray();
+
+             */
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.PRICE_LIST_MATERIALS.AsNoTracking().AsQueryable();
+
+                var priceLists = PriceListFetch(companyKey, companyUserId, priceListId);
+                q = q.Where(a => priceLists.Any(b => b.PRICE_LIST_ID == a.PRICE_LIST_ID));
+
+                int priceListMaterialIdInt = priceListId.ToInt();
+                if (priceListMaterialIdInt != 0)
+                {
+                    q = q.Where(a => a.PRICE_LIST_MATERIAL_ID == priceListMaterialIdInt);
+                }
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.PRICE_LIST_MATERIALS>(a)).ToArray();
+
+            }
+
         }
 
-        public Dto.PRICE_LIST_ITEM_TYPES[] PriceListGetItemTypeFilters(string companyKey, int priceListId)
+        public Dto.Models.PRICE_LIST_ITEM_TYPES[] PriceListGetItemTypeFilters(string companyKey, int priceListId)
         {
-            throw new NotImplementedException();
+
+            /*
+            PriceListFetch priceListFetch = new PriceListFetch { Repositories = Repositories };
+            var priceList = priceListFetch.Strategy(companyKey, null, priceListId).FirstOrDefault();
+            if (priceList == null)
+                throw new Exception("Price Agreement does not exist for specified company Key");
+            return GetRepository<PRICE_LIST_ITEM_TYPES>().RetrieveAll().Where(p => p.PRICE_LIST_ID == priceListId).ToArray();
+            */
+
+            var priceLists = PriceListFetch(companyKey, null, priceListId);
+            if (priceLists == null || priceLists.Any() == false)
+                throw new Exception("Price Agreement does not exist for specified company Key");
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.PRICE_LIST_ITEM_TYPES.AsNoTracking().Where(p => p.PRICE_LIST_ID == priceListId);
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.PRICE_LIST_ITEM_TYPES>(a)).ToArray();
+
+            }
         }
         #endregion
         #region PriceAgreement(Material)
-        public Dto.PRICE_AGREEMENT[] PriceAgreementFetch(string companyKey, int? companyUserId, int? priceListId = null, int? priceAgreementId = null)
+        public Dto.Models.PRICE_AGREEMENT[] PriceAgreementFetch(string companyKey, int? companyUserId, int? priceListId = null, int? priceAgreementId = null)
         {
-            throw new NotImplementedException();
+            /*    var priceAgreements = GetRepository<PRICE_AGREEMENT>().RetrieveAll();
+                        var priceListFetch = new PriceListFetch { Repositories = Repositories };
+                        var PriceLists = priceListFetch.Strategy(companyKey, companyUserId, priceListId);
+                        priceAgreements = priceAgreements.Where(p => PriceLists.Any(c => c.PRICE_LIST_ID == p.PRICE_LIST_ID));
+                        return ((priceAgreementId != null) ? priceAgreements.Where(p => p.PRICE_AGREEMENT_ID == priceAgreementId) : priceAgreements).ToArray(); */
+
+
+            var priceLists = PriceListFetch(companyKey, companyUserId, priceListId);
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.PRICE_AGREEMENT.AsNoTracking().AsQueryable();
+                q = q.Where(a => priceLists.Any(b => b.PRICE_LIST_ID == a.PRICE_LIST_ID));
+                int priceAgreementIdInt = priceAgreementId.ToInt();
+                if (priceAgreementIdInt != 0)
+                {
+                    q = q.Where(a => a.PRICE_AGREEMENT_ID == priceAgreementIdInt);
+                }
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.PRICE_AGREEMENT>(a)).ToArray();
+            }
         }
 
-        public Dto.PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(string companyKey, int? companyUserId, int? priceListId = null, int? priceAgreementId = null, int? priceList = null)
+
+        public Dto.Models.PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(string companyKey, int? companyUserId, int? priceListId = null, int? priceAgreementId = null, int? priceAgreementMaterialId = null)
         {
-            throw new NotImplementedException();
+            // ODD BEHAVIOR TO SEARCH BY PRIMARY KEY AND ALSO OPTIONAL PARAMETERS
+
+            // CHANGED priceList TO priceAgreementMaterialId AT THE END
+
+            /* var priceAgreementMaterials = GetRepository<PRICE_AGREEMENT_MATERIALS>().RetrieveAll();
+            PriceAgreementFetch priceAgreementFetch = new PriceAgreementFetch { Repositories = Repositories };
+            var priceAgreements = priceAgreementFetch.Strategy(companyKey, companyUserId, priceListId, priceAgreementId);
+            priceAgreementMaterials = priceAgreementMaterials.Where(p => priceAgreements.Any(c => c.PRICE_AGREEMENT_ID == p.PRICE_AGREEMENT_ID));
+            return ((priceAgreementMaterialId != null) ? priceAgreementMaterials.Where(p => p.PRICE_LIST_MATERIAL_ID == priceAgreementMaterialId) : priceAgreementMaterials).ToArray(); */
+
+
+            var priceAgreements = PriceAgreementFetch(companyKey, companyUserId, priceListId, priceAgreementId);
+
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.PRICE_AGREEMENT_MATERIALS.AsNoTracking().AsQueryable();
+                q = q.Where(a => priceAgreements.Any(b => b.PRICE_AGREEMENT_ID == a.PRICE_AGREEMENT_ID));
+                int priceAgreementMaterialIdInt = priceAgreementMaterialId.ToInt();
+                if (priceAgreementMaterialIdInt != 0)
+                {
+                    q = q.Where(a => a.PRICE_AGREEMENT_MATERIAL_ID == priceAgreementMaterialIdInt);
+                }
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.PRICE_AGREEMENT_MATERIALS>(a)).ToArray();
+            }
+
         }
         #endregion
         #region PriceAdjustment
-        public Dto.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentCreate(string companyKey, int PriceAgreementId)
+        public Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentCreate(string companyKey, int priceAgreementId)
         {
-            throw new NotImplementedException();
+     
+            var priceAgreement = PriceAgreementFetch(companyKey, null, null, priceAgreementId).FirstOrDefault();
+
+            if (priceAgreement == null)
+                throw new Exception("PriceAgreementId Must be a valid price agreement that is associated with the company");
+
+            using (var db = new EPA.Data.Db())
+            {
+                var model = new EPA.Models.PRICE_AGREEMENT_ADJUSTMENTS() { PRICE_AGREEMENT_ID = priceAgreementId };
+                db.PRICE_AGREEMENT_ADJUSTMENTS.Add(model);
+                db.SaveChanges();
+                return Mapper.Map<EPA.Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS>(model);
+            }
+
         }
 
-        public Dto.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentModify(string companyKey, Dto.PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust)
+        public Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentModify(string companyKey, Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust)
         {
-            throw new NotImplementedException();
+            /* 
+             *   var paa = priceAgreementAdjust;
+            var paaf = new PriceAgreementAdjustmentFetch { Repositories = Repositories };
+            var adjustment = paaf.Strategy(companyKey, null, null, null, paa.PRICE_AGREEMENT_ADJUSTMENT_ID).FirstOrDefault();
+
+            if (adjustment == null)
+                throw new Exception("No Price AgreementAdjustment associated with the function");
+
+            GetRepository<PRICE_AGREEMENT_ADJUSTMENTS>().Update(paa);
+            return GetRepository<PRICE_AGREEMENT_ADJUSTMENTS>().Retrieve(p => p.PRICE_AGREEMENT_ADJUSTMENT_ID == paa.PRICE_AGREEMENT_ADJUSTMENT_ID);
+               
+             * 
+             */
+
+            var adjustment = PriceAgreementAdjustmentFetch(companyKey, null, priceAgreementAdjust.PRICE_AGREEMENT_ADJUSTMENT_ID).FirstOrDefault();
+            if (adjustment == null)
+                throw new Exception("No Price AgreementAdjustment associated with the function");
+
+
+            using (var db = new EPA.Data.Db())
+            {
+                var model = db.PRICE_AGREEMENT_ADJUSTMENTS.Where(a => a.PRICE_AGREEMENT_ADJUSTMENT_ID == priceAgreementAdjust.PRICE_AGREEMENT_ADJUSTMENT_ID).FirstOrDefault();
+                if (model == null)
+                    throw new Exception("Can't find object to modify based on KEY " + priceAgreementAdjust.PRICE_AGREEMENT_ADJUSTMENT_ID);
+
+                model = Mapper.Map<EPA.Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS, EPA.Models.PRICE_AGREEMENT_ADJUSTMENTS>(priceAgreementAdjust, model);
+                db.SetToModified(model);
+                db.SaveChanges();
+                return Mapper.Map<EPA.Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS>(model);
+            }
         }
 
         public void PriceAgreementAdjustmentDelete(string companyKey, int priceAgreementAdjustmentId)
         {
-            throw new NotImplementedException();
+
+
+            var adjustment = PriceAgreementAdjustmentFetch(companyKey, null, priceAgreementAdjustmentId).FirstOrDefault();
+            if (adjustment == null)
+                throw new Exception("No Price Agreement Adjustment associated with the function");
+
+
+            using (var db = new EPA.Data.Db())
+            {
+                var model = db.PRICE_AGREEMENT_ADJUSTMENTS.Where(a => a.PRICE_AGREEMENT_ADJUSTMENT_ID == priceAgreementAdjustmentId).FirstOrDefault();
+                if (model == null)
+                    throw new Exception("Can't find object to modify based on KEY " + priceAgreementAdjustmentId);
+
+                  db.SetToDeleted(model);
+                db.SaveChanges();
+                 
+            }
+
         }
 
-        public Dto.PRICE_AGREEMENT_ADJUSTMENTS[] PriceAgreementAdjustmentFetch(string companyKey, int? priceAgreementId = null, int? priceAdustmentId = null)
+        public Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS[] PriceAgreementAdjustmentFetch(string companyKey, int? priceAgreementId = null, int? priceAgreementAdjustmentId = null)
         {
-            throw new NotImplementedException();
+            // PROBLEM
+            // ERROR IN THIS
+            /* InvokePreMethodExecutionEvent(MethodInfo.GetCurrentMethod());
+            // PROBABLY NOT WHATS INTENDED
+            var result = new PriceAgreementAdjustmentFetch { Repositories = repositories }.Strategy(companyKey, priceAgreementId, priceAdustmentId);
+            InvokePostMethodExecutionEvent(MethodInfo.GetCurrentMethod());
+            return result;
+             * 
+             *  var priceAgreementFetch = new PriceAgreementFetch { Repositories = Repositories };
+            var priceAgreementAdjustments = GetRepository<PRICE_AGREEMENT_ADJUSTMENTS>().RetrieveAll();
+            var priceAgreements = priceAgreementFetch.Strategy(companyKey, companyUserId, priceListId, PriceAgreementId);
+            priceAgreementAdjustments = priceAgreementAdjustments.Where(p=> priceAgreements.Any(c => c.PRICE_AGREEMENT_ID == p.PRICE_AGREEMENT_ID));
+            return ((PriceAdjustmentId != null)?priceAgreementAdjustments.Where(p=>p.PRICE_AGREEMENT_ADJUSTMENT_ID == PriceAdjustmentId):priceAgreementAdjustments).ToArray();
+             * 
+            */
+            var priceAgreements = PriceAgreementFetch(companyKey, null, null, priceAgreementId);
+
+            using (var db = new EPA.Data.Db())
+            {
+                var q = db.PRICE_AGREEMENT_MATERIALS.AsNoTracking().AsQueryable();
+                q = q.Where(a => priceAgreements.Any(b => b.PRICE_AGREEMENT_ID == a.PRICE_AGREEMENT_ID));
+                int priceAgreementMaterialIdInt = priceAgreementAdjustmentId.ToInt();
+                if (priceAgreementMaterialIdInt != 0)
+                {
+                    q = q.Where(a => a.PRICE_AGREEMENT_MATERIAL_ID == priceAgreementMaterialIdInt);
+                }
+                return q.ToList().Select(a => Mapper.Map<EPA.Dto.Models.PRICE_AGREEMENT_ADJUSTMENTS>(a)).ToArray();
+            }
+
+
         }
         #endregion
     }

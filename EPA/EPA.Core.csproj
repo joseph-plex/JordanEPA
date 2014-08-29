@@ -139,6 +139,9 @@
     <Compile Include="Services\EPAService.cs" />
     <Compile Include="Services\IdGenerator.cs" />
     <Compile Include="Services\IEPAService.cs" />
+    <Compile Include="Services\PriceAgreementIUD.cs" />
+    <Compile Include="Services\PriceListIUD.cs" />
+    <Compile Include="Services\ServiceDtos.cs" />
     <Compile Include="UnitTests\EFTests.cs" />
   </ItemGroup>
   <ItemGroup>

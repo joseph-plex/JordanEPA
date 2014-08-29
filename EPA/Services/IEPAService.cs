@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using EPA.Dto;
+using EPA.Dto.Models;
 
 namespace EPA.Services
 {
@@ -77,7 +77,7 @@ namespace EPA.Services
 
         // TODO - FIGURE OUT WHATS GOING ON HERE
         #region PriceList(Material) Operations
-      /*  [OperationContract]
+       [OperationContract]
         PriceListIUDResponse PriceListIUD(String companyKey, PriceListIUDWrapper priceList, PriceListMaterialIUDWrapper[] materials);
 
         [OperationContract]
@@ -85,8 +85,12 @@ namespace EPA.Services
         [OperationContract]
         void PriceListSetFilters(String companyKey, Int32 priceListId, PRICE_LIST_ITEM_TYPES[] iTypeFilters, ItemFilter[] itemFilter);
         [OperationContract]
-        ItemFilter[] PriceListGetItemFilters(String companyKey, Int32 priceListId);
-        */
+       Dto.Services.ItemFilter[] PriceListGetItemFilters(String companyKey, Int32 priceListId);
+        
+
+
+
+
         [OperationContract]
         PRICE_LIST[] PriceListFetch(String companyKey, Int32? companyUserId = null, Int32? priceListId = null);
         [OperationContract]
@@ -99,7 +103,7 @@ namespace EPA.Services
    
         PRICE_AGREEMENT[] PriceAgreementFetch(String companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null);
         [OperationContract]
-        PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(String companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null, Int32? priceList = null);
+        PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(String companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null, Int32? priceAgreementMaterialId = null);
         #endregion
         #region PriceAdjustment Operations
         [OperationContract]

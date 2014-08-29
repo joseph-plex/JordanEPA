@@ -4,8 +4,19 @@ using System.Linq;
 using System.Text;
 // using NLog;
 
-namespace EPA
+namespace EPA.Functions
 {
+
+    public interface IDeepCloneable
+    {
+        object DeepClone();
+    }
+    public interface IDeepCloneable<T> : IDeepCloneable
+    {
+        T DeepClone();
+    }
+
+
     public class Logger
     {
         //  private static NLog.Logger logger = LogManager.GetCurrentClassLogger();
