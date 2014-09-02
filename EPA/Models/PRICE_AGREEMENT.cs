@@ -14,6 +14,11 @@ namespace EPA.Models
     
     public partial class PRICE_AGREEMENT
     {
+        public PRICE_AGREEMENT()
+        {
+            this.PRICE_AGREEMENT_ADJUSTMENTS = new HashSet<PRICE_AGREEMENT_ADJUSTMENTS>();
+        }
+    
         public int PRICE_AGREEMENT_ID { get; set; }
         public Nullable<int> PRICE_LIST_ID { get; set; }
         public Nullable<int> SUPPLIER_ID { get; set; }
@@ -32,5 +37,8 @@ namespace EPA.Models
         public string REFERENCE { get; set; }
         public Nullable<int> GROUP_ID { get; set; }
         public Nullable<int> PROGRESSION { get; set; }
+    
+        public virtual ICollection<PRICE_AGREEMENT_ADJUSTMENTS> PRICE_AGREEMENT_ADJUSTMENTS { get; set; }
+        public virtual PRICE_LIST PRICE_LIST { get; set; }
     }
 }

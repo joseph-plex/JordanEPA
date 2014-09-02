@@ -14,8 +14,8 @@ namespace EPA.Models
     
     public partial class PRICE_AGREEMENT_MATERIALS
     {
-        public int PRICE_AGREEMENT_ID { get; set; }
-        public int PRICE_LIST_MATERIAL_ID { get; set; }
+        public Nullable<int> PRICE_AGREEMENT_ID { get; set; }
+        public Nullable<int> PRICE_LIST_MATERIAL_ID { get; set; }
         public Nullable<decimal> RATE { get; set; }
         public string RATE_UOM { get; set; }
         public Nullable<decimal> RATE_UOM_UNITS { get; set; }

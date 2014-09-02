@@ -28,13 +28,14 @@ namespace EPA.Models
         public DbSet<COMPANY> COMPANIES { get; set; }
         public DbSet<COMPANY_SUPPLIERS> COMPANY_SUPPLIERS { get; set; }
         public DbSet<PRICE_LIST_ITEM_TYPES> PRICE_LIST_ITEM_TYPES { get; set; }
+        public DbSet<PRICE_AGREEMENT_ADJUSTMENTS> PRICE_AGREEMENT_ADJUSTMENTS { get; set; }
         public DbSet<COMPANY_USER_SUPPLIERS> COMPANY_USER_SUPPLIERS { get; set; }
         public DbSet<COMPANY_USERS> COMPANY_USERS { get; set; }
         public DbSet<PRICE_AGREEMENT> PRICE_AGREEMENT { get; set; }
-        public DbSet<PRICE_AGREEMENT_ADJUSTMENTS> PRICE_AGREEMENT_ADJUSTMENTS { get; set; }
         public DbSet<PRICE_AGREEMENT_MATERIALS> PRICE_AGREEMENT_MATERIALS { get; set; }
         public DbSet<PRICE_LIST> PRICE_LIST { get; set; }
         public DbSet<PRICE_LIST_MATERIALS> PRICE_LIST_MATERIALS { get; set; }
         public DbSet<SUPPLIER> SUPPLIERS { get; set; }
+        public DbSet<WINDEV_CLIENT_VERSION> WINDEV_CLIENT_VERSION { get; set; }
     }
 }

@@ -26,6 +26,10 @@ namespace EPA.Data
                 AutoMapper.Mapper.CreateMap<EPA.Models.PRICE_LIST_ITEM_TYPES, EPA.Dto.Models.PRICE_LIST_ITEM_TYPES>();
                 AutoMapper.Mapper.CreateMap<EPA.Models.PRICE_LIST_MATERIALS, EPA.Dto.Models.PRICE_LIST_MATERIALS>();
                 AutoMapper.Mapper.CreateMap<EPA.Models.SUPPLIER, EPA.Dto.Models.SUPPLIER>();
+                AutoMapper.Mapper.CreateMap<EPA.Models.WINDEV_CLIENT_VERSION, EPA.Dto.Models.WINDEV_CLIENT_VERSION>();
+
+
+
 
                 // THE OTHER WAY
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.COMPANY, EPA.Models.COMPANY>();
@@ -39,6 +43,9 @@ namespace EPA.Data
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.PRICE_LIST_ITEM_TYPES, EPA.Models.PRICE_LIST_ITEM_TYPES>();
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.PRICE_LIST_MATERIALS, EPA.Models.PRICE_LIST_MATERIALS>();
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.SUPPLIER, EPA.Models.SUPPLIER>();
+                AutoMapper.Mapper.CreateMap<EPA.Dto.Models.WINDEV_CLIENT_VERSION, EPA.Models.WINDEV_CLIENT_VERSION>();
+
+
 
                 // SERVICE DTOs
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.PRICE_AGREEMENT, EPA.Dto.Services.PriceAgreementIUDWrapper>();
@@ -46,7 +53,9 @@ namespace EPA.Data
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.PRICE_LIST, EPA.Dto.Services.PriceListIUDWrapper>();
                 AutoMapper.Mapper.CreateMap<EPA.Dto.Models.PRICE_LIST_MATERIALS, EPA.Dto.Services.PriceListMaterialIUDWrapper>();
 
-
+                // FOR INSERTS
+                // AutoMapper.Mapper.CreateMap<EPA.Dto.Services.PriceListMaterialIUDWrapper, EPA.Models.PRICE_LIST_MATERIALS >();
+                // AutoMapper.Mapper.CreateMap<EPA.Dto.Services.PriceListIUDWrapper, EPA.Models.PRICE_LIST>();
 
 
                 _MappersAreSet = true;

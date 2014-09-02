@@ -96,7 +96,7 @@ namespace EPA.Models
                     {
 
                         Outcome.AddError(validationError.ErrorMessage);
-                        EPA.Logger.Warn(string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + " " +
+                       Plexxis.Helpers.Logger.Warn(string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + " " +
                             dbEx.StackTrace + " " + dbEx.Source);
                     }
                 }
@@ -163,7 +163,7 @@ namespace EPA.Models
             {
                 errorMessage = errorMessage.Replace("An error occurred while updating the entries. See the inner exception for details.", "");
                 Outcome.AddError(errorMessage);
-                EPA.Logger.Warn("From Db " + errorMessage);
+                Plexxis.Helpers.Logger.Warn("From Db " + errorMessage);
             }
             return Outcome;
         }

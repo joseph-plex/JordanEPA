@@ -47,7 +47,7 @@ namespace EPA
                     Console.WriteLine("From  Database " + company.EMAIL);
 
 
-                    var companyDto = Mapper.Map<EPA.Dto.COMPANY>(company);
+                    var companyDto = Mapper.Map<EPA.Dto.Models.COMPANY>(company);
 
                     Console.WriteLine("From DTO " + companyDto.EMAIL);
 

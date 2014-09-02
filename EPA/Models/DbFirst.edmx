@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DbFirstModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbFirstModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="COMPANIES">
           <Key>
             <PropertyRef Name="COMPANY_ID" />
           </Key>
           <Property Name="KEY" Type="varchar2" MaxLength="20" Nullable="false" />
-          <Property Name="COMPANY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="COMPANY_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DESCRIPTION" Type="varchar2" MaxLength="100" Nullable="false" />
           <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
           <Property Name="PHONE1" Type="varchar2" MaxLength="20" />
@@ -39,16 +39,16 @@
           <Key>
             <PropertyRef Name="COMPANY_USER_SUPPLIERS_ID" />
           </Key>
-          <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" />
-          <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" />
-          <Property Name="COMPANY_USER_SUPPLIERS_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="COMPANY_USER_SUPPLIERS_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="COMPANY_USERS">
           <Key>
             <PropertyRef Name="COMPANY_USER_ID" />
           </Key>
-          <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="COMPANY_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="COMPANY_USER_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COMPANY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="DESCRIPTION" Type="varchar2" MaxLength="100" />
           <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
           <Property Name="STATUS" Type="number" Precision="1" Scale="0" />
@@ -62,7 +62,7 @@
           <Key>
             <PropertyRef Name="PRICE_AGREEMENT_ID" />
           </Key>
-          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="IS_SUPPLIER_AWARE_OF_UPDATE" Type="number" Precision="1" Scale="0" />
@@ -85,7 +85,7 @@
           <Key>
             <PropertyRef Name="PRICE_AGREEMENT_ADJUSTMENT_ID" />
           </Key>
-          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="RECORD_TYPE" Type="number" Precision="1" Scale="0" />
           <Property Name="RATE_TYPE" Type="number" Precision="10" Scale="0" />
@@ -96,11 +96,10 @@
         </EntityType>
         <EntityType Name="PRICE_AGREEMENT_MATERIALS">
           <Key>
-            <PropertyRef Name="PRICE_AGREEMENT_ID" />
-            <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
+            <PropertyRef Name="PRICE_AGREEMENT_MATERIAL_ID" />
           </Key>
-          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="RATE" Type="number" Precision="16" Scale="4" />
           <Property Name="RATE_UOM" Type="varchar2" MaxLength="8" />
           <Property Name="RATE_UOM_UNITS" Type="number" Precision="20" Scale="8" />
@@ -124,7 +123,7 @@
           <Property Name="STOCKING_CODE" Type="varchar2" MaxLength="8" />
           <Property Name="PA_ADJUSTMENT_ID_STOCKING" Type="number" Precision="10" Scale="0" />
           <Property Name="PA_ADJUSTMENT_ID_INCREASE" Type="number" Precision="10" Scale="0" />
-          <Property Name="PRICE_AGREEMENT_MATERIAL_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_MATERIAL_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="PRICE_LIST">
           <Key>
@@ -149,6 +148,7 @@
           <Key>
             <PropertyRef Name="ITEM_TYPE" />
             <PropertyRef Name="PRICE_LIST_ID" />
+            <PropertyRef Name="PRICE_LIST_ITEM_TYPES_ID" />
           </Key>
           <Property Name="ITEM_TYPE" Type="varchar2" MaxLength="125" Nullable="false" />
           <Property Name="ITEM_TYPE_GROUP" Type="varchar2" MaxLength="125" />
@@ -159,13 +159,13 @@
           <Property Name="PROP_TITLE_5" Type="varchar2" MaxLength="50" />
           <Property Name="PROP_TITLE_6" Type="varchar2" MaxLength="50" />
           <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="PRICE_LIST_ITEM_TYPES_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="PRICE_LIST_ITEM_TYPES_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="PRICE_LIST_MATERIALS">
           <Key>
             <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
           </Key>
-          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PRICE_LIST_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="ITEM_ID" Type="number" Precision="10" Scale="0" />
           <Property Name="ITEM_CODE" Type="varchar2" MaxLength="100" />
@@ -189,7 +189,7 @@
           <Key>
             <PropertyRef Name="SUPPLIER_ID" />
           </Key>
-          <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EMAIL" Type="varchar2" MaxLength="100" Nullable="false" />
           <Property Name="FIRST_NAME" Type="varchar2" MaxLength="50" />
           <Property Name="LAST_NAME" Type="varchar2" MaxLength="50" />
@@ -201,18 +201,63 @@
           <Property Name="VALIDATION_CODE" Type="varchar2" MaxLength="10" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="number" Precision="1" Scale="0" />
         </EntityType>
-        <Association Name="COMPANIES_COMPANY_ID">
-          <End Role="COMPANIES" Type="Self.COMPANIES" Multiplicity="1" />
-          <End Role="COMPANY_SUPPLIERS" Type="Self.COMPANY_SUPPLIERS" Multiplicity="*" />
+        <EntityType Name="WINDEV_CLIENT_VERSION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VERSION" Type="number" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="DATE_UPDATED" Type="date" />
+          <Property Name="URL" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_COMPANY_USER_ID">
+          <End Role="COMPANY_USERS" Type="Self.COMPANY_USERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="COMPANY_USER_SUPPLIERS" Type="Self.COMPANY_USER_SUPPLIERS" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="COMPANIES">
-              <PropertyRef Name="COMPANY_ID" />
+            <Principal Role="COMPANY_USERS">
+              <PropertyRef Name="COMPANY_USER_ID" />
             </Principal>
-            <Dependent Role="COMPANY_SUPPLIERS">
-              <PropertyRef Name="COMPANY_ID" />
+            <Dependent Role="COMPANY_USER_SUPPLIERS">
+              <PropertyRef Name="COMPANY_USER_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PRICE_AGREEMENT_ADJUSTMENTS">
+          <End Role="PRICE_AGREEMENT" Type="Self.PRICE_AGREEMENT" Multiplicity="0..1" />
+          <End Role="PRICE_AGREEMENT_ADJUSTMENTS" Type="Self.PRICE_AGREEMENT_ADJUSTMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRICE_AGREEMENT">
+              <PropertyRef Name="PRICE_AGREEMENT_ID" />
+            </Principal>
+            <Dependent Role="PRICE_AGREEMENT_ADJUSTMENTS">
+              <PropertyRef Name="PRICE_AGREEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRICE_LIST_ID">
+          <End Role="PRICE_LIST" Type="Self.PRICE_LIST" Multiplicity="0..1" />
+          <End Role="PRICE_AGREEMENT" Type="Self.PRICE_AGREEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRICE_LIST">
+              <PropertyRef Name="PRICE_LIST_ID" />
+            </Principal>
+            <Dependent Role="PRICE_AGREEMENT">
+              <PropertyRef Name="PRICE_LIST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DBMESSAGE_ERRORCLEARVARIABLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##EPA" StoreFunctionName="DBMESSAGE.ERRORCLEARVARIABLES" ReturnType="number" />
+        <Function Name="EPA_COMPANYCREATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##EPA" StoreFunctionName="EPA.COMPANYCREATE" ReturnType="number">
+          <Parameter Name="SKEY" Type="varchar2" Mode="In" />
+          <Parameter Name="SDESCRIPTION" Type="varchar2" Mode="In" />
+          <Parameter Name="SEMAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="SPHONE1" Type="varchar2" Mode="In" />
+          <Parameter Name="SPHONE2" Type="varchar2" Mode="In" />
+          <Parameter Name="SFAX" Type="varchar2" Mode="In" />
+          <Parameter Name="SCODE" Type="varchar2" Mode="In" />
+        </Function>
         <EntityContainer Name="DbFirstModelStoreContainer">
           <EntitySet Name="COMPANIES" EntityType="Self.COMPANIES" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" Schema="C##EPA" store:Type="Tables" />
@@ -225,9 +270,18 @@
           <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="PRICE_LIST_MATERIALS" EntityType="Self.PRICE_LIST_MATERIALS" Schema="C##EPA" store:Type="Tables" />
           <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" Schema="C##EPA" store:Type="Tables" />
-          <AssociationSet Name="COMPANIES_COMPANY_ID" Association="Self.COMPANIES_COMPANY_ID">
-            <End Role="COMPANIES" EntitySet="COMPANIES" />
-            <End Role="COMPANY_SUPPLIERS" EntitySet="COMPANY_SUPPLIERS" />
+          <EntitySet Name="WINDEV_CLIENT_VERSION" EntityType="Self.WINDEV_CLIENT_VERSION" Schema="C##EPA" store:Type="Tables" />
+          <AssociationSet Name="FK_COMPANY_USER_ID" Association="Self.FK_COMPANY_USER_ID">
+            <End Role="COMPANY_USERS" EntitySet="COMPANY_USERS" />
+            <End Role="COMPANY_USER_SUPPLIERS" EntitySet="COMPANY_USER_SUPPLIERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRICE_AGREEMENT_ADJUSTMENTS" Association="Self.FK_PRICE_AGREEMENT_ADJUSTMENTS">
+            <End Role="PRICE_AGREEMENT" EntitySet="PRICE_AGREEMENT" />
+            <End Role="PRICE_AGREEMENT_ADJUSTMENTS" EntitySet="PRICE_AGREEMENT_ADJUSTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRICE_LIST_ID" Association="Self.FK_PRICE_LIST_ID">
+            <End Role="PRICE_LIST" EntitySet="PRICE_LIST" />
+            <End Role="PRICE_AGREEMENT" EntitySet="PRICE_AGREEMENT" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -286,33 +340,73 @@
           <EntitySet Name="COMPANIES" EntityType="DbFirstModel.COMPANY" />
           <EntitySet Name="COMPANY_SUPPLIERS" EntityType="Self.COMPANY_SUPPLIERS" />
           <EntitySet Name="PRICE_LIST_ITEM_TYPES" EntityType="Self.PRICE_LIST_ITEM_TYPES" />
-          <EntitySet Name="COMPANY_USER_SUPPLIERS" EntityType="DbFirstModel.COMPANY_USER_SUPPLIERS" />
-          <EntitySet Name="COMPANY_USERS" EntityType="DbFirstModel.COMPANY_USERS" />
-          <EntitySet Name="PRICE_AGREEMENT" EntityType="DbFirstModel.PRICE_AGREEMENT" />
           <EntitySet Name="PRICE_AGREEMENT_ADJUSTMENTS" EntityType="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS" />
-          <EntitySet Name="PRICE_AGREEMENT_MATERIALS" EntityType="DbFirstModel.PRICE_AGREEMENT_MATERIALS" />
-          <EntitySet Name="PRICE_LIST" EntityType="DbFirstModel.PRICE_LIST" />
-          <EntitySet Name="PRICE_LIST_MATERIALS" EntityType="DbFirstModel.PRICE_LIST_MATERIALS" />
           <AssociationSet Name="COMPANIES_COMPANY_ID" Association="DbFirstModel.COMPANIES_COMPANY_ID">
             <End Role="COMPANY" EntitySet="COMPANIES" />
             <End Role="COMPANY_SUPPLIERS" EntitySet="COMPANY_SUPPLIERS" />
           </AssociationSet>
+          <EntitySet Name="COMPANY_USER_SUPPLIERS" EntityType="DbFirstModel.COMPANY_USER_SUPPLIERS" />
+          <EntitySet Name="COMPANY_USERS" EntityType="DbFirstModel.COMPANY_USERS" />
+          <AssociationSet Name="FK_COMPANY_USER_ID" Association="DbFirstModel.FK_COMPANY_USER_ID">
+            <End Role="COMPANY_USERS" EntitySet="COMPANY_USERS" />
+            <End Role="COMPANY_USER_SUPPLIERS" EntitySet="COMPANY_USER_SUPPLIERS" />
+          </AssociationSet>
+          <EntitySet Name="PRICE_AGREEMENT" EntityType="DbFirstModel.PRICE_AGREEMENT" />
+          <EntitySet Name="PRICE_AGREEMENT_MATERIALS" EntityType="DbFirstModel.PRICE_AGREEMENT_MATERIALS" />
+          <EntitySet Name="PRICE_LIST" EntityType="DbFirstModel.PRICE_LIST" />
+          <EntitySet Name="PRICE_LIST_MATERIALS" EntityType="DbFirstModel.PRICE_LIST_MATERIALS" />
           <EntitySet Name="SUPPLIERS" EntityType="DbFirstModel.SUPPLIER" />
+          <AssociationSet Name="FK_PRICE_AGREEMENT_ADJUSTMENTS" Association="DbFirstModel.FK_PRICE_AGREEMENT_ADJUSTMENTS">
+            <End Role="PRICE_AGREEMENT" EntitySet="PRICE_AGREEMENT" />
+            <End Role="PRICE_AGREEMENT_ADJUSTMENTS" EntitySet="PRICE_AGREEMENT_ADJUSTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRICE_LIST_ID" Association="DbFirstModel.FK_PRICE_LIST_ID">
+            <End Role="PRICE_LIST" EntitySet="PRICE_LIST" />
+            <End Role="PRICE_AGREEMENT" EntitySet="PRICE_AGREEMENT" />
+          </AssociationSet>
+          <EntitySet Name="WINDEV_CLIENT_VERSION" EntityType="DbFirstModel.WINDEV_CLIENT_VERSION" />
         </EntityContainer>
+        <EntityType Name="PRICE_AGREEMENT_ADJUSTMENTS">
+          <Key>
+            <PropertyRef Name="PRICE_AGREEMENT_ADJUSTMENT_ID" />
+          </Key>
+          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" />
+          <Property Name="RECORD_TYPE" Type="Int16" />
+          <Property Name="RATE_TYPE" Type="Int32" />
+          <Property Name="RATE" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="RATE_UOM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RATE_DATE" Type="DateTime" />
+          <Property Name="CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRICE_AGREEMENT" Relationship="DbFirstModel.FK_PRICE_AGREEMENT_ADJUSTMENTS" FromRole="PRICE_AGREEMENT_ADJUSTMENTS" ToRole="PRICE_AGREEMENT" />
+        </EntityType>
+        <Association Name="COMPANIES_COMPANY_ID">
+          <End Type="DbFirstModel.COMPANY" Role="COMPANY" Multiplicity="1" />
+          <End Type="DbFirstModel.COMPANY_SUPPLIERS" Role="COMPANY_SUPPLIERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="COMPANY_SUPPLIERS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="COMPANY_USER_SUPPLIERS">
           <Key>
             <PropertyRef Name="COMPANY_USER_SUPPLIERS_ID" />
           </Key>
-          <Property Name="SUPPLIER_ID" Type="Int32" />
-          <Property Name="COMPANY_USER_ID" Type="Int32" />
-          <Property Name="COMPANY_USER_SUPPLIERS_ID" Type="Int32" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="Int32" Nullable="false" />
+          <Property Name="COMPANY_USER_ID" Type="Int32" Nullable="false" />
+          <Property Name="COMPANY_USER_SUPPLIERS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="COMPANY_USERS" Relationship="DbFirstModel.FK_COMPANY_USER_ID" FromRole="COMPANY_USER_SUPPLIERS" ToRole="COMPANY_USERS" />
         </EntityType>
         <EntityType Name="COMPANY_USERS">
           <Key>
             <PropertyRef Name="COMPANY_USER_ID" />
           </Key>
-          <Property Name="COMPANY_USER_ID" Type="Int32" Nullable="false" />
-          <Property Name="COMPANY_ID" Type="Int32" />
+          <Property Name="COMPANY_USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COMPANY_ID" Type="Int32" Nullable="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="STATUS" Type="Int16" />
@@ -321,12 +415,27 @@
           <Property Name="VALIDATION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="Int16" />
           <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="COMPANY_USER_SUPPLIERS" Relationship="DbFirstModel.FK_COMPANY_USER_ID" FromRole="COMPANY_USERS" ToRole="COMPANY_USER_SUPPLIERS" />
         </EntityType>
+        <Association Name="FK_COMPANY_USER_ID">
+          <End Type="DbFirstModel.COMPANY_USERS" Role="COMPANY_USERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DbFirstModel.COMPANY_USER_SUPPLIERS" Role="COMPANY_USER_SUPPLIERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY_USERS">
+              <PropertyRef Name="COMPANY_USER_ID" />
+            </Principal>
+            <Dependent Role="COMPANY_USER_SUPPLIERS">
+              <PropertyRef Name="COMPANY_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="PRICE_AGREEMENT">
           <Key>
             <PropertyRef Name="PRICE_AGREEMENT_ID" />
           </Key>
-          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PRICE_LIST_ID" Type="Int32" />
           <Property Name="SUPPLIER_ID" Type="Int32" />
           <Property Name="IS_SUPPLIER_AWARE_OF_UPDATE" Type="Int16" />
@@ -344,27 +453,15 @@
           <Property Name="REFERENCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="GROUP_ID" Type="Int32" />
           <Property Name="PROGRESSION" Type="Int32" />
-        </EntityType>
-        <EntityType Name="PRICE_AGREEMENT_ADJUSTMENTS">
-          <Key>
-            <PropertyRef Name="PRICE_AGREEMENT_ADJUSTMENT_ID" />
-          </Key>
-          <Property Name="PRICE_AGREEMENT_ADJUSTMENT_ID" Type="Int32" Nullable="false" />
-          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" />
-          <Property Name="RECORD_TYPE" Type="Int16" />
-          <Property Name="RATE_TYPE" Type="Int32" />
-          <Property Name="RATE" Type="Decimal" Precision="16" Scale="4" />
-          <Property Name="RATE_UOM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="RATE_DATE" Type="DateTime" />
-          <Property Name="CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRICE_AGREEMENT_ADJUSTMENTS" Relationship="DbFirstModel.FK_PRICE_AGREEMENT_ADJUSTMENTS" FromRole="PRICE_AGREEMENT" ToRole="PRICE_AGREEMENT_ADJUSTMENTS" />
+          <NavigationProperty Name="PRICE_LIST" Relationship="DbFirstModel.FK_PRICE_LIST_ID" FromRole="PRICE_AGREEMENT" ToRole="PRICE_LIST" />
         </EntityType>
         <EntityType Name="PRICE_AGREEMENT_MATERIALS">
           <Key>
-            <PropertyRef Name="PRICE_AGREEMENT_ID" />
-            <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
+            <PropertyRef Name="PRICE_AGREEMENT_MATERIAL_ID" />
           </Key>
-          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" Nullable="false" />
-          <Property Name="PRICE_LIST_MATERIAL_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_ID" Type="Int32" />
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="Int32" />
           <Property Name="RATE" Type="Decimal" Precision="16" Scale="4" />
           <Property Name="RATE_UOM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="RATE_UOM_UNITS" Type="Decimal" Precision="20" Scale="8" />
@@ -388,7 +485,7 @@
           <Property Name="STOCKING_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="PA_ADJUSTMENT_ID_STOCKING" Type="Int32" />
           <Property Name="PA_ADJUSTMENT_ID_INCREASE" Type="Int32" />
-          <Property Name="PRICE_AGREEMENT_MATERIAL_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_AGREEMENT_MATERIAL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="PRICE_LIST">
           <Key>
@@ -408,12 +505,13 @@
           <Property Name="STATUS_DATE" Type="DateTime" />
           <Property Name="REFERENCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="TERMS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRICE_AGREEMENT" Relationship="DbFirstModel.FK_PRICE_LIST_ID" FromRole="PRICE_LIST" ToRole="PRICE_AGREEMENT" />
         </EntityType>
         <EntityType Name="PRICE_LIST_MATERIALS">
           <Key>
             <PropertyRef Name="PRICE_LIST_MATERIAL_ID" />
           </Key>
-          <Property Name="PRICE_LIST_MATERIAL_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRICE_LIST_MATERIAL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PRICE_LIST_ID" Type="Int32" />
           <Property Name="ITEM_ID" Type="Int32" />
           <Property Name="ITEM_CODE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -433,23 +531,11 @@
           <Property Name="PROP_6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="RATE_UOM" Type="Decimal" Precision="16" Scale="4" />
         </EntityType>
-        <Association Name="COMPANIES_COMPANY_ID">
-          <End Type="DbFirstModel.COMPANY" Role="COMPANY" Multiplicity="1" />
-          <End Type="DbFirstModel.COMPANY_SUPPLIERS" Role="COMPANY_SUPPLIERS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="COMPANY">
-              <PropertyRef Name="COMPANY_ID" />
-            </Principal>
-            <Dependent Role="COMPANY_SUPPLIERS">
-              <PropertyRef Name="COMPANY_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="SUPPLIER">
           <Key>
             <PropertyRef Name="SUPPLIER_ID" />
           </Key>
-          <Property Name="SUPPLIER_ID" Type="Int32" Nullable="false" />
+          <Property Name="SUPPLIER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -460,6 +546,39 @@
           <Property Name="STATUS" Type="Int16" />
           <Property Name="VALIDATION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="VALIDATION_EMAIL_SENT" Type="Int16" />
+        </EntityType>
+        <Association Name="FK_PRICE_AGREEMENT_ADJUSTMENTS">
+          <End Type="DbFirstModel.PRICE_AGREEMENT" Role="PRICE_AGREEMENT" Multiplicity="0..1" />
+          <End Type="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS" Role="PRICE_AGREEMENT_ADJUSTMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRICE_AGREEMENT">
+              <PropertyRef Name="PRICE_AGREEMENT_ID" />
+            </Principal>
+            <Dependent Role="PRICE_AGREEMENT_ADJUSTMENTS">
+              <PropertyRef Name="PRICE_AGREEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRICE_LIST_ID">
+          <End Type="DbFirstModel.PRICE_LIST" Role="PRICE_LIST" Multiplicity="0..1" />
+          <End Type="DbFirstModel.PRICE_AGREEMENT" Role="PRICE_AGREEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRICE_LIST">
+              <PropertyRef Name="PRICE_LIST_ID" />
+            </Principal>
+            <Dependent Role="PRICE_AGREEMENT">
+              <PropertyRef Name="PRICE_LIST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WINDEV_CLIENT_VERSION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VERSION" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="DATE_UPDATED" Type="DateTime" />
+          <Property Name="URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -514,6 +633,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PRICE_AGREEMENT_ADJUSTMENTS">
+            <EntityTypeMapping TypeName="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS">
+              <MappingFragment StoreEntitySet="PRICE_AGREEMENT_ADJUSTMENTS">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="RATE_DATE" ColumnName="RATE_DATE" />
+                <ScalarProperty Name="RATE_UOM" ColumnName="RATE_UOM" />
+                <ScalarProperty Name="RATE" ColumnName="RATE" />
+                <ScalarProperty Name="RATE_TYPE" ColumnName="RATE_TYPE" />
+                <ScalarProperty Name="RECORD_TYPE" ColumnName="RECORD_TYPE" />
+                <ScalarProperty Name="PRICE_AGREEMENT_ID" ColumnName="PRICE_AGREEMENT_ID" />
+                <ScalarProperty Name="PRICE_AGREEMENT_ADJUSTMENT_ID" ColumnName="PRICE_AGREEMENT_ADJUSTMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="COMPANY_USER_SUPPLIERS">
             <EntityTypeMapping TypeName="DbFirstModel.COMPANY_USER_SUPPLIERS">
               <MappingFragment StoreEntitySet="COMPANY_USER_SUPPLIERS">
@@ -560,20 +693,6 @@
                 <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
                 <ScalarProperty Name="PRICE_LIST_ID" ColumnName="PRICE_LIST_ID" />
                 <ScalarProperty Name="PRICE_AGREEMENT_ID" ColumnName="PRICE_AGREEMENT_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PRICE_AGREEMENT_ADJUSTMENTS">
-            <EntityTypeMapping TypeName="DbFirstModel.PRICE_AGREEMENT_ADJUSTMENTS">
-              <MappingFragment StoreEntitySet="PRICE_AGREEMENT_ADJUSTMENTS">
-                <ScalarProperty Name="CODE" ColumnName="CODE" />
-                <ScalarProperty Name="RATE_DATE" ColumnName="RATE_DATE" />
-                <ScalarProperty Name="RATE_UOM" ColumnName="RATE_UOM" />
-                <ScalarProperty Name="RATE" ColumnName="RATE" />
-                <ScalarProperty Name="RATE_TYPE" ColumnName="RATE_TYPE" />
-                <ScalarProperty Name="RECORD_TYPE" ColumnName="RECORD_TYPE" />
-                <ScalarProperty Name="PRICE_AGREEMENT_ID" ColumnName="PRICE_AGREEMENT_ID" />
-                <ScalarProperty Name="PRICE_AGREEMENT_ADJUSTMENT_ID" ColumnName="PRICE_AGREEMENT_ADJUSTMENT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -668,6 +787,16 @@
                 <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WINDEV_CLIENT_VERSION">
+            <EntityTypeMapping TypeName="DbFirstModel.WINDEV_CLIENT_VERSION">
+              <MappingFragment StoreEntitySet="WINDEV_CLIENT_VERSION">
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="DATE_UPDATED" ColumnName="DATE_UPDATED" />
+                <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

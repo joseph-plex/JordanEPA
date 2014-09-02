@@ -14,6 +14,11 @@ namespace EPA.Models
     
     public partial class PRICE_LIST
     {
+        public PRICE_LIST()
+        {
+            this.PRICE_AGREEMENT = new HashSet<PRICE_AGREEMENT>();
+        }
+    
         public int PRICE_LIST_ID { get; set; }
         public Nullable<int> COMPANY_USER_ID { get; set; }
         public string DESCRIPTION { get; set; }
@@ -28,5 +33,7 @@ namespace EPA.Models
         public Nullable<System.DateTime> STATUS_DATE { get; set; }
         public string REFERENCE { get; set; }
         public string TERMS { get; set; }
+    
+        public virtual ICollection<PRICE_AGREEMENT> PRICE_AGREEMENT { get; set; }
     }
 }

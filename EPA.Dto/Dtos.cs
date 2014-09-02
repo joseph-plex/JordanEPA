@@ -8,6 +8,7 @@ namespace EPA.Dto.Models
 {
     public class COMPANY
     {
+        
         public string KEY { get; set; }
         public int COMPANY_ID { get; set; }
         public string DESCRIPTION { get; set; }
@@ -18,6 +19,13 @@ namespace EPA.Dto.Models
         public Nullable<int> ROW_VERSION { get; set; }
         public string CODE { get; set; }
         public Nullable<int> PA_REFERENCE { get; set; }
+    }
+    public partial class WINDEV_CLIENT_VERSION
+    {
+        private int ID { get; set; }
+        public decimal VERSION { get; set; }
+        public Nullable<System.DateTime> DATE_UPDATED { get; set; }
+        public string URL { get; set; }
     }
 
     public partial class COMPANY_SUPPLIERS

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EPA.Dto;
+using EPA.Dto.Models;
 using AutoMapper;
 
 namespace EPA.Dto.Services
 {
-
+    /*
     public static class Create
     {
         public static PriceAgreementMaterialIUDWrapper PriceAgreementMaterialIUDWrapper(PRICE_AGREEMENT_MATERIALS priceAgreementMaterial)
@@ -30,7 +30,7 @@ namespace EPA.Dto.Services
         }
 
 
-    }
+    } */
 
     public class ItemFilter
     {
@@ -61,11 +61,11 @@ namespace EPA.Dto.Services
 
     public class PriceAgreementIUDResponse
     {
-        public EPA.Dto.PRICE_AGREEMENT PRICE_AGREEMENT { get; set; }
-        public EPA.Dto.PRICE_AGREEMENT_MATERIALS[] PRICE_AGREEMENT_MATERIALS { get; set; }
+        public EPA.Dto.Models.PRICE_AGREEMENT PRICE_AGREEMENT { get; set; }
+        public EPA.Dto.Models.PRICE_AGREEMENT_MATERIALS[] PRICE_AGREEMENT_MATERIALS { get; set; }
     }
 
-    public class PriceAgreementIUDWrapper : EPA.Dto.PRICE_AGREEMENT
+    public class PriceAgreementIUDWrapper : EPA.Dto.Models.PRICE_AGREEMENT
     {
         public int Operation { get; set; }
 
@@ -111,6 +111,8 @@ namespace EPA.Dto.Services
         public PRICE_LIST PRICE_LIST { get; set; }
         public PRICE_LIST_MATERIALS[] PRICE_LIST_MATERIALS { get; set; }
     }
+
+
     public class PriceListIUDWrapper : PRICE_LIST
     {
         public int Operation { get; set; }
@@ -124,6 +126,8 @@ namespace EPA.Dto.Services
 
 
         public PriceListMaterialIUDWrapper() : base() { }
+
+
      /*   public PriceListMaterialIUDWrapper(PlexQueryResultTuple plexTuple) : base(plexTuple) { }
         public PriceListMaterialIUDWrapper(PRICE_LIST_MATERIALS priceList)
             : this()

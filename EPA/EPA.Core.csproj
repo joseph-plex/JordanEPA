@@ -80,7 +80,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Logger.cs" />
+    <Compile Include="Behaviors\Common.cs" />
+    <Compile Include="Behaviors\CompanyCreate.cs" />
+    <Compile Include="Behaviors\CompanyDelete.cs" />
+    <Compile Include="Behaviors\CompanyFetch.cs" />
+    <Compile Include="Behaviors\CompanyModify.cs" />
+    <Compile Include="Behaviors\CompanySupplierCreate.cs" />
+    <Compile Include="Behaviors\CompanySupplierDelete.cs" />
+    <Compile Include="Behaviors\CompanySupplierFetch.cs" />
+    <Compile Include="Behaviors\CompanySupplierModify.cs" />
+    <Compile Include="Behaviors\CompanyUserCreate.cs" />
+    <Compile Include="Behaviors\CompanyUserDelete.cs" />
+    <Compile Include="Behaviors\CompanyUserExists.cs" />
+    <Compile Include="Behaviors\CompanyUserFetch.cs" />
+    <Compile Include="Behaviors\CompanyUserModify.cs" />
+    <Compile Include="Behaviors\CompanyUsersSuppliersCreate.cs" />
+    <Compile Include="Behaviors\CompanyUsersSuppliersDelete.cs" />
+    <Compile Include="Behaviors\CompanyUsersSuppliersExists.cs" />
+    <Compile Include="Behaviors\GenerateAdjustmentReferenceNumber.cs" />
+    <Compile Include="Behaviors\GenerateAgreementReferenceNumber.cs" />
+    <Compile Include="Behaviors\GeneratePriceListReferenceNumber.cs" />
+    <Compile Include="Behaviors\PriceAgreementAdjustmentCreate.cs" />
+    <Compile Include="Behaviors\PriceAgreementAdjustmentDelete.cs" />
+    <Compile Include="Behaviors\PriceAgreementAdjustmentFetch.cs" />
+    <Compile Include="Behaviors\PriceAgreementAdjustmentModify.cs" />
+    <Compile Include="Behaviors\PriceAgreementFetch.cs" />
+    <Compile Include="Behaviors\PriceAgreementIUD.cs" />
+    <Compile Include="Behaviors\PriceAgreementMaterialFetch.cs" />
+    <Compile Include="Behaviors\PriceListFetch.cs" />
+    <Compile Include="Behaviors\PriceListGetItemFilters.cs" />
+    <Compile Include="Behaviors\PriceListGetItemTypeFilters.cs" />
+    <Compile Include="Behaviors\PriceListMaterialFetch.cs" />
+    <Compile Include="Behaviors\PriceListSetFilters.cs" />
+    <Compile Include="Behaviors\SupplierCompanyFetch.cs" />
+    <Compile Include="Behaviors\SupplierCreate.cs" />
+    <Compile Include="Behaviors\SupplierDelete.cs" />
+    <Compile Include="Behaviors\SupplierFetch.cs" />
+    <Compile Include="Behaviors\SupplierFetchByEmail.cs" />
+    <Compile Include="Behaviors\SupplierModify.cs" />
+    <Compile Include="Behaviors\SupplierPriceAgreementFetch.cs" />
+    <Compile Include="Behaviors\WinDevVersionFetch.cs" />
+    <Compile Include="Behaviors\WinDevVersionModify.cs" />
     <Compile Include="Data\Db.cs" />
     <Compile Include="Data\Mappers.cs" />
     <Compile Include="Data\StartUp.cs" />
@@ -132,6 +172,9 @@
     <Compile Include="Models\SUPPLIER.cs">
       <DependentUpon>DbFirst.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\WINDEV_CLIENT_VERSION.cs">
+      <DependentUpon>DbFirst.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,8 +182,7 @@
     <Compile Include="Services\EPAService.cs" />
     <Compile Include="Services\IdGenerator.cs" />
     <Compile Include="Services\IEPAService.cs" />
-    <Compile Include="Services\PriceAgreementIUD.cs" />
-    <Compile Include="Services\PriceListIUD.cs" />
+    <Compile Include="Behaviors\PriceListIUD.cs" />
     <Compile Include="Services\ServiceDtos.cs" />
     <Compile Include="UnitTests\EFTests.cs" />
   </ItemGroup>

@@ -14,27 +14,32 @@ namespace EPA.Services
     {
         [OperationContract]
         void DoWork();
-        [OperationContract]
-        Dto.COMPANY CompanyFetch(string key);
+   
 
+            [OperationContract]
+        Dto.Models.WINDEV_CLIENT_VERSION WinDevVersionFetchLatestVersion(string key);
 
+        
 
+        #region Company 
 
-        #region Company Operations
         [OperationContract]
-        Dto.COMPANY CompanyCreate(String description);
+        Dto.Models.COMPANY CompanyFetch(string key);
+
         [OperationContract]
-        Dto.COMPANY CompanyModify(Dto.COMPANY company);
+        Dto.Models.COMPANY CompanyCreate(string description);
         [OperationContract]
-        void CompanyDelete(Dto.COMPANY company);
+        Dto.Models.COMPANY CompanyModify(Dto.Models.COMPANY company);
+        [OperationContract]
+        void CompanyDelete(Dto.Models.COMPANY company);
         #endregion
 
 
         #region Supplier Operations
         [OperationContract]
-        SUPPLIER SupplierCreate(String description);
+        SUPPLIER SupplierCreate(string description, string email);
         [OperationContract]
-        SUPPLIER SupplierCreate(SUPPLIER description);
+        SUPPLIER SupplierCreate(SUPPLIER supplier);
         [OperationContract]
         SUPPLIER SupplierModify(SUPPLIER supplier);
         [OperationContract]
@@ -44,33 +49,33 @@ namespace EPA.Services
         #endregion
         #region Company Supplier Operations
         [OperationContract]
-        COMPANY_SUPPLIERS CompanySupplierCreate(String companyKey, Int32 companyId, String description);
+        COMPANY_SUPPLIERS CompanySupplierCreate(string~ companyKey, Int32 companyId, string description);
         [OperationContract]
-        COMPANY_SUPPLIERS CompanySupplierModify(String companyKey, COMPANY_SUPPLIERS companySuppliers);
+        COMPANY_SUPPLIERS CompanySupplierModify(string companyKey, COMPANY_SUPPLIERS companySuppliers);
         [OperationContract]
-        void CompanySupplierDelete(String companyKey, Int32 supplierId);
+        void CompanySupplierDelete(string companyKey, Int32 supplierId);
         [OperationContract]
-        COMPANY_SUPPLIERS[] CompanySupplierFetch(String companyKey, Int32? supplierId = null);
+        COMPANY_SUPPLIERS[] CompanySupplierFetch(string companyKey, Int32? supplierId = null);
         #endregion
         #region Company User Operations
         [OperationContract]
-        COMPANY_USERS CompanyUserCreate(String companyKey, String companyUser, String email);
+        COMPANY_USERS CompanyUserCreate(string companyKey, string companyUser, string email);
         [OperationContract]
-        COMPANY_USERS CompanyUserModify(String companyKey, COMPANY_USERS companyUser);
+        COMPANY_USERS CompanyUserModify(string companyKey, COMPANY_USERS companyUser);
         [OperationContract]
-        void CompanyUserDelete(String companyKey, Int32 companyUserId);
+        void CompanyUserDelete(string companyKey, Int32 companyUserId);
         [OperationContract]
-        COMPANY_USERS[] CompanyUserFetch(String companyKey, Int32? companyUserId = null);
+        COMPANY_USERS[] CompanyUserFetch(string companyKey, Int32? companyUserId = null);
 
-        Boolean CompanyUserExists(String companyKey, String email);
+        Boolean CompanyUserExists(string companyKey, string email);
         #endregion
         #region Company User Suppliers Operations
         [OperationContract]
-        COMPANY_USER_SUPPLIERS CompanyUsersSuppliersCreate(String companyKey, Int32 supplierId, Int32 companyUserId);
+        COMPANY_USER_SUPPLIERS CompanyUsersSuppliersCreate(string companyKey, Int32 supplierId, Int32 companyUserId);
         [OperationContract]
-        void CompanyUsersSuppliersDelete(String companyKey, Int32 supplierId, Int32 companyUserId);
+        void CompanyUsersSuppliersDelete(string companyKey, Int32 supplierId, Int32 companyUserId);
         [OperationContract]
-        Boolean CompanyUsersSuppliersExists(String CompanyKey, Int32 supplierId, Int32 companyUserId);
+        Boolean CompanyUsersSuppliersExists(string CompanyKey, Int32 supplierId, Int32 companyUserId);
         #endregion
 
 
@@ -78,42 +83,42 @@ namespace EPA.Services
         // TODO - FIGURE OUT WHATS GOING ON HERE
         #region PriceList(Material) Operations
        [OperationContract]
-        PriceListIUDResponse PriceListIUD(String companyKey, PriceListIUDWrapper priceList, PriceListMaterialIUDWrapper[] materials);
+        EPA.Dto.Services.PriceListIUDResponse PriceListIUD(string companyKey, EPA.Dto.Services.PriceListIUDWrapper priceList, EPA.Dto.Services.PriceListMaterialIUDWrapper[] materials);
 
         [OperationContract]
-        PriceAgreementIUDResponse PriceAgreementIUD(String companyKey, PriceListIUDWrapper PriceAgreement, PriceListMaterialIUDWrapper[] materials);
+       EPA.Dto.Services.PriceAgreementIUDResponse PriceAgreementIUD(string companyKey, EPA.Dto.Services.PriceListIUDWrapper PriceAgreement, EPA.Dto.Services.PriceListMaterialIUDWrapper[] materials);
         [OperationContract]
-        void PriceListSetFilters(String companyKey, Int32 priceListId, PRICE_LIST_ITEM_TYPES[] iTypeFilters, ItemFilter[] itemFilter);
+        void PriceListSetFilters(string companyKey, Int32 priceListId, PRICE_LIST_ITEM_TYPES[] iTypeFilters, EPA.Dto.Services.ItemFilter[] itemFilter);
         [OperationContract]
-       Dto.Services.ItemFilter[] PriceListGetItemFilters(String companyKey, Int32 priceListId);
+       Dto.Services.ItemFilter[] PriceListGetItemFilters(string companyKey, Int32 priceListId);
         
 
 
 
 
         [OperationContract]
-        PRICE_LIST[] PriceListFetch(String companyKey, Int32? companyUserId = null, Int32? priceListId = null);
+        PRICE_LIST[] PriceListFetch(string companyKey, Int32? companyUserId = null, Int32? priceListId = null);
         [OperationContract]
-        PRICE_LIST_MATERIALS[] PriceListMaterialFetch(String companyKey, Int32? companyUserId = null, Int32? priceListId = null, Int32? priceListMaterialId = null);
+        PRICE_LIST_MATERIALS[] PriceListMaterialFetch(string companyKey, Int32? companyUserId = null, Int32? priceListId = null, Int32? priceListMaterialId = null);
 
         [OperationContract]
         PRICE_LIST_ITEM_TYPES[] PriceListGetItemTypeFilters(string companyKey, int priceListId);
         #endregion
         #region PriceAgreement(Material) Operations
    
-        PRICE_AGREEMENT[] PriceAgreementFetch(String companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null);
+        PRICE_AGREEMENT[] PriceAgreementFetch(string companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null);
         [OperationContract]
-        PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(String companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null, Int32? priceAgreementMaterialId = null);
+        PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(string companyKey, Int32? companyUserId, Int32? priceListId = null, Int32? priceAgreementId = null, Int32? priceAgreementMaterialId = null);
         #endregion
         #region PriceAdjustment Operations
         [OperationContract]
-        PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentCreate(String companyKey, Int32 PriceAgreementId);
+        PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentCreate(string companyKey, Int32 PriceAgreementId);
         [OperationContract]
         PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentModify(string companyKey, PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust);
         [OperationContract]
-        void PriceAgreementAdjustmentDelete(String companyKey, Int32 priceAgreementAdjustmentId);
+        void PriceAgreementAdjustmentDelete(string companyKey, Int32 priceAgreementAdjustmentId);
         [OperationContract]
-        PRICE_AGREEMENT_ADJUSTMENTS[] PriceAgreementAdjustmentFetch(String companyKey, Int32? priceAgreementId = null, Int32? priceAdustmentId = null);
+        PRICE_AGREEMENT_ADJUSTMENTS[] PriceAgreementAdjustmentFetch(string companyKey, Int32? priceAgreementId = null, Int32? priceAdustmentId = null);
         #endregion
 
     }

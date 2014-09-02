@@ -22,5 +22,7 @@ namespace EPA.Models
         public string RATE_UOM { get; set; }
         public Nullable<System.DateTime> RATE_DATE { get; set; }
         public string CODE { get; set; }
+    
+        public virtual PRICE_AGREEMENT PRICE_AGREEMENT { get; set; }
     }
 }

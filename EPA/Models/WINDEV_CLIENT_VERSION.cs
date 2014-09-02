@@ -12,12 +12,11 @@ namespace EPA.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class COMPANY_USER_SUPPLIERS
+    public partial class WINDEV_CLIENT_VERSION
     {
-        public int SUPPLIER_ID { get; set; }
-        public int COMPANY_USER_ID { get; set; }
-        public int COMPANY_USER_SUPPLIERS_ID { get; set; }
-    
-        public virtual COMPANY_USERS COMPANY_USERS { get; set; }
+        public int ID { get; set; }
+        public decimal VERSION { get; set; }
+        public Nullable<System.DateTime> DATE_UPDATED { get; set; }
+        public string URL { get; set; }
     }
 }
