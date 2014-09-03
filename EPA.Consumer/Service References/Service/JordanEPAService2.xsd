@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ChickenService" />
-  <xs:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EPA.Models" />
-  <xs:element name="GetData">
+  <xs:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" />
+  <xs:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" />
+  <xs:element name="CompanyCreateByModel">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="value" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="company" nillable="true" type="q1:COMPANY" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataResponse">
+  <xs:element name="CompanyCreateByModelResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyCreateByModelResult" nillable="true" type="q2:COMPANY" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataUsingDataContract">
+  <xs:element name="CompanyCreate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ChickenService" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataUsingDataContractResponse">
+  <xs:element name="CompanyCreateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ChickenService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyCreateResult" nillable="true" type="q3:COMPANY" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="company" nillable="true" type="q4:COMPANY" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyDeleteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyDeleteByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyFetchById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyFetchByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyFetchByIdResult" nillable="true" type="q5:COMPANY" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -40,21 +78,608 @@
   <xs:element name="CompanyFetchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EPA.Models" minOccurs="0" name="CompanyFetchResult" nillable="true" type="q3:COMPANY" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyFetchResult" nillable="true" type="q6:COMPANY" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CompanyFetchTest">
+  <xs:element name="CompanyModify">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="company" nillable="true" type="q7:COMPANY" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CompanyFetchTestResponse">
+  <xs:element name="CompanyModifyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CompanyFetchTestResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyModifyResult" nillable="true" type="q8:COMPANY" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanySupplierCreateResult" nillable="true" type="q9:COMPANY_SUPPLIERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplierId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanySupplierFetchResult" nillable="true" type="q10:ArrayOfCOMPANY_SUPPLIERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierModify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="companySuppliers" nillable="true" type="q11:COMPANY_SUPPLIERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanySupplierModifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanySupplierModifyResult" nillable="true" type="q12:COMPANY_SUPPLIERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserCreateByModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="companyUser" nillable="true" type="q13:COMPANY_USERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserCreateByModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyUserCreateByModelResult" nillable="true" type="q14:COMPANY_USERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripton" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyUserCreateResult" nillable="true" type="q15:COMPANY_USERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyUserExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyUserFetchResult" nillable="true" type="q16:ArrayOfCOMPANY_USERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserModify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="companyUser" nillable="true" type="q17:COMPANY_USERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUserModifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyUserModifyResult" nillable="true" type="q18:COMPANY_USERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUsersSuppliersCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUsersSuppliersCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="CompanyUsersSuppliersCreateResult" nillable="true" type="q19:COMPANY_USER_SUPPLIERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUsersSuppliersDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUsersSuppliersDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUsersSuppliersExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyUsersSuppliersExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyUsersSuppliersExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateAdjustmentReferenceNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateAdjustmentReferenceNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateAdjustmentReferenceNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateAgreementReferenceNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateAgreementReferenceNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateAgreementReferenceNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePriceListReferenceNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePriceListReferenceNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratePriceListReferenceNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceAgreementId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceAgreementAdjustmentCreateResult" nillable="true" type="q20:PRICE_AGREEMENT_ADJUSTMENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceAgreementAdjustmentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceAgreementId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceAgreementAdjustmentId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceAgreementAdjustmentFetchResult" nillable="true" type="q21:ArrayOfPRICE_AGREEMENT_ADJUSTMENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentModify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="priceAgreementAdjust" nillable="true" type="q22:PRICE_AGREEMENT_ADJUSTMENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementAdjustmentModifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceAgreementAdjustmentModifyResult" nillable="true" type="q23:PRICE_AGREEMENT_ADJUSTMENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceListId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceAgreementId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceAgreementFetchResult" nillable="true" type="q24:ArrayOfPRICE_AGREEMENT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementIUD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="priceAgreement" nillable="true" type="q25:PriceAgreementIUDWrapper" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="materials" nillable="true" type="q26:ArrayOfPriceAgreementMaterialIUDWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementIUDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="PriceAgreementIUDResult" nillable="true" type="q27:PriceAgreementIUDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementMaterialFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceListId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceAgreementId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceAgreementMaterialId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceAgreementMaterialFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceAgreementMaterialFetchResult" nillable="true" type="q28:ArrayOfPRICE_AGREEMENT_MATERIALS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceListId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceListFetchResult" nillable="true" type="q29:ArrayOfPRICE_LIST" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListGetItemFilters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceListId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListGetItemFiltersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="PriceListGetItemFiltersResult" nillable="true" type="q30:ArrayOfItemFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListGetItemTypeFilters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceListId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListGetItemTypeFiltersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceListGetItemTypeFiltersResult" nillable="true" type="q31:ArrayOfPRICE_LIST_ITEM_TYPES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListIUD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="priceList" nillable="true" type="q32:PriceListIUDWrapper" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="materials" nillable="true" type="q33:ArrayOfPriceListMaterialIUDWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListIUDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="PriceListIUDResult" nillable="true" type="q34:PriceListIUDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListMaterialFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyUserId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceListId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="priceListMaterialId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListMaterialFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PriceListMaterialFetchResult" nillable="true" type="q35:ArrayOfPRICE_LIST_MATERIALS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListSetFilters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="priceListId" type="xs:int" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="iTypeFilters" nillable="true" type="q36:ArrayOfPRICE_LIST_ITEM_TYPES" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" minOccurs="0" name="itemFilter" nillable="true" type="q37:ArrayOfItemFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceListSetFiltersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierCompanyFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierCompanyFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierCompanyFetchResult" nillable="true" type="q38:ArrayOfCOMPANY" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierCreateByModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="supplier" nillable="true" type="q39:SUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierCreateByModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierCreateByModelResult" nillable="true" type="q40:SUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierCreateResult" nillable="true" type="q41:SUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="supplier" nillable="true" type="q42:SUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierDeleteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierDeleteByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierFetchResult" nillable="true" type="q43:ArrayOfSUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierFetchByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierFetchByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierFetchByEmailResult" nillable="true" type="q44:ArrayOfSUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierModify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="supplier" nillable="true" type="q45:SUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierModifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierModifyResult" nillable="true" type="q46:SUPPLIER" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierPriceAgreementFetch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplierPriceAgreementFetchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="SupplierPriceAgreementFetchResult" nillable="true" type="q47:ArrayOfPRICE_AGREEMENT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WinDevVersionFetchLatestVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WinDevVersionFetchLatestVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="WinDevVersionFetchLatestVersionResult" nillable="true" type="q48:WINDEV_CLIENT_VERSION" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

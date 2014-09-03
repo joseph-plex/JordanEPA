@@ -22,7 +22,7 @@ namespace EPA.Dto.Models
     }
     public partial class WINDEV_CLIENT_VERSION
     {
-        private int ID { get; set; }
+        public int WINDEV_CLIENT_VERSION_ID { get; set; }
         public decimal VERSION { get; set; }
         public Nullable<System.DateTime> DATE_UPDATED { get; set; }
         public string URL { get; set; }

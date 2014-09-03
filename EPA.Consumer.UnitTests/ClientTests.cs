@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using EPA.Consumer;
 using System.Data;
+using System.Reflection;
+using System.Linq.Expressions;
 
 namespace EPA.Consumer.UnitTests
 {
@@ -29,11 +31,11 @@ namespace EPA.Consumer.UnitTests
             }
             //var mockSet = new Mock<DbSet<Blog>>(); 
 
-            Client c = new Client("http://epa.plexxis.com/Jordan/JordanEPAService.svc");
-            var v = c.GetData(2);
+         //   x__Client c = new x__Client("http://epa.plexxis.com/Jordan/JordanEPAService.svc");
+         //   var v = c.GetData(2);
 
 
-            v = v;
+         //   v = v;
         }
 
         [TestMethod]
@@ -88,6 +90,89 @@ namespace EPA.Consumer.UnitTests
             Assert.AreEqual(email1, email2);
 
         }
+
+
+         [TestMethod]
+        public void InsertPrimaryKey()
+        {
+            using (var db = new EPA.Data.Db())
+            {
+            
+
+               //  using (var connection = db.Database.Connection OracleRepository.GetOpenIDbConnection())
+                  //  return Convert.ToInt32(connection.Query("select c_user_id.nextval from dual")[0, 0]);
+              
+                string keyForCompany = EPA.Services.IdGenerator.CreateUniqueKeyForCompany();
+                var c = new Models.COMPANY
+                {
+                    DESCRIPTION = "Test Description",
+                    CODE = Plexxis.Helpers.Strings.Left(keyForCompany, 5, ""),
+                    KEY = keyForCompany,
+                    EMAIL = Plexxis.Helpers.Strings.Left(keyForCompany, 5, "") + "@test.com",
+                   // COMPANY_ID = nextVal,
+                
+                };
+                var nextVal = db.Database.SqlQuery<int>("select company_id.nextval from dual").First();
+                Console.WriteLine("nextVal = " + nextVal);
+
+                PropertyInfo propertyInfo = c.GetType().GetProperty("COMPANY_ID");
+                propertyInfo.SetValue(c, Convert.ChangeType(nextVal, propertyInfo.PropertyType), null);
+
+                db.COMPANIES.Add(c);
+                db.SaveChanges();
+                Assert.AreNotEqual(0, c.COMPANY_ID);
+                
+
+            }
+        }
+            [TestMethod]
+         public void InsertAutoMaticPrimaryKey()
+         {
+             using (var db = new EPA.Data.Db())
+             {
+
+
+                 //  using (var connection = db.Database.Connection OracleRepository.GetOpenIDbConnection())
+                 //  return Convert.ToInt32(connection.Query("select c_user_id.nextval from dual")[0, 0]);
+
+                 string keyForCompany = EPA.Services.IdGenerator.CreateUniqueKeyForCompany();
+                 var c = new Models.COMPANY
+                 {
+                     DESCRIPTION = "Test Description",
+                     CODE = Plexxis.Helpers.Strings.Left(keyForCompany, 5, ""),
+                     KEY = keyForCompany,
+                     EMAIL = Plexxis.Helpers.Strings.Left(keyForCompany, 5, "") + "@test.com",
+                     // COMPANY_ID = nextVal,
+
+                 };
+        
+                 c = db.AssignPrimaryKey(c, () => c.COMPANY_ID, Data.Sequence.COMPANY_ID);
+                 db.COMPANIES.Add(c);
+                 db.SaveChanges();
+                 Assert.AreNotEqual(0, c.COMPANY_ID);
+
+
+             }
+         }
+ 
+        /*
+         public static T AssignPrimaryKey<T>(T entity, Expression<Func<T>> expr, string sequenceName)
+         {
+             string classSeperator = ".";
+             var ex = ((MemberExpression)expr.Body);
+             string keyColumnName = Plexxis.Helpers.Strings.TextAfterThis(Plexxis.Helpers.Strings.TextAfterThis(ex.ToString(), ")."), ".");
+             if (classSeperator != ".")
+                 keyColumnName = keyColumnName.Replace(".", classSeperator);
+
+             var nextVal = db.Database.SqlQuery<int>("select " + sequenceName + ".nextval from dual").First();
+
+             PropertyInfo propertyInfo = entity.GetType().GetProperty(keyColumnName);
+             propertyInfo.SetValue(entity, Convert.ChangeType(nextVal, propertyInfo.PropertyType), null);
+
+             return entity;
+             
+         }
+        */
 
     }
 }

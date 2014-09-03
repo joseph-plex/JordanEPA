@@ -1,10 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ChickenService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ChickenService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="CompositeType">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="COMPANY">
     <xs:sequence>
-      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
-      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PA_REFERENCE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PHONE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:element name="COMPANY" nillable="true" type="tns:COMPANY" />
+  <xs:complexType name="COMPANY_SUPPLIERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPANY_SUPPLIERS_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_TRUSTED_BY_SUPPLIER" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="PAYEE_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SEND_PASSWORD" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SUPPLIER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COMPANY_SUPPLIERS" nillable="true" type="tns:COMPANY_SUPPLIERS" />
+  <xs:complexType name="ArrayOfCOMPANY_SUPPLIERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COMPANY_SUPPLIERS" nillable="true" type="tns:COMPANY_SUPPLIERS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOMPANY_SUPPLIERS" nillable="true" type="tns:ArrayOfCOMPANY_SUPPLIERS" />
+  <xs:complexType name="COMPANY_USERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPANY_USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DB_USER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="VALIDATION_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALIDATION_EMAIL_SENT" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COMPANY_USERS" nillable="true" type="tns:COMPANY_USERS" />
+  <xs:complexType name="ArrayOfCOMPANY_USERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COMPANY_USERS" nillable="true" type="tns:COMPANY_USERS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOMPANY_USERS" nillable="true" type="tns:ArrayOfCOMPANY_USERS" />
+  <xs:complexType name="COMPANY_USER_SUPPLIERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_USER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPANY_USER_SUPPLIERS_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SUPPLIER_ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="COMPANY_USER_SUPPLIERS" nillable="true" type="tns:COMPANY_USER_SUPPLIERS" />
+  <xs:complexType name="PRICE_AGREEMENT_ADJUSTMENTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICE_AGREEMENT_ADJUSTMENT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_AGREEMENT_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RATE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RATE_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RATE_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RECORD_TYPE" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRICE_AGREEMENT_ADJUSTMENTS" nillable="true" type="tns:PRICE_AGREEMENT_ADJUSTMENTS" />
+  <xs:complexType name="ArrayOfPRICE_AGREEMENT_ADJUSTMENTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRICE_AGREEMENT_ADJUSTMENTS" nillable="true" type="tns:PRICE_AGREEMENT_ADJUSTMENTS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRICE_AGREEMENT_ADJUSTMENTS" nillable="true" type="tns:ArrayOfPRICE_AGREEMENT_ADJUSTMENTS" />
+  <xs:complexType name="ArrayOfPRICE_AGREEMENT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRICE_AGREEMENT" nillable="true" type="tns:PRICE_AGREEMENT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRICE_AGREEMENT" nillable="true" type="tns:ArrayOfPRICE_AGREEMENT" />
+  <xs:complexType name="PRICE_AGREEMENT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AGREED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AGREED_BY_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="COMPANY_SUPPLIER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DUE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EFFECTIVE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EXPIRY_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GROUP_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HAS_INCREASES" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="HAS_STOCKING" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="IS_SUPPLIER_AWARE_OF_UPDATE" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="NOTIFY_SUPPLIER" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="PRICE_AGREEMENT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_LIST_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROGRESSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SUPPLIER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SUPPLIER_NOTES" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRICE_AGREEMENT" nillable="true" type="tns:PRICE_AGREEMENT" />
+  <xs:complexType name="PRICE_AGREEMENT_MATERIALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="INCREASE_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INCREASE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="INCREASE_RATE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="INCREASE_TYPE" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ITEM_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PA_ADJUSTMENT_ID_INCREASE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PA_ADJUSTMENT_ID_STOCKING" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_AGREEMENT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_AGREEMENT_MATERIAL_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_LIST_MATERIAL_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RATE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RATE_STATUS" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="RATE_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RATE_UOM_UNITS" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="STOCKING_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STOCKING_RATE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="STOCKING_TYPE" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SUPPLIER_ITEM_CODE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="S_RATE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="S_RATE_CONVERSION" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="S_RATE_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_RATE_NOTES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_RATE_UOM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRICE_AGREEMENT_MATERIALS" nillable="true" type="tns:PRICE_AGREEMENT_MATERIALS" />
+  <xs:complexType name="ArrayOfPRICE_AGREEMENT_MATERIALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRICE_AGREEMENT_MATERIALS" nillable="true" type="tns:PRICE_AGREEMENT_MATERIALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRICE_AGREEMENT_MATERIALS" nillable="true" type="tns:ArrayOfPRICE_AGREEMENT_MATERIALS" />
+  <xs:complexType name="ArrayOfPRICE_LIST">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRICE_LIST" nillable="true" type="tns:PRICE_LIST" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRICE_LIST" nillable="true" type="tns:ArrayOfPRICE_LIST" />
+  <xs:complexType name="PRICE_LIST">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_USER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESIRED_EFFECTIVE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DESIRED_EXPIRY_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GROUP_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NOTES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOTIFY_USER" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="PRICE_LIST_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="STATUS_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TERMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TYPE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRICE_LIST" nillable="true" type="tns:PRICE_LIST" />
+  <xs:complexType name="ArrayOfPRICE_LIST_ITEM_TYPES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRICE_LIST_ITEM_TYPES" nillable="true" type="tns:PRICE_LIST_ITEM_TYPES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRICE_LIST_ITEM_TYPES" nillable="true" type="tns:ArrayOfPRICE_LIST_ITEM_TYPES" />
+  <xs:complexType name="PRICE_LIST_ITEM_TYPES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ITEM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_TYPE_GROUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICE_LIST_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_LIST_ITEM_TYPES_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROP_TITLE_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_TITLE_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_TITLE_3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_TITLE_4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_TITLE_5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_TITLE_6" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRICE_LIST_ITEM_TYPES" nillable="true" type="tns:PRICE_LIST_ITEM_TYPES" />
+  <xs:complexType name="PRICE_LIST_MATERIALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DIMENSION_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIMENSION_CONVERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DIMENSION_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ITEM_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ITEM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_TYPE_GROUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MEASURE_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRICE_LIST_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PRICE_LIST_MATERIAL_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PROP_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROP_6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="QTY_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RATE_UOM" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRICE_LIST_MATERIALS" nillable="true" type="tns:PRICE_LIST_MATERIALS" />
+  <xs:complexType name="ArrayOfPRICE_LIST_MATERIALS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRICE_LIST_MATERIALS" nillable="true" type="tns:PRICE_LIST_MATERIALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRICE_LIST_MATERIALS" nillable="true" type="tns:ArrayOfPRICE_LIST_MATERIALS" />
+  <xs:complexType name="ArrayOfCOMPANY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="COMPANY" nillable="true" type="tns:COMPANY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCOMPANY" nillable="true" type="tns:ArrayOfCOMPANY" />
+  <xs:complexType name="SUPPLIER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIRST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SUPPLIER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VALIDATION_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALIDATION_EMAIL_SENT" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SUPPLIER" nillable="true" type="tns:SUPPLIER" />
+  <xs:complexType name="ArrayOfSUPPLIER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SUPPLIER" nillable="true" type="tns:SUPPLIER" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSUPPLIER" nillable="true" type="tns:ArrayOfSUPPLIER" />
+  <xs:complexType name="WINDEV_CLIENT_VERSION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATE_UPDATED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VERSION" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WINDEV_CLIENT_VERSION_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WINDEV_CLIENT_VERSION" nillable="true" type="tns:WINDEV_CLIENT_VERSION" />
 </xs:schema>

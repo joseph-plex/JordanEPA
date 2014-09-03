@@ -10,10 +10,10 @@ namespace ChickenService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IJordanEPAService
+    public interface IJordanEPAService : EPA.Services.IEPAService
     {
 
-        [OperationContract]
+     /*   [OperationContract]
         string GetData(int value);
 
         [OperationContract]
@@ -23,12 +23,12 @@ namespace ChickenService
         [OperationContract]
         CompanyDto CompanyFetchDto(string key);
            [OperationContract]
-        string CompanyFetchTest(string key);
+        string CompanyFetchTest(string key); */
 
         // TODO: Add your service operations here
     }
 
-
+    /*
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
     public class CompositeType
@@ -66,4 +66,5 @@ namespace ChickenService
         public string CODE { get; set; }
         public Nullable<int> PA_REFERENCE { get; set; }
     }
+     * */
 }

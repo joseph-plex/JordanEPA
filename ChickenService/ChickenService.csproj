@@ -103,9 +103,13 @@
       <Project>{a7f5bc45-2837-4800-9ede-c03c75388d51}</Project>
       <Name>Plexxis.Helpers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EPA\EPA.Core.csproj">
+    <ProjectReference Include="..\EPA.Core\EPA.Core.csproj">
       <Project>{97f59878-363e-4e57-b6bb-277e89c532d6}</Project>
       <Name>EPA.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EPA.Dto\EPA.Dto.csproj">
+      <Project>{de2865b8-bf59-4015-8d36-ca454b171954}</Project>
+      <Name>EPA.Dto</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

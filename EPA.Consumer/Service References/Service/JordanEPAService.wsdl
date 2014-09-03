@@ -4,56 +4,486 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ChickenService" />
-      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EPA.Models" />
+      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" />
+      <xsd:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IJordanEPAService_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="IEPAService_CompanyCreateByModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyCreateByModel" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  <wsdl:message name="IEPAService_CompanyCreateByModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyCreateByModelResponse" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="IEPAService_CompanyCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyCreate" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="IEPAService_CompanyCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyCreateResponse" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_CompanyFetch_InputMessage">
+  <wsdl:message name="IEPAService_CompanyDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyDeleteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyDeleteById" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyDeleteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyDeleteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyFetchById_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyFetchById" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyFetchById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyFetchByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyFetch_InputMessage">
     <wsdl:part name="parameters" element="tns:CompanyFetch" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_CompanyFetch_OutputMessage">
+  <wsdl:message name="IEPAService_CompanyFetch_OutputMessage">
     <wsdl:part name="parameters" element="tns:CompanyFetchResponse" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_CompanyFetchTest_InputMessage">
-    <wsdl:part name="parameters" element="tns:CompanyFetchTest" />
+  <wsdl:message name="IEPAService_CompanyModify_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyModify" />
   </wsdl:message>
-  <wsdl:message name="IJordanEPAService_CompanyFetchTest_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CompanyFetchTestResponse" />
+  <wsdl:message name="IEPAService_CompanyModify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyModifyResponse" />
   </wsdl:message>
-  <wsdl:portType name="IJordanEPAService">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/GetData" message="tns:IJordanEPAService_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/GetDataResponse" message="tns:IJordanEPAService_GetData_OutputMessage" />
+  <wsdl:message name="IEPAService_CompanySupplierCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierCreate" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierModify_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierModify" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanySupplierModify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanySupplierModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserCreateByModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserCreateByModel" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserCreateByModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserCreateByModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserCreate" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserExists" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserModify_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserModify" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUserModify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUserModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUsersSuppliersCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUsersSuppliersCreate" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUsersSuppliersCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUsersSuppliersCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUsersSuppliersDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUsersSuppliersDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUsersSuppliersDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUsersSuppliersDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUsersSuppliersExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUsersSuppliersExists" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_CompanyUsersSuppliersExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyUsersSuppliersExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_GenerateAdjustmentReferenceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAdjustmentReferenceNumber" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_GenerateAdjustmentReferenceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAdjustmentReferenceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_GenerateAgreementReferenceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAgreementReferenceNumber" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_GenerateAgreementReferenceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAgreementReferenceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_GeneratePriceListReferenceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePriceListReferenceNumber" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_GeneratePriceListReferenceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePriceListReferenceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentCreate" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentModify_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentModify" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementAdjustmentModify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementAdjustmentModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementIUD_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementIUD" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementIUD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementIUDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementMaterialFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementMaterialFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceAgreementMaterialFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceAgreementMaterialFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListGetItemFilters_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListGetItemFilters" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListGetItemFilters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListGetItemFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListGetItemTypeFilters_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListGetItemTypeFilters" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListGetItemTypeFilters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListGetItemTypeFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListIUD_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListIUD" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListIUD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListIUDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListMaterialFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListMaterialFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListMaterialFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListMaterialFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListSetFilters_InputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListSetFilters" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_PriceListSetFilters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PriceListSetFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierCompanyFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierCompanyFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierCompanyFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierCompanyFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierCreateByModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierCreateByModel" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierCreateByModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierCreateByModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierCreate" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierDelete" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierDeleteById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierDeleteById" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierDeleteById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierDeleteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierFetchByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierFetchByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierFetchByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierFetchByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierModify_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierModify" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierModify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierPriceAgreementFetch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierPriceAgreementFetch" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_SupplierPriceAgreementFetch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplierPriceAgreementFetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_WinDevVersionFetchLatestVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:WinDevVersionFetchLatestVersion" />
+  </wsdl:message>
+  <wsdl:message name="IEPAService_WinDevVersionFetchLatestVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WinDevVersionFetchLatestVersionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEPAService">
+    <wsdl:operation name="CompanyCreateByModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyCreateByModel" message="tns:IEPAService_CompanyCreateByModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyCreateByModelResponse" message="tns:IEPAService_CompanyCreateByModel_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/GetDataUsingDataContract" message="tns:IJordanEPAService_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/GetDataUsingDataContractResponse" message="tns:IJordanEPAService_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="CompanyCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyCreate" message="tns:IEPAService_CompanyCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyCreateResponse" message="tns:IEPAService_CompanyCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyDelete" message="tns:IEPAService_CompanyDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyDeleteResponse" message="tns:IEPAService_CompanyDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyDeleteById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyDeleteById" message="tns:IEPAService_CompanyDeleteById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyDeleteByIdResponse" message="tns:IEPAService_CompanyDeleteById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyFetchById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyFetchById" message="tns:IEPAService_CompanyFetchById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyFetchByIdResponse" message="tns:IEPAService_CompanyFetchById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CompanyFetch">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetch" message="tns:IJordanEPAService_CompanyFetch_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetchResponse" message="tns:IJordanEPAService_CompanyFetch_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyFetch" message="tns:IEPAService_CompanyFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyFetchResponse" message="tns:IEPAService_CompanyFetch_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CompanyFetchTest">
-      <wsdl:input wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetchTest" message="tns:IJordanEPAService_CompanyFetchTest_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IJordanEPAService/CompanyFetchTestResponse" message="tns:IJordanEPAService_CompanyFetchTest_OutputMessage" />
+    <wsdl:operation name="CompanyModify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyModify" message="tns:IEPAService_CompanyModify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyModifyResponse" message="tns:IEPAService_CompanyModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierCreate" message="tns:IEPAService_CompanySupplierCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierCreateResponse" message="tns:IEPAService_CompanySupplierCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierDelete" message="tns:IEPAService_CompanySupplierDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierDeleteResponse" message="tns:IEPAService_CompanySupplierDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierFetch" message="tns:IEPAService_CompanySupplierFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierFetchResponse" message="tns:IEPAService_CompanySupplierFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierModify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierModify" message="tns:IEPAService_CompanySupplierModify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanySupplierModifyResponse" message="tns:IEPAService_CompanySupplierModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserCreateByModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUserCreateByModel" message="tns:IEPAService_CompanyUserCreateByModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUserCreateByModelResponse" message="tns:IEPAService_CompanyUserCreateByModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUserCreate" message="tns:IEPAService_CompanyUserCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUserCreateResponse" message="tns:IEPAService_CompanyUserCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUserDelete" message="tns:IEPAService_CompanyUserDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUserDeleteResponse" message="tns:IEPAService_CompanyUserDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUserExists" message="tns:IEPAService_CompanyUserExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUserExistsResponse" message="tns:IEPAService_CompanyUserExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUserFetch" message="tns:IEPAService_CompanyUserFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUserFetchResponse" message="tns:IEPAService_CompanyUserFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserModify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUserModify" message="tns:IEPAService_CompanyUserModify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUserModifyResponse" message="tns:IEPAService_CompanyUserModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUsersSuppliersCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreate" message="tns:IEPAService_CompanyUsersSuppliersCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreateResponse" message="tns:IEPAService_CompanyUsersSuppliersCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUsersSuppliersDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersDelete" message="tns:IEPAService_CompanyUsersSuppliersDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersDeleteResponse" message="tns:IEPAService_CompanyUsersSuppliersDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUsersSuppliersExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersExists" message="tns:IEPAService_CompanyUsersSuppliersExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersExistsResponse" message="tns:IEPAService_CompanyUsersSuppliersExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/DoWork" message="tns:IEPAService_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/DoWorkResponse" message="tns:IEPAService_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAdjustmentReferenceNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumber" message="tns:IEPAService_GenerateAdjustmentReferenceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumberResponse" message="tns:IEPAService_GenerateAdjustmentReferenceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAgreementReferenceNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumber" message="tns:IEPAService_GenerateAgreementReferenceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumberResponse" message="tns:IEPAService_GenerateAgreementReferenceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePriceListReferenceNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumber" message="tns:IEPAService_GeneratePriceListReferenceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumberResponse" message="tns:IEPAService_GeneratePriceListReferenceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreate" message="tns:IEPAService_PriceAgreementAdjustmentCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreateResponse" message="tns:IEPAService_PriceAgreementAdjustmentCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDelete" message="tns:IEPAService_PriceAgreementAdjustmentDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDeleteResponse" message="tns:IEPAService_PriceAgreementAdjustmentDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetch" message="tns:IEPAService_PriceAgreementAdjustmentFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetchResponse" message="tns:IEPAService_PriceAgreementAdjustmentFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentModify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModify" message="tns:IEPAService_PriceAgreementAdjustmentModify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModifyResponse" message="tns:IEPAService_PriceAgreementAdjustmentModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementFetch" message="tns:IEPAService_PriceAgreementFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementFetchResponse" message="tns:IEPAService_PriceAgreementFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementIUD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementIUD" message="tns:IEPAService_PriceAgreementIUD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementIUDResponse" message="tns:IEPAService_PriceAgreementIUD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementMaterialFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementMaterialFetch" message="tns:IEPAService_PriceAgreementMaterialFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceAgreementMaterialFetchResponse" message="tns:IEPAService_PriceAgreementMaterialFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceListFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceListFetch" message="tns:IEPAService_PriceListFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceListFetchResponse" message="tns:IEPAService_PriceListFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceListGetItemFilters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceListGetItemFilters" message="tns:IEPAService_PriceListGetItemFilters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceListGetItemFiltersResponse" message="tns:IEPAService_PriceListGetItemFilters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceListGetItemTypeFilters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceListGetItemTypeFilters" message="tns:IEPAService_PriceListGetItemTypeFilters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceListGetItemTypeFiltersResponse" message="tns:IEPAService_PriceListGetItemTypeFilters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceListIUD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceListIUD" message="tns:IEPAService_PriceListIUD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceListIUDResponse" message="tns:IEPAService_PriceListIUD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceListMaterialFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceListMaterialFetch" message="tns:IEPAService_PriceListMaterialFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceListMaterialFetchResponse" message="tns:IEPAService_PriceListMaterialFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PriceListSetFilters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/PriceListSetFilters" message="tns:IEPAService_PriceListSetFilters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/PriceListSetFiltersResponse" message="tns:IEPAService_PriceListSetFilters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierCompanyFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierCompanyFetch" message="tns:IEPAService_SupplierCompanyFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierCompanyFetchResponse" message="tns:IEPAService_SupplierCompanyFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierCreateByModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierCreateByModel" message="tns:IEPAService_SupplierCreateByModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierCreateByModelResponse" message="tns:IEPAService_SupplierCreateByModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierCreate" message="tns:IEPAService_SupplierCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierCreateResponse" message="tns:IEPAService_SupplierCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierDelete" message="tns:IEPAService_SupplierDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierDeleteResponse" message="tns:IEPAService_SupplierDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierDeleteById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierDeleteById" message="tns:IEPAService_SupplierDeleteById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierDeleteByIdResponse" message="tns:IEPAService_SupplierDeleteById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierFetch" message="tns:IEPAService_SupplierFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierFetchResponse" message="tns:IEPAService_SupplierFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierFetchByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierFetchByEmail" message="tns:IEPAService_SupplierFetchByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierFetchByEmailResponse" message="tns:IEPAService_SupplierFetchByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierModify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierModify" message="tns:IEPAService_SupplierModify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierModifyResponse" message="tns:IEPAService_SupplierModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplierPriceAgreementFetch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/SupplierPriceAgreementFetch" message="tns:IEPAService_SupplierPriceAgreementFetch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/SupplierPriceAgreementFetchResponse" message="tns:IEPAService_SupplierPriceAgreementFetch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WinDevVersionFetchLatestVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersion" message="tns:IEPAService_WinDevVersionFetchLatestVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersionResponse" message="tns:IEPAService_WinDevVersionFetchLatestVersion_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IJordanEPAService" type="tns:IJordanEPAService">
+  <wsdl:binding name="BasicHttpBinding_IEPAService" type="tns:IEPAService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/GetData" style="document" />
+    <wsdl:operation name="CompanyCreateByModel">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyCreateByModel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -61,8 +491,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="CompanyCreate">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyDelete">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyDeleteById">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyDeleteById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyFetchById">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyFetchById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -71,7 +528,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CompanyFetch">
-      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/CompanyFetch" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyFetch" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -79,8 +536,368 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CompanyFetchTest">
-      <soap:operation soapAction="http://tempuri.org/IJordanEPAService/CompanyFetchTest" style="document" />
+    <wsdl:operation name="CompanyModify">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyModify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierCreate">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanySupplierCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierDelete">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanySupplierDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanySupplierFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanySupplierModify">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanySupplierModify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserCreateByModel">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUserCreateByModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserCreate">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUserCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserDelete">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUserDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserExists">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUserExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUserFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUserModify">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUserModify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUsersSuppliersCreate">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUsersSuppliersDelete">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyUsersSuppliersExists">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAdjustmentReferenceNumber">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAgreementReferenceNumber">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePriceListReferenceNumber">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentCreate">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentDelete">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementAdjustmentModify">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementIUD">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementIUD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceAgreementMaterialFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceAgreementMaterialFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceListFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceListFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceListGetItemFilters">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceListGetItemFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceListGetItemTypeFilters">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceListGetItemTypeFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceListIUD">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceListIUD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceListMaterialFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceListMaterialFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PriceListSetFilters">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/PriceListSetFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierCompanyFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierCompanyFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierCreateByModel">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierCreateByModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierCreate">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierDelete">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierDeleteById">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierDeleteById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierFetchByEmail">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierFetchByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierModify">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierModify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierPriceAgreementFetch">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/SupplierPriceAgreementFetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinDevVersionFetchLatestVersion">
+      <soap:operation soapAction="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,7 +907,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="JordanEPAService">
-    <wsdl:port name="BasicHttpBinding_IJordanEPAService" binding="tns:BasicHttpBinding_IJordanEPAService">
+    <wsdl:port name="BasicHttpBinding_IEPAService" binding="tns:BasicHttpBinding_IEPAService">
       <soap:address location="http://epa.plexxis.com/Jordan/JordanEPAService.svc" />
     </wsdl:port>
   </wsdl:service>

@@ -15,68 +15,7 @@ namespace EPA.Consumer.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/ChickenService")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="COMPANY", Namespace="http://schemas.datacontract.org/2004/07/EPA.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="COMPANY", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
     [System.SerializableAttribute()]
     public partial class COMPANY : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -263,76 +202,3180 @@ namespace EPA.Consumer.Service {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Service.IJordanEPAService")]
-    public interface IJordanEPAService {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="COMPANY_SUPPLIERS", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class COMPANY_SUPPLIERS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/GetData", ReplyAction="http://tempuri.org/IJordanEPAService/GetDataResponse")]
-        string GetData(int value);
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/GetData", ReplyAction="http://tempuri.org/IJordanEPAService/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int COMPANY_IDField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IJordanEPAService/GetDataUsingDataContractResponse")]
-        EPA.Consumer.Service.CompositeType GetDataUsingDataContract(EPA.Consumer.Service.CompositeType composite);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> COMPANY_SUPPLIERS_IDField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IJordanEPAService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<EPA.Consumer.Service.CompositeType> GetDataUsingDataContractAsync(EPA.Consumer.Service.CompositeType composite);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCRIPTIONField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/CompanyFetch", ReplyAction="http://tempuri.org/IJordanEPAService/CompanyFetchResponse")]
-        EPA.Consumer.Service.COMPANY CompanyFetch(string key);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMAILField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/CompanyFetch", ReplyAction="http://tempuri.org/IJordanEPAService/CompanyFetchResponse")]
-        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyFetchAsync(string key);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> IS_TRUSTED_BY_SUPPLIERField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/CompanyFetchTest", ReplyAction="http://tempuri.org/IJordanEPAService/CompanyFetchTestResponse")]
-        string CompanyFetchTest(string key);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PAYEE_IDField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IJordanEPAService/CompanyFetchTest", ReplyAction="http://tempuri.org/IJordanEPAService/CompanyFetchTestResponse")]
-        System.Threading.Tasks.Task<string> CompanyFetchTestAsync(string key);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ROW_VERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> SEND_PASSWORDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SUPPLIER_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int COMPANY_ID {
+            get {
+                return this.COMPANY_IDField;
+            }
+            set {
+                if ((this.COMPANY_IDField.Equals(value) != true)) {
+                    this.COMPANY_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> COMPANY_SUPPLIERS_ID {
+            get {
+                return this.COMPANY_SUPPLIERS_IDField;
+            }
+            set {
+                if ((this.COMPANY_SUPPLIERS_IDField.Equals(value) != true)) {
+                    this.COMPANY_SUPPLIERS_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_SUPPLIERS_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCRIPTION {
+            get {
+                return this.DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
+                    this.DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMAIL {
+            get {
+                return this.EMAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMAILField, value) != true)) {
+                    this.EMAILField = value;
+                    this.RaisePropertyChanged("EMAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> IS_TRUSTED_BY_SUPPLIER {
+            get {
+                return this.IS_TRUSTED_BY_SUPPLIERField;
+            }
+            set {
+                if ((this.IS_TRUSTED_BY_SUPPLIERField.Equals(value) != true)) {
+                    this.IS_TRUSTED_BY_SUPPLIERField = value;
+                    this.RaisePropertyChanged("IS_TRUSTED_BY_SUPPLIER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PAYEE_ID {
+            get {
+                return this.PAYEE_IDField;
+            }
+            set {
+                if ((this.PAYEE_IDField.Equals(value) != true)) {
+                    this.PAYEE_IDField = value;
+                    this.RaisePropertyChanged("PAYEE_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ROW_VERSION {
+            get {
+                return this.ROW_VERSIONField;
+            }
+            set {
+                if ((this.ROW_VERSIONField.Equals(value) != true)) {
+                    this.ROW_VERSIONField = value;
+                    this.RaisePropertyChanged("ROW_VERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> SEND_PASSWORD {
+            get {
+                return this.SEND_PASSWORDField;
+            }
+            set {
+                if ((this.SEND_PASSWORDField.Equals(value) != true)) {
+                    this.SEND_PASSWORDField = value;
+                    this.RaisePropertyChanged("SEND_PASSWORD");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SUPPLIER_ID {
+            get {
+                return this.SUPPLIER_IDField;
+            }
+            set {
+                if ((this.SUPPLIER_IDField.Equals(value) != true)) {
+                    this.SUPPLIER_IDField = value;
+                    this.RaisePropertyChanged("SUPPLIER_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="COMPANY_USERS", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class COMPANY_USERS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> COMPANY_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int COMPANY_USER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DB_USER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMAILField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PHONEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ROW_VERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> STATUSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VALIDATION_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> VALIDATION_EMAIL_SENTField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> COMPANY_ID {
+            get {
+                return this.COMPANY_IDField;
+            }
+            set {
+                if ((this.COMPANY_IDField.Equals(value) != true)) {
+                    this.COMPANY_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int COMPANY_USER_ID {
+            get {
+                return this.COMPANY_USER_IDField;
+            }
+            set {
+                if ((this.COMPANY_USER_IDField.Equals(value) != true)) {
+                    this.COMPANY_USER_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_USER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> DB_USER_ID {
+            get {
+                return this.DB_USER_IDField;
+            }
+            set {
+                if ((this.DB_USER_IDField.Equals(value) != true)) {
+                    this.DB_USER_IDField = value;
+                    this.RaisePropertyChanged("DB_USER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCRIPTION {
+            get {
+                return this.DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
+                    this.DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMAIL {
+            get {
+                return this.EMAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMAILField, value) != true)) {
+                    this.EMAILField = value;
+                    this.RaisePropertyChanged("EMAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PHONE {
+            get {
+                return this.PHONEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PHONEField, value) != true)) {
+                    this.PHONEField = value;
+                    this.RaisePropertyChanged("PHONE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ROW_VERSION {
+            get {
+                return this.ROW_VERSIONField;
+            }
+            set {
+                if ((this.ROW_VERSIONField.Equals(value) != true)) {
+                    this.ROW_VERSIONField = value;
+                    this.RaisePropertyChanged("ROW_VERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> STATUS {
+            get {
+                return this.STATUSField;
+            }
+            set {
+                if ((this.STATUSField.Equals(value) != true)) {
+                    this.STATUSField = value;
+                    this.RaisePropertyChanged("STATUS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VALIDATION_CODE {
+            get {
+                return this.VALIDATION_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VALIDATION_CODEField, value) != true)) {
+                    this.VALIDATION_CODEField = value;
+                    this.RaisePropertyChanged("VALIDATION_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> VALIDATION_EMAIL_SENT {
+            get {
+                return this.VALIDATION_EMAIL_SENTField;
+            }
+            set {
+                if ((this.VALIDATION_EMAIL_SENTField.Equals(value) != true)) {
+                    this.VALIDATION_EMAIL_SENTField = value;
+                    this.RaisePropertyChanged("VALIDATION_EMAIL_SENT");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="COMPANY_USER_SUPPLIERS", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class COMPANY_USER_SUPPLIERS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> COMPANY_USER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int COMPANY_USER_SUPPLIERS_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> SUPPLIER_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> COMPANY_USER_ID {
+            get {
+                return this.COMPANY_USER_IDField;
+            }
+            set {
+                if ((this.COMPANY_USER_IDField.Equals(value) != true)) {
+                    this.COMPANY_USER_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_USER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int COMPANY_USER_SUPPLIERS_ID {
+            get {
+                return this.COMPANY_USER_SUPPLIERS_IDField;
+            }
+            set {
+                if ((this.COMPANY_USER_SUPPLIERS_IDField.Equals(value) != true)) {
+                    this.COMPANY_USER_SUPPLIERS_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_USER_SUPPLIERS_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> SUPPLIER_ID {
+            get {
+                return this.SUPPLIER_IDField;
+            }
+            set {
+                if ((this.SUPPLIER_IDField.Equals(value) != true)) {
+                    this.SUPPLIER_IDField = value;
+                    this.RaisePropertyChanged("SUPPLIER_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PRICE_AGREEMENT_ADJUSTMENTS", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class PRICE_AGREEMENT_ADJUSTMENTS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_AGREEMENT_ADJUSTMENT_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PRICE_AGREEMENT_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> RATE_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> RATE_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RATE_UOMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> RECORD_TYPEField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CODE {
+            get {
+                return this.CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CODEField, value) != true)) {
+                    this.CODEField = value;
+                    this.RaisePropertyChanged("CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_AGREEMENT_ADJUSTMENT_ID {
+            get {
+                return this.PRICE_AGREEMENT_ADJUSTMENT_IDField;
+            }
+            set {
+                if ((this.PRICE_AGREEMENT_ADJUSTMENT_IDField.Equals(value) != true)) {
+                    this.PRICE_AGREEMENT_ADJUSTMENT_IDField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT_ADJUSTMENT_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PRICE_AGREEMENT_ID {
+            get {
+                return this.PRICE_AGREEMENT_IDField;
+            }
+            set {
+                if ((this.PRICE_AGREEMENT_IDField.Equals(value) != true)) {
+                    this.PRICE_AGREEMENT_IDField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RATE {
+            get {
+                return this.RATEField;
+            }
+            set {
+                if ((this.RATEField.Equals(value) != true)) {
+                    this.RATEField = value;
+                    this.RaisePropertyChanged("RATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> RATE_DATE {
+            get {
+                return this.RATE_DATEField;
+            }
+            set {
+                if ((this.RATE_DATEField.Equals(value) != true)) {
+                    this.RATE_DATEField = value;
+                    this.RaisePropertyChanged("RATE_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> RATE_TYPE {
+            get {
+                return this.RATE_TYPEField;
+            }
+            set {
+                if ((this.RATE_TYPEField.Equals(value) != true)) {
+                    this.RATE_TYPEField = value;
+                    this.RaisePropertyChanged("RATE_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RATE_UOM {
+            get {
+                return this.RATE_UOMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RATE_UOMField, value) != true)) {
+                    this.RATE_UOMField = value;
+                    this.RaisePropertyChanged("RATE_UOM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> RECORD_TYPE {
+            get {
+                return this.RECORD_TYPEField;
+            }
+            set {
+                if ((this.RECORD_TYPEField.Equals(value) != true)) {
+                    this.RECORD_TYPEField = value;
+                    this.RaisePropertyChanged("RECORD_TYPE");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PRICE_AGREEMENT", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EPA.Consumer.Service.PriceAgreementIUDWrapper))]
+    public partial class PRICE_AGREEMENT : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AGREED_BYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> AGREED_BY_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> COMPANY_SUPPLIER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DUE_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> EFFECTIVE_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> EXPIRY_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> GROUP_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> HAS_INCREASESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> HAS_STOCKINGField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> IS_SUPPLIER_AWARE_OF_UPDATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> NOTIFY_SUPPLIERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_AGREEMENT_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PRICE_LIST_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PROGRESSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REFERENCEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> STATUSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> SUPPLIER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SUPPLIER_NOTESField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AGREED_BY {
+            get {
+                return this.AGREED_BYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AGREED_BYField, value) != true)) {
+                    this.AGREED_BYField = value;
+                    this.RaisePropertyChanged("AGREED_BY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> AGREED_BY_DATE {
+            get {
+                return this.AGREED_BY_DATEField;
+            }
+            set {
+                if ((this.AGREED_BY_DATEField.Equals(value) != true)) {
+                    this.AGREED_BY_DATEField = value;
+                    this.RaisePropertyChanged("AGREED_BY_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> COMPANY_SUPPLIER_ID {
+            get {
+                return this.COMPANY_SUPPLIER_IDField;
+            }
+            set {
+                if ((this.COMPANY_SUPPLIER_IDField.Equals(value) != true)) {
+                    this.COMPANY_SUPPLIER_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_SUPPLIER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DUE_DATE {
+            get {
+                return this.DUE_DATEField;
+            }
+            set {
+                if ((this.DUE_DATEField.Equals(value) != true)) {
+                    this.DUE_DATEField = value;
+                    this.RaisePropertyChanged("DUE_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> EFFECTIVE_DATE {
+            get {
+                return this.EFFECTIVE_DATEField;
+            }
+            set {
+                if ((this.EFFECTIVE_DATEField.Equals(value) != true)) {
+                    this.EFFECTIVE_DATEField = value;
+                    this.RaisePropertyChanged("EFFECTIVE_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> EXPIRY_DATE {
+            get {
+                return this.EXPIRY_DATEField;
+            }
+            set {
+                if ((this.EXPIRY_DATEField.Equals(value) != true)) {
+                    this.EXPIRY_DATEField = value;
+                    this.RaisePropertyChanged("EXPIRY_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> GROUP_ID {
+            get {
+                return this.GROUP_IDField;
+            }
+            set {
+                if ((this.GROUP_IDField.Equals(value) != true)) {
+                    this.GROUP_IDField = value;
+                    this.RaisePropertyChanged("GROUP_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> HAS_INCREASES {
+            get {
+                return this.HAS_INCREASESField;
+            }
+            set {
+                if ((this.HAS_INCREASESField.Equals(value) != true)) {
+                    this.HAS_INCREASESField = value;
+                    this.RaisePropertyChanged("HAS_INCREASES");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> HAS_STOCKING {
+            get {
+                return this.HAS_STOCKINGField;
+            }
+            set {
+                if ((this.HAS_STOCKINGField.Equals(value) != true)) {
+                    this.HAS_STOCKINGField = value;
+                    this.RaisePropertyChanged("HAS_STOCKING");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> IS_SUPPLIER_AWARE_OF_UPDATE {
+            get {
+                return this.IS_SUPPLIER_AWARE_OF_UPDATEField;
+            }
+            set {
+                if ((this.IS_SUPPLIER_AWARE_OF_UPDATEField.Equals(value) != true)) {
+                    this.IS_SUPPLIER_AWARE_OF_UPDATEField = value;
+                    this.RaisePropertyChanged("IS_SUPPLIER_AWARE_OF_UPDATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> NOTIFY_SUPPLIER {
+            get {
+                return this.NOTIFY_SUPPLIERField;
+            }
+            set {
+                if ((this.NOTIFY_SUPPLIERField.Equals(value) != true)) {
+                    this.NOTIFY_SUPPLIERField = value;
+                    this.RaisePropertyChanged("NOTIFY_SUPPLIER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_AGREEMENT_ID {
+            get {
+                return this.PRICE_AGREEMENT_IDField;
+            }
+            set {
+                if ((this.PRICE_AGREEMENT_IDField.Equals(value) != true)) {
+                    this.PRICE_AGREEMENT_IDField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PRICE_LIST_ID {
+            get {
+                return this.PRICE_LIST_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PROGRESSION {
+            get {
+                return this.PROGRESSIONField;
+            }
+            set {
+                if ((this.PROGRESSIONField.Equals(value) != true)) {
+                    this.PROGRESSIONField = value;
+                    this.RaisePropertyChanged("PROGRESSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REFERENCE {
+            get {
+                return this.REFERENCEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REFERENCEField, value) != true)) {
+                    this.REFERENCEField = value;
+                    this.RaisePropertyChanged("REFERENCE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> STATUS {
+            get {
+                return this.STATUSField;
+            }
+            set {
+                if ((this.STATUSField.Equals(value) != true)) {
+                    this.STATUSField = value;
+                    this.RaisePropertyChanged("STATUS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> SUPPLIER_ID {
+            get {
+                return this.SUPPLIER_IDField;
+            }
+            set {
+                if ((this.SUPPLIER_IDField.Equals(value) != true)) {
+                    this.SUPPLIER_IDField = value;
+                    this.RaisePropertyChanged("SUPPLIER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SUPPLIER_NOTES {
+            get {
+                return this.SUPPLIER_NOTESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SUPPLIER_NOTESField, value) != true)) {
+                    this.SUPPLIER_NOTESField = value;
+                    this.RaisePropertyChanged("SUPPLIER_NOTES");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceAgreementIUDWrapper", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class PriceAgreementIUDWrapper : EPA.Consumer.Service.PRICE_AGREEMENT {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OperationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceAgreementMaterialIUDWrapper", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class PriceAgreementMaterialIUDWrapper : EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OperationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PRICE_AGREEMENT_MATERIALS", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EPA.Consumer.Service.PriceAgreementMaterialIUDWrapper))]
+    public partial class PRICE_AGREEMENT_MATERIALS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string INCREASE_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> INCREASE_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> INCREASE_RATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> INCREASE_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITEM_UOMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MANUFACTURERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PA_ADJUSTMENT_ID_INCREASEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PA_ADJUSTMENT_ID_STOCKINGField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_AGREEMENT_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_AGREEMENT_MATERIAL_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_LIST_MATERIAL_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> RATE_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> RATE_STATUSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RATE_UOMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RATE_UOM_UNITSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ROW_VERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string STOCKING_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> STOCKING_RATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> STOCKING_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> SUPPLIER_ITEM_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> S_RATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> S_RATE_CONVERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string S_RATE_DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string S_RATE_NOTESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string S_RATE_UOMField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string INCREASE_CODE {
+            get {
+                return this.INCREASE_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.INCREASE_CODEField, value) != true)) {
+                    this.INCREASE_CODEField = value;
+                    this.RaisePropertyChanged("INCREASE_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> INCREASE_DATE {
+            get {
+                return this.INCREASE_DATEField;
+            }
+            set {
+                if ((this.INCREASE_DATEField.Equals(value) != true)) {
+                    this.INCREASE_DATEField = value;
+                    this.RaisePropertyChanged("INCREASE_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> INCREASE_RATE {
+            get {
+                return this.INCREASE_RATEField;
+            }
+            set {
+                if ((this.INCREASE_RATEField.Equals(value) != true)) {
+                    this.INCREASE_RATEField = value;
+                    this.RaisePropertyChanged("INCREASE_RATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> INCREASE_TYPE {
+            get {
+                return this.INCREASE_TYPEField;
+            }
+            set {
+                if ((this.INCREASE_TYPEField.Equals(value) != true)) {
+                    this.INCREASE_TYPEField = value;
+                    this.RaisePropertyChanged("INCREASE_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITEM_UOM {
+            get {
+                return this.ITEM_UOMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITEM_UOMField, value) != true)) {
+                    this.ITEM_UOMField = value;
+                    this.RaisePropertyChanged("ITEM_UOM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MANUFACTURER {
+            get {
+                return this.MANUFACTURERField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MANUFACTURERField, value) != true)) {
+                    this.MANUFACTURERField = value;
+                    this.RaisePropertyChanged("MANUFACTURER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PA_ADJUSTMENT_ID_INCREASE {
+            get {
+                return this.PA_ADJUSTMENT_ID_INCREASEField;
+            }
+            set {
+                if ((this.PA_ADJUSTMENT_ID_INCREASEField.Equals(value) != true)) {
+                    this.PA_ADJUSTMENT_ID_INCREASEField = value;
+                    this.RaisePropertyChanged("PA_ADJUSTMENT_ID_INCREASE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PA_ADJUSTMENT_ID_STOCKING {
+            get {
+                return this.PA_ADJUSTMENT_ID_STOCKINGField;
+            }
+            set {
+                if ((this.PA_ADJUSTMENT_ID_STOCKINGField.Equals(value) != true)) {
+                    this.PA_ADJUSTMENT_ID_STOCKINGField = value;
+                    this.RaisePropertyChanged("PA_ADJUSTMENT_ID_STOCKING");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_AGREEMENT_ID {
+            get {
+                return this.PRICE_AGREEMENT_IDField;
+            }
+            set {
+                if ((this.PRICE_AGREEMENT_IDField.Equals(value) != true)) {
+                    this.PRICE_AGREEMENT_IDField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_AGREEMENT_MATERIAL_ID {
+            get {
+                return this.PRICE_AGREEMENT_MATERIAL_IDField;
+            }
+            set {
+                if ((this.PRICE_AGREEMENT_MATERIAL_IDField.Equals(value) != true)) {
+                    this.PRICE_AGREEMENT_MATERIAL_IDField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT_MATERIAL_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_LIST_MATERIAL_ID {
+            get {
+                return this.PRICE_LIST_MATERIAL_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_MATERIAL_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_MATERIAL_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_MATERIAL_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RATE {
+            get {
+                return this.RATEField;
+            }
+            set {
+                if ((this.RATEField.Equals(value) != true)) {
+                    this.RATEField = value;
+                    this.RaisePropertyChanged("RATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> RATE_DATE {
+            get {
+                return this.RATE_DATEField;
+            }
+            set {
+                if ((this.RATE_DATEField.Equals(value) != true)) {
+                    this.RATE_DATEField = value;
+                    this.RaisePropertyChanged("RATE_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> RATE_STATUS {
+            get {
+                return this.RATE_STATUSField;
+            }
+            set {
+                if ((this.RATE_STATUSField.Equals(value) != true)) {
+                    this.RATE_STATUSField = value;
+                    this.RaisePropertyChanged("RATE_STATUS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RATE_UOM {
+            get {
+                return this.RATE_UOMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RATE_UOMField, value) != true)) {
+                    this.RATE_UOMField = value;
+                    this.RaisePropertyChanged("RATE_UOM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RATE_UOM_UNITS {
+            get {
+                return this.RATE_UOM_UNITSField;
+            }
+            set {
+                if ((this.RATE_UOM_UNITSField.Equals(value) != true)) {
+                    this.RATE_UOM_UNITSField = value;
+                    this.RaisePropertyChanged("RATE_UOM_UNITS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ROW_VERSION {
+            get {
+                return this.ROW_VERSIONField;
+            }
+            set {
+                if ((this.ROW_VERSIONField.Equals(value) != true)) {
+                    this.ROW_VERSIONField = value;
+                    this.RaisePropertyChanged("ROW_VERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string STOCKING_CODE {
+            get {
+                return this.STOCKING_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.STOCKING_CODEField, value) != true)) {
+                    this.STOCKING_CODEField = value;
+                    this.RaisePropertyChanged("STOCKING_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> STOCKING_RATE {
+            get {
+                return this.STOCKING_RATEField;
+            }
+            set {
+                if ((this.STOCKING_RATEField.Equals(value) != true)) {
+                    this.STOCKING_RATEField = value;
+                    this.RaisePropertyChanged("STOCKING_RATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> STOCKING_TYPE {
+            get {
+                return this.STOCKING_TYPEField;
+            }
+            set {
+                if ((this.STOCKING_TYPEField.Equals(value) != true)) {
+                    this.STOCKING_TYPEField = value;
+                    this.RaisePropertyChanged("STOCKING_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> SUPPLIER_ITEM_CODE {
+            get {
+                return this.SUPPLIER_ITEM_CODEField;
+            }
+            set {
+                if ((this.SUPPLIER_ITEM_CODEField.Equals(value) != true)) {
+                    this.SUPPLIER_ITEM_CODEField = value;
+                    this.RaisePropertyChanged("SUPPLIER_ITEM_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> S_RATE {
+            get {
+                return this.S_RATEField;
+            }
+            set {
+                if ((this.S_RATEField.Equals(value) != true)) {
+                    this.S_RATEField = value;
+                    this.RaisePropertyChanged("S_RATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> S_RATE_CONVERSION {
+            get {
+                return this.S_RATE_CONVERSIONField;
+            }
+            set {
+                if ((this.S_RATE_CONVERSIONField.Equals(value) != true)) {
+                    this.S_RATE_CONVERSIONField = value;
+                    this.RaisePropertyChanged("S_RATE_CONVERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string S_RATE_DESCRIPTION {
+            get {
+                return this.S_RATE_DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.S_RATE_DESCRIPTIONField, value) != true)) {
+                    this.S_RATE_DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("S_RATE_DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string S_RATE_NOTES {
+            get {
+                return this.S_RATE_NOTESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.S_RATE_NOTESField, value) != true)) {
+                    this.S_RATE_NOTESField = value;
+                    this.RaisePropertyChanged("S_RATE_NOTES");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string S_RATE_UOM {
+            get {
+                return this.S_RATE_UOMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.S_RATE_UOMField, value) != true)) {
+                    this.S_RATE_UOMField = value;
+                    this.RaisePropertyChanged("S_RATE_UOM");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceAgreementIUDResponse", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class PriceAgreementIUDResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EPA.Consumer.Service.PRICE_AGREEMENT PRICE_AGREEMENTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS[] PRICE_AGREEMENT_MATERIALSField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EPA.Consumer.Service.PRICE_AGREEMENT PRICE_AGREEMENT {
+            get {
+                return this.PRICE_AGREEMENTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRICE_AGREEMENTField, value) != true)) {
+                    this.PRICE_AGREEMENTField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS[] PRICE_AGREEMENT_MATERIALS {
+            get {
+                return this.PRICE_AGREEMENT_MATERIALSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRICE_AGREEMENT_MATERIALSField, value) != true)) {
+                    this.PRICE_AGREEMENT_MATERIALSField = value;
+                    this.RaisePropertyChanged("PRICE_AGREEMENT_MATERIALS");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PRICE_LIST", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EPA.Consumer.Service.PriceListIUDWrapper))]
+    public partial class PRICE_LIST : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> COMPANY_USER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DESIRED_EFFECTIVE_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DESIRED_EXPIRY_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> GROUP_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NOTESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> NOTIFY_USERField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_LIST_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string REFERENCEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ROW_VERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> STATUSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> STATUS_DATEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TERMSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TYPEField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> COMPANY_USER_ID {
+            get {
+                return this.COMPANY_USER_IDField;
+            }
+            set {
+                if ((this.COMPANY_USER_IDField.Equals(value) != true)) {
+                    this.COMPANY_USER_IDField = value;
+                    this.RaisePropertyChanged("COMPANY_USER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCRIPTION {
+            get {
+                return this.DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
+                    this.DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DESIRED_EFFECTIVE_DATE {
+            get {
+                return this.DESIRED_EFFECTIVE_DATEField;
+            }
+            set {
+                if ((this.DESIRED_EFFECTIVE_DATEField.Equals(value) != true)) {
+                    this.DESIRED_EFFECTIVE_DATEField = value;
+                    this.RaisePropertyChanged("DESIRED_EFFECTIVE_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DESIRED_EXPIRY_DATE {
+            get {
+                return this.DESIRED_EXPIRY_DATEField;
+            }
+            set {
+                if ((this.DESIRED_EXPIRY_DATEField.Equals(value) != true)) {
+                    this.DESIRED_EXPIRY_DATEField = value;
+                    this.RaisePropertyChanged("DESIRED_EXPIRY_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> GROUP_ID {
+            get {
+                return this.GROUP_IDField;
+            }
+            set {
+                if ((this.GROUP_IDField.Equals(value) != true)) {
+                    this.GROUP_IDField = value;
+                    this.RaisePropertyChanged("GROUP_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NOTES {
+            get {
+                return this.NOTESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NOTESField, value) != true)) {
+                    this.NOTESField = value;
+                    this.RaisePropertyChanged("NOTES");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> NOTIFY_USER {
+            get {
+                return this.NOTIFY_USERField;
+            }
+            set {
+                if ((this.NOTIFY_USERField.Equals(value) != true)) {
+                    this.NOTIFY_USERField = value;
+                    this.RaisePropertyChanged("NOTIFY_USER");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_LIST_ID {
+            get {
+                return this.PRICE_LIST_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string REFERENCE {
+            get {
+                return this.REFERENCEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.REFERENCEField, value) != true)) {
+                    this.REFERENCEField = value;
+                    this.RaisePropertyChanged("REFERENCE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ROW_VERSION {
+            get {
+                return this.ROW_VERSIONField;
+            }
+            set {
+                if ((this.ROW_VERSIONField.Equals(value) != true)) {
+                    this.ROW_VERSIONField = value;
+                    this.RaisePropertyChanged("ROW_VERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> STATUS {
+            get {
+                return this.STATUSField;
+            }
+            set {
+                if ((this.STATUSField.Equals(value) != true)) {
+                    this.STATUSField = value;
+                    this.RaisePropertyChanged("STATUS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> STATUS_DATE {
+            get {
+                return this.STATUS_DATEField;
+            }
+            set {
+                if ((this.STATUS_DATEField.Equals(value) != true)) {
+                    this.STATUS_DATEField = value;
+                    this.RaisePropertyChanged("STATUS_DATE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TERMS {
+            get {
+                return this.TERMSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TERMSField, value) != true)) {
+                    this.TERMSField = value;
+                    this.RaisePropertyChanged("TERMS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TYPE {
+            get {
+                return this.TYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TYPEField, value) != true)) {
+                    this.TYPEField = value;
+                    this.RaisePropertyChanged("TYPE");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceListIUDWrapper", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class PriceListIUDWrapper : EPA.Consumer.Service.PRICE_LIST {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OperationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ItemFilter", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class ItemFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITypeGroupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ItemIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Prop1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Prop2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Prop3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Prop4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Prop5Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Prop6Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IType {
+            get {
+                return this.ITypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITypeField, value) != true)) {
+                    this.ITypeField = value;
+                    this.RaisePropertyChanged("IType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITypeGroup {
+            get {
+                return this.ITypeGroupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITypeGroupField, value) != true)) {
+                    this.ITypeGroupField = value;
+                    this.RaisePropertyChanged("ITypeGroup");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ItemId {
+            get {
+                return this.ItemIdField;
+            }
+            set {
+                if ((this.ItemIdField.Equals(value) != true)) {
+                    this.ItemIdField = value;
+                    this.RaisePropertyChanged("ItemId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prop1 {
+            get {
+                return this.Prop1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Prop1Field, value) != true)) {
+                    this.Prop1Field = value;
+                    this.RaisePropertyChanged("Prop1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prop2 {
+            get {
+                return this.Prop2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Prop2Field, value) != true)) {
+                    this.Prop2Field = value;
+                    this.RaisePropertyChanged("Prop2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prop3 {
+            get {
+                return this.Prop3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Prop3Field, value) != true)) {
+                    this.Prop3Field = value;
+                    this.RaisePropertyChanged("Prop3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prop4 {
+            get {
+                return this.Prop4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Prop4Field, value) != true)) {
+                    this.Prop4Field = value;
+                    this.RaisePropertyChanged("Prop4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prop5 {
+            get {
+                return this.Prop5Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Prop5Field, value) != true)) {
+                    this.Prop5Field = value;
+                    this.RaisePropertyChanged("Prop5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prop6 {
+            get {
+                return this.Prop6Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Prop6Field, value) != true)) {
+                    this.Prop6Field = value;
+                    this.RaisePropertyChanged("Prop6");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PRICE_LIST_ITEM_TYPES", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class PRICE_LIST_ITEM_TYPES : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITEM_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITEM_TYPE_GROUPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_LIST_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PRICE_LIST_ITEM_TYPES_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_TITLE_1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_TITLE_2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_TITLE_3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_TITLE_4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_TITLE_5Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_TITLE_6Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITEM_TYPE {
+            get {
+                return this.ITEM_TYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITEM_TYPEField, value) != true)) {
+                    this.ITEM_TYPEField = value;
+                    this.RaisePropertyChanged("ITEM_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITEM_TYPE_GROUP {
+            get {
+                return this.ITEM_TYPE_GROUPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITEM_TYPE_GROUPField, value) != true)) {
+                    this.ITEM_TYPE_GROUPField = value;
+                    this.RaisePropertyChanged("ITEM_TYPE_GROUP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_LIST_ID {
+            get {
+                return this.PRICE_LIST_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PRICE_LIST_ITEM_TYPES_ID {
+            get {
+                return this.PRICE_LIST_ITEM_TYPES_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_ITEM_TYPES_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_ITEM_TYPES_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_ITEM_TYPES_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_TITLE_1 {
+            get {
+                return this.PROP_TITLE_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_TITLE_1Field, value) != true)) {
+                    this.PROP_TITLE_1Field = value;
+                    this.RaisePropertyChanged("PROP_TITLE_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_TITLE_2 {
+            get {
+                return this.PROP_TITLE_2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_TITLE_2Field, value) != true)) {
+                    this.PROP_TITLE_2Field = value;
+                    this.RaisePropertyChanged("PROP_TITLE_2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_TITLE_3 {
+            get {
+                return this.PROP_TITLE_3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_TITLE_3Field, value) != true)) {
+                    this.PROP_TITLE_3Field = value;
+                    this.RaisePropertyChanged("PROP_TITLE_3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_TITLE_4 {
+            get {
+                return this.PROP_TITLE_4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_TITLE_4Field, value) != true)) {
+                    this.PROP_TITLE_4Field = value;
+                    this.RaisePropertyChanged("PROP_TITLE_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_TITLE_5 {
+            get {
+                return this.PROP_TITLE_5Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_TITLE_5Field, value) != true)) {
+                    this.PROP_TITLE_5Field = value;
+                    this.RaisePropertyChanged("PROP_TITLE_5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_TITLE_6 {
+            get {
+                return this.PROP_TITLE_6Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_TITLE_6Field, value) != true)) {
+                    this.PROP_TITLE_6Field = value;
+                    this.RaisePropertyChanged("PROP_TITLE_6");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceListMaterialIUDWrapper", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class PriceListMaterialIUDWrapper : EPA.Consumer.Service.PRICE_LIST_MATERIALS {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OperationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PRICE_LIST_MATERIALS", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EPA.Consumer.Service.PriceListMaterialIUDWrapper))]
+    public partial class PRICE_LIST_MATERIALS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DIMENSION_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DIMENSION_CONVERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DIMENSION_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITEM_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ITEM_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITEM_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ITEM_TYPE_GROUPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MEASURE_TYPEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PRICE_LIST_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PRICE_LIST_MATERIAL_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_5Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PROP_6Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> QTYField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QTY_UOMField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RATE_UOMField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DIMENSION_CODE {
+            get {
+                return this.DIMENSION_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DIMENSION_CODEField, value) != true)) {
+                    this.DIMENSION_CODEField = value;
+                    this.RaisePropertyChanged("DIMENSION_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> DIMENSION_CONVERSION {
+            get {
+                return this.DIMENSION_CONVERSIONField;
+            }
+            set {
+                if ((this.DIMENSION_CONVERSIONField.Equals(value) != true)) {
+                    this.DIMENSION_CONVERSIONField = value;
+                    this.RaisePropertyChanged("DIMENSION_CONVERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> DIMENSION_ID {
+            get {
+                return this.DIMENSION_IDField;
+            }
+            set {
+                if ((this.DIMENSION_IDField.Equals(value) != true)) {
+                    this.DIMENSION_IDField = value;
+                    this.RaisePropertyChanged("DIMENSION_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITEM_CODE {
+            get {
+                return this.ITEM_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITEM_CODEField, value) != true)) {
+                    this.ITEM_CODEField = value;
+                    this.RaisePropertyChanged("ITEM_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ITEM_ID {
+            get {
+                return this.ITEM_IDField;
+            }
+            set {
+                if ((this.ITEM_IDField.Equals(value) != true)) {
+                    this.ITEM_IDField = value;
+                    this.RaisePropertyChanged("ITEM_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITEM_TYPE {
+            get {
+                return this.ITEM_TYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITEM_TYPEField, value) != true)) {
+                    this.ITEM_TYPEField = value;
+                    this.RaisePropertyChanged("ITEM_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ITEM_TYPE_GROUP {
+            get {
+                return this.ITEM_TYPE_GROUPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ITEM_TYPE_GROUPField, value) != true)) {
+                    this.ITEM_TYPE_GROUPField = value;
+                    this.RaisePropertyChanged("ITEM_TYPE_GROUP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MEASURE_TYPE {
+            get {
+                return this.MEASURE_TYPEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MEASURE_TYPEField, value) != true)) {
+                    this.MEASURE_TYPEField = value;
+                    this.RaisePropertyChanged("MEASURE_TYPE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PRICE_LIST_ID {
+            get {
+                return this.PRICE_LIST_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PRICE_LIST_MATERIAL_ID {
+            get {
+                return this.PRICE_LIST_MATERIAL_IDField;
+            }
+            set {
+                if ((this.PRICE_LIST_MATERIAL_IDField.Equals(value) != true)) {
+                    this.PRICE_LIST_MATERIAL_IDField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_MATERIAL_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_1 {
+            get {
+                return this.PROP_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_1Field, value) != true)) {
+                    this.PROP_1Field = value;
+                    this.RaisePropertyChanged("PROP_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_2 {
+            get {
+                return this.PROP_2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_2Field, value) != true)) {
+                    this.PROP_2Field = value;
+                    this.RaisePropertyChanged("PROP_2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_3 {
+            get {
+                return this.PROP_3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_3Field, value) != true)) {
+                    this.PROP_3Field = value;
+                    this.RaisePropertyChanged("PROP_3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_4 {
+            get {
+                return this.PROP_4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_4Field, value) != true)) {
+                    this.PROP_4Field = value;
+                    this.RaisePropertyChanged("PROP_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_5 {
+            get {
+                return this.PROP_5Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_5Field, value) != true)) {
+                    this.PROP_5Field = value;
+                    this.RaisePropertyChanged("PROP_5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PROP_6 {
+            get {
+                return this.PROP_6Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PROP_6Field, value) != true)) {
+                    this.PROP_6Field = value;
+                    this.RaisePropertyChanged("PROP_6");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> QTY {
+            get {
+                return this.QTYField;
+            }
+            set {
+                if ((this.QTYField.Equals(value) != true)) {
+                    this.QTYField = value;
+                    this.RaisePropertyChanged("QTY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QTY_UOM {
+            get {
+                return this.QTY_UOMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QTY_UOMField, value) != true)) {
+                    this.QTY_UOMField = value;
+                    this.RaisePropertyChanged("QTY_UOM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RATE_UOM {
+            get {
+                return this.RATE_UOMField;
+            }
+            set {
+                if ((this.RATE_UOMField.Equals(value) != true)) {
+                    this.RATE_UOMField = value;
+                    this.RaisePropertyChanged("RATE_UOM");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceListIUDResponse", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services")]
+    [System.SerializableAttribute()]
+    public partial class PriceListIUDResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EPA.Consumer.Service.PRICE_LIST PRICE_LISTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private EPA.Consumer.Service.PRICE_LIST_MATERIALS[] PRICE_LIST_MATERIALSField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EPA.Consumer.Service.PRICE_LIST PRICE_LIST {
+            get {
+                return this.PRICE_LISTField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRICE_LISTField, value) != true)) {
+                    this.PRICE_LISTField = value;
+                    this.RaisePropertyChanged("PRICE_LIST");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EPA.Consumer.Service.PRICE_LIST_MATERIALS[] PRICE_LIST_MATERIALS {
+            get {
+                return this.PRICE_LIST_MATERIALSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PRICE_LIST_MATERIALSField, value) != true)) {
+                    this.PRICE_LIST_MATERIALSField = value;
+                    this.RaisePropertyChanged("PRICE_LIST_MATERIALS");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SUPPLIER", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class SUPPLIER : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string COMPANY_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DESCRIPTIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EMAILField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FIRST_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LAST_NAMEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PASSWORDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PHONEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> STATUSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SUPPLIER_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VALIDATION_CODEField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> VALIDATION_EMAIL_SENTField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string COMPANY_NAME {
+            get {
+                return this.COMPANY_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.COMPANY_NAMEField, value) != true)) {
+                    this.COMPANY_NAMEField = value;
+                    this.RaisePropertyChanged("COMPANY_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DESCRIPTION {
+            get {
+                return this.DESCRIPTIONField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DESCRIPTIONField, value) != true)) {
+                    this.DESCRIPTIONField = value;
+                    this.RaisePropertyChanged("DESCRIPTION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EMAIL {
+            get {
+                return this.EMAILField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EMAILField, value) != true)) {
+                    this.EMAILField = value;
+                    this.RaisePropertyChanged("EMAIL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FIRST_NAME {
+            get {
+                return this.FIRST_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FIRST_NAMEField, value) != true)) {
+                    this.FIRST_NAMEField = value;
+                    this.RaisePropertyChanged("FIRST_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LAST_NAME {
+            get {
+                return this.LAST_NAMEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LAST_NAMEField, value) != true)) {
+                    this.LAST_NAMEField = value;
+                    this.RaisePropertyChanged("LAST_NAME");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PASSWORD {
+            get {
+                return this.PASSWORDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PASSWORDField, value) != true)) {
+                    this.PASSWORDField = value;
+                    this.RaisePropertyChanged("PASSWORD");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PHONE {
+            get {
+                return this.PHONEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PHONEField, value) != true)) {
+                    this.PHONEField = value;
+                    this.RaisePropertyChanged("PHONE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> STATUS {
+            get {
+                return this.STATUSField;
+            }
+            set {
+                if ((this.STATUSField.Equals(value) != true)) {
+                    this.STATUSField = value;
+                    this.RaisePropertyChanged("STATUS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SUPPLIER_ID {
+            get {
+                return this.SUPPLIER_IDField;
+            }
+            set {
+                if ((this.SUPPLIER_IDField.Equals(value) != true)) {
+                    this.SUPPLIER_IDField = value;
+                    this.RaisePropertyChanged("SUPPLIER_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VALIDATION_CODE {
+            get {
+                return this.VALIDATION_CODEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VALIDATION_CODEField, value) != true)) {
+                    this.VALIDATION_CODEField = value;
+                    this.RaisePropertyChanged("VALIDATION_CODE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> VALIDATION_EMAIL_SENT {
+            get {
+                return this.VALIDATION_EMAIL_SENTField;
+            }
+            set {
+                if ((this.VALIDATION_EMAIL_SENTField.Equals(value) != true)) {
+                    this.VALIDATION_EMAIL_SENTField = value;
+                    this.RaisePropertyChanged("VALIDATION_EMAIL_SENT");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WINDEV_CLIENT_VERSION", Namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models")]
+    [System.SerializableAttribute()]
+    public partial class WINDEV_CLIENT_VERSION : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DATE_UPDATEDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string URLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal VERSIONField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WINDEV_CLIENT_VERSION_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DATE_UPDATED {
+            get {
+                return this.DATE_UPDATEDField;
+            }
+            set {
+                if ((this.DATE_UPDATEDField.Equals(value) != true)) {
+                    this.DATE_UPDATEDField = value;
+                    this.RaisePropertyChanged("DATE_UPDATED");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string URL {
+            get {
+                return this.URLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.URLField, value) != true)) {
+                    this.URLField = value;
+                    this.RaisePropertyChanged("URL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal VERSION {
+            get {
+                return this.VERSIONField;
+            }
+            set {
+                if ((this.VERSIONField.Equals(value) != true)) {
+                    this.VERSIONField = value;
+                    this.RaisePropertyChanged("VERSION");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WINDEV_CLIENT_VERSION_ID {
+            get {
+                return this.WINDEV_CLIENT_VERSION_IDField;
+            }
+            set {
+                if ((this.WINDEV_CLIENT_VERSION_IDField.Equals(value) != true)) {
+                    this.WINDEV_CLIENT_VERSION_IDField = value;
+                    this.RaisePropertyChanged("WINDEV_CLIENT_VERSION_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IJordanEPAServiceChannel : EPA.Consumer.Service.IJordanEPAService, System.ServiceModel.IClientChannel {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Service.IEPAService")]
+    public interface IEPAService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyCreateByModel", ReplyAction="http://tempuri.org/IEPAService/CompanyCreateByModelResponse")]
+        EPA.Consumer.Service.COMPANY CompanyCreateByModel(EPA.Consumer.Service.COMPANY company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyCreateByModel", ReplyAction="http://tempuri.org/IEPAService/CompanyCreateByModelResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyCreateByModelAsync(EPA.Consumer.Service.COMPANY company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyCreate", ReplyAction="http://tempuri.org/IEPAService/CompanyCreateResponse")]
+        EPA.Consumer.Service.COMPANY CompanyCreate(string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyCreate", ReplyAction="http://tempuri.org/IEPAService/CompanyCreateResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyCreateAsync(string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyDelete", ReplyAction="http://tempuri.org/IEPAService/CompanyDeleteResponse")]
+        void CompanyDelete(EPA.Consumer.Service.COMPANY company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyDelete", ReplyAction="http://tempuri.org/IEPAService/CompanyDeleteResponse")]
+        System.Threading.Tasks.Task CompanyDeleteAsync(EPA.Consumer.Service.COMPANY company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyDeleteById", ReplyAction="http://tempuri.org/IEPAService/CompanyDeleteByIdResponse")]
+        void CompanyDeleteById(int companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyDeleteById", ReplyAction="http://tempuri.org/IEPAService/CompanyDeleteByIdResponse")]
+        System.Threading.Tasks.Task CompanyDeleteByIdAsync(int companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyFetchById", ReplyAction="http://tempuri.org/IEPAService/CompanyFetchByIdResponse")]
+        EPA.Consumer.Service.COMPANY CompanyFetchById(int companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyFetchById", ReplyAction="http://tempuri.org/IEPAService/CompanyFetchByIdResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyFetchByIdAsync(int companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyFetch", ReplyAction="http://tempuri.org/IEPAService/CompanyFetchResponse")]
+        EPA.Consumer.Service.COMPANY CompanyFetch(string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyFetch", ReplyAction="http://tempuri.org/IEPAService/CompanyFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyFetchAsync(string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyModify", ReplyAction="http://tempuri.org/IEPAService/CompanyModifyResponse")]
+        EPA.Consumer.Service.COMPANY CompanyModify(EPA.Consumer.Service.COMPANY company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyModify", ReplyAction="http://tempuri.org/IEPAService/CompanyModifyResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyModifyAsync(EPA.Consumer.Service.COMPANY company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierCreate", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierCreateResponse")]
+        EPA.Consumer.Service.COMPANY_SUPPLIERS CompanySupplierCreate(string companyKey, int supplierId, string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierCreate", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierCreateResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_SUPPLIERS> CompanySupplierCreateAsync(string companyKey, int supplierId, string description);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierDelete", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierDeleteResponse")]
+        void CompanySupplierDelete(string companyKey, int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierDelete", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierDeleteResponse")]
+        System.Threading.Tasks.Task CompanySupplierDeleteAsync(string companyKey, int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierFetch", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierFetchResponse")]
+        EPA.Consumer.Service.COMPANY_SUPPLIERS[] CompanySupplierFetch(string companyKey, System.Nullable<int> supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierFetch", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_SUPPLIERS[]> CompanySupplierFetchAsync(string companyKey, System.Nullable<int> supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierModify", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierModifyResponse")]
+        EPA.Consumer.Service.COMPANY_SUPPLIERS CompanySupplierModify(string companyKey, EPA.Consumer.Service.COMPANY_SUPPLIERS companySuppliers);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanySupplierModify", ReplyAction="http://tempuri.org/IEPAService/CompanySupplierModifyResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_SUPPLIERS> CompanySupplierModifyAsync(string companyKey, EPA.Consumer.Service.COMPANY_SUPPLIERS companySuppliers);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserCreateByModel", ReplyAction="http://tempuri.org/IEPAService/CompanyUserCreateByModelResponse")]
+        EPA.Consumer.Service.COMPANY_USERS CompanyUserCreateByModel(EPA.Consumer.Service.COMPANY_USERS companyUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserCreateByModel", ReplyAction="http://tempuri.org/IEPAService/CompanyUserCreateByModelResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS> CompanyUserCreateByModelAsync(EPA.Consumer.Service.COMPANY_USERS companyUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserCreate", ReplyAction="http://tempuri.org/IEPAService/CompanyUserCreateResponse")]
+        EPA.Consumer.Service.COMPANY_USERS CompanyUserCreate(string companyKey, string descripton, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserCreate", ReplyAction="http://tempuri.org/IEPAService/CompanyUserCreateResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS> CompanyUserCreateAsync(string companyKey, string descripton, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserDelete", ReplyAction="http://tempuri.org/IEPAService/CompanyUserDeleteResponse")]
+        void CompanyUserDelete(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserDelete", ReplyAction="http://tempuri.org/IEPAService/CompanyUserDeleteResponse")]
+        System.Threading.Tasks.Task CompanyUserDeleteAsync(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserExists", ReplyAction="http://tempuri.org/IEPAService/CompanyUserExistsResponse")]
+        bool CompanyUserExists(string companyKey, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserExists", ReplyAction="http://tempuri.org/IEPAService/CompanyUserExistsResponse")]
+        System.Threading.Tasks.Task<bool> CompanyUserExistsAsync(string companyKey, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserFetch", ReplyAction="http://tempuri.org/IEPAService/CompanyUserFetchResponse")]
+        EPA.Consumer.Service.COMPANY_USERS[] CompanyUserFetch(string companyKey, System.Nullable<int> companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserFetch", ReplyAction="http://tempuri.org/IEPAService/CompanyUserFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS[]> CompanyUserFetchAsync(string companyKey, System.Nullable<int> companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserModify", ReplyAction="http://tempuri.org/IEPAService/CompanyUserModifyResponse")]
+        EPA.Consumer.Service.COMPANY_USERS CompanyUserModify(string companyKey, EPA.Consumer.Service.COMPANY_USERS companyUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUserModify", ReplyAction="http://tempuri.org/IEPAService/CompanyUserModifyResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS> CompanyUserModifyAsync(string companyKey, EPA.Consumer.Service.COMPANY_USERS companyUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreate", ReplyAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreateResponse")]
+        EPA.Consumer.Service.COMPANY_USER_SUPPLIERS CompanyUsersSuppliersCreate(string companyKey, int supplierId, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreate", ReplyAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersCreateResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USER_SUPPLIERS> CompanyUsersSuppliersCreateAsync(string companyKey, int supplierId, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersDelete", ReplyAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersDeleteResponse")]
+        void CompanyUsersSuppliersDelete(string companyKey, int supplierId, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersDelete", ReplyAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersDeleteResponse")]
+        System.Threading.Tasks.Task CompanyUsersSuppliersDeleteAsync(string companyKey, int supplierId, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersExists", ReplyAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersExistsResponse")]
+        bool CompanyUsersSuppliersExists(string companyKey, int supplierId, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/CompanyUsersSuppliersExists", ReplyAction="http://tempuri.org/IEPAService/CompanyUsersSuppliersExistsResponse")]
+        System.Threading.Tasks.Task<bool> CompanyUsersSuppliersExistsAsync(string companyKey, int supplierId, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/DoWork", ReplyAction="http://tempuri.org/IEPAService/DoWorkResponse")]
+        void DoWork();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/DoWork", ReplyAction="http://tempuri.org/IEPAService/DoWorkResponse")]
+        System.Threading.Tasks.Task DoWorkAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumber", ReplyAction="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumberResponse")]
+        string GenerateAdjustmentReferenceNumber(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumber", ReplyAction="http://tempuri.org/IEPAService/GenerateAdjustmentReferenceNumberResponse")]
+        System.Threading.Tasks.Task<string> GenerateAdjustmentReferenceNumberAsync(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumber", ReplyAction="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumberResponse")]
+        string GenerateAgreementReferenceNumber(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumber", ReplyAction="http://tempuri.org/IEPAService/GenerateAgreementReferenceNumberResponse")]
+        System.Threading.Tasks.Task<string> GenerateAgreementReferenceNumberAsync(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumber", ReplyAction="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumberResponse")]
+        string GeneratePriceListReferenceNumber(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumber", ReplyAction="http://tempuri.org/IEPAService/GeneratePriceListReferenceNumberResponse")]
+        System.Threading.Tasks.Task<string> GeneratePriceListReferenceNumberAsync(string companyKey, int companyUserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreate", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreateResponse")]
+        EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentCreate(string companyKey, int priceAgreementId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreate", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentCreateResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS> PriceAgreementAdjustmentCreateAsync(string companyKey, int priceAgreementId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDelete", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDeleteResponse")]
+        void PriceAgreementAdjustmentDelete(string companyKey, int priceAgreementAdjustmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDelete", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentDeleteResponse")]
+        System.Threading.Tasks.Task PriceAgreementAdjustmentDeleteAsync(string companyKey, int priceAgreementAdjustmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetch", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetchResponse")]
+        EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS[] PriceAgreementAdjustmentFetch(string companyKey, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementAdjustmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetch", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS[]> PriceAgreementAdjustmentFetchAsync(string companyKey, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementAdjustmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModify", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModifyResponse")]
+        EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentModify(string companyKey, EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModify", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementAdjustmentModifyResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS> PriceAgreementAdjustmentModifyAsync(string companyKey, EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementFetch", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementFetchResponse")]
+        EPA.Consumer.Service.PRICE_AGREEMENT[] PriceAgreementFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementFetch", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT[]> PriceAgreementFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementIUD", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementIUDResponse")]
+        EPA.Consumer.Service.PriceAgreementIUDResponse PriceAgreementIUD(string companyKey, EPA.Consumer.Service.PriceAgreementIUDWrapper priceAgreement, EPA.Consumer.Service.PriceAgreementMaterialIUDWrapper[] materials);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementIUD", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementIUDResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PriceAgreementIUDResponse> PriceAgreementIUDAsync(string companyKey, EPA.Consumer.Service.PriceAgreementIUDWrapper priceAgreement, EPA.Consumer.Service.PriceAgreementMaterialIUDWrapper[] materials);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementMaterialFetch", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementMaterialFetchResponse")]
+        EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementMaterialId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceAgreementMaterialFetch", ReplyAction="http://tempuri.org/IEPAService/PriceAgreementMaterialFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS[]> PriceAgreementMaterialFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementMaterialId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListFetch", ReplyAction="http://tempuri.org/IEPAService/PriceListFetchResponse")]
+        EPA.Consumer.Service.PRICE_LIST[] PriceListFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListFetch", ReplyAction="http://tempuri.org/IEPAService/PriceListFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_LIST[]> PriceListFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListGetItemFilters", ReplyAction="http://tempuri.org/IEPAService/PriceListGetItemFiltersResponse")]
+        EPA.Consumer.Service.ItemFilter[] PriceListGetItemFilters(string companyKey, int priceListId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListGetItemFilters", ReplyAction="http://tempuri.org/IEPAService/PriceListGetItemFiltersResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.ItemFilter[]> PriceListGetItemFiltersAsync(string companyKey, int priceListId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListGetItemTypeFilters", ReplyAction="http://tempuri.org/IEPAService/PriceListGetItemTypeFiltersResponse")]
+        EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[] PriceListGetItemTypeFilters(string companyKey, int priceListId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListGetItemTypeFilters", ReplyAction="http://tempuri.org/IEPAService/PriceListGetItemTypeFiltersResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[]> PriceListGetItemTypeFiltersAsync(string companyKey, int priceListId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListIUD", ReplyAction="http://tempuri.org/IEPAService/PriceListIUDResponse")]
+        EPA.Consumer.Service.PriceListIUDResponse PriceListIUD(string companyKey, EPA.Consumer.Service.PriceListIUDWrapper priceList, EPA.Consumer.Service.PriceListMaterialIUDWrapper[] materials);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListIUD", ReplyAction="http://tempuri.org/IEPAService/PriceListIUDResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PriceListIUDResponse> PriceListIUDAsync(string companyKey, EPA.Consumer.Service.PriceListIUDWrapper priceList, EPA.Consumer.Service.PriceListMaterialIUDWrapper[] materials);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListMaterialFetch", ReplyAction="http://tempuri.org/IEPAService/PriceListMaterialFetchResponse")]
+        EPA.Consumer.Service.PRICE_LIST_MATERIALS[] PriceListMaterialFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceListMaterialId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListMaterialFetch", ReplyAction="http://tempuri.org/IEPAService/PriceListMaterialFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_LIST_MATERIALS[]> PriceListMaterialFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceListMaterialId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListSetFilters", ReplyAction="http://tempuri.org/IEPAService/PriceListSetFiltersResponse")]
+        void PriceListSetFilters(string companyKey, int priceListId, EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[] iTypeFilters, EPA.Consumer.Service.ItemFilter[] itemFilter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/PriceListSetFilters", ReplyAction="http://tempuri.org/IEPAService/PriceListSetFiltersResponse")]
+        System.Threading.Tasks.Task PriceListSetFiltersAsync(string companyKey, int priceListId, EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[] iTypeFilters, EPA.Consumer.Service.ItemFilter[] itemFilter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierCompanyFetch", ReplyAction="http://tempuri.org/IEPAService/SupplierCompanyFetchResponse")]
+        EPA.Consumer.Service.COMPANY[] SupplierCompanyFetch(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierCompanyFetch", ReplyAction="http://tempuri.org/IEPAService/SupplierCompanyFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY[]> SupplierCompanyFetchAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierCreateByModel", ReplyAction="http://tempuri.org/IEPAService/SupplierCreateByModelResponse")]
+        EPA.Consumer.Service.SUPPLIER SupplierCreateByModel(EPA.Consumer.Service.SUPPLIER supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierCreateByModel", ReplyAction="http://tempuri.org/IEPAService/SupplierCreateByModelResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER> SupplierCreateByModelAsync(EPA.Consumer.Service.SUPPLIER supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierCreate", ReplyAction="http://tempuri.org/IEPAService/SupplierCreateResponse")]
+        EPA.Consumer.Service.SUPPLIER SupplierCreate(string description, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierCreate", ReplyAction="http://tempuri.org/IEPAService/SupplierCreateResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER> SupplierCreateAsync(string description, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierDelete", ReplyAction="http://tempuri.org/IEPAService/SupplierDeleteResponse")]
+        void SupplierDelete(EPA.Consumer.Service.SUPPLIER supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierDelete", ReplyAction="http://tempuri.org/IEPAService/SupplierDeleteResponse")]
+        System.Threading.Tasks.Task SupplierDeleteAsync(EPA.Consumer.Service.SUPPLIER supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierDeleteById", ReplyAction="http://tempuri.org/IEPAService/SupplierDeleteByIdResponse")]
+        void SupplierDeleteById(int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierDeleteById", ReplyAction="http://tempuri.org/IEPAService/SupplierDeleteByIdResponse")]
+        System.Threading.Tasks.Task SupplierDeleteByIdAsync(int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierFetch", ReplyAction="http://tempuri.org/IEPAService/SupplierFetchResponse")]
+        EPA.Consumer.Service.SUPPLIER[] SupplierFetch(System.Nullable<int> supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierFetch", ReplyAction="http://tempuri.org/IEPAService/SupplierFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER[]> SupplierFetchAsync(System.Nullable<int> supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierFetchByEmail", ReplyAction="http://tempuri.org/IEPAService/SupplierFetchByEmailResponse")]
+        EPA.Consumer.Service.SUPPLIER[] SupplierFetchByEmail(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierFetchByEmail", ReplyAction="http://tempuri.org/IEPAService/SupplierFetchByEmailResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER[]> SupplierFetchByEmailAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierModify", ReplyAction="http://tempuri.org/IEPAService/SupplierModifyResponse")]
+        EPA.Consumer.Service.SUPPLIER SupplierModify(EPA.Consumer.Service.SUPPLIER supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierModify", ReplyAction="http://tempuri.org/IEPAService/SupplierModifyResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER> SupplierModifyAsync(EPA.Consumer.Service.SUPPLIER supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierPriceAgreementFetch", ReplyAction="http://tempuri.org/IEPAService/SupplierPriceAgreementFetchResponse")]
+        EPA.Consumer.Service.PRICE_AGREEMENT[] SupplierPriceAgreementFetch(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/SupplierPriceAgreementFetch", ReplyAction="http://tempuri.org/IEPAService/SupplierPriceAgreementFetchResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT[]> SupplierPriceAgreementFetchAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersion", ReplyAction="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersionResponse")]
+        EPA.Consumer.Service.WINDEV_CLIENT_VERSION WinDevVersionFetchLatestVersion();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersion", ReplyAction="http://tempuri.org/IEPAService/WinDevVersionFetchLatestVersionResponse")]
+        System.Threading.Tasks.Task<EPA.Consumer.Service.WINDEV_CLIENT_VERSION> WinDevVersionFetchLatestVersionAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IEPAServiceChannel : EPA.Consumer.Service.IEPAService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class JordanEPAServiceClient : System.ServiceModel.ClientBase<EPA.Consumer.Service.IJordanEPAService>, EPA.Consumer.Service.IJordanEPAService {
+    public partial class EPAServiceClient : System.ServiceModel.ClientBase<EPA.Consumer.Service.IEPAService>, EPA.Consumer.Service.IEPAService {
         
-        public JordanEPAServiceClient() {
+        public EPAServiceClient() {
         }
         
-        public JordanEPAServiceClient(string endpointConfigurationName) : 
+        public EPAServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public JordanEPAServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public EPAServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public JordanEPAServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public EPAServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public JordanEPAServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public EPAServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public EPA.Consumer.Service.COMPANY CompanyCreateByModel(EPA.Consumer.Service.COMPANY company) {
+            return base.Channel.CompanyCreateByModel(company);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyCreateByModelAsync(EPA.Consumer.Service.COMPANY company) {
+            return base.Channel.CompanyCreateByModelAsync(company);
         }
         
-        public EPA.Consumer.Service.CompositeType GetDataUsingDataContract(EPA.Consumer.Service.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public EPA.Consumer.Service.COMPANY CompanyCreate(string description) {
+            return base.Channel.CompanyCreate(description);
         }
         
-        public System.Threading.Tasks.Task<EPA.Consumer.Service.CompositeType> GetDataUsingDataContractAsync(EPA.Consumer.Service.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyCreateAsync(string description) {
+            return base.Channel.CompanyCreateAsync(description);
+        }
+        
+        public void CompanyDelete(EPA.Consumer.Service.COMPANY company) {
+            base.Channel.CompanyDelete(company);
+        }
+        
+        public System.Threading.Tasks.Task CompanyDeleteAsync(EPA.Consumer.Service.COMPANY company) {
+            return base.Channel.CompanyDeleteAsync(company);
+        }
+        
+        public void CompanyDeleteById(int companyId) {
+            base.Channel.CompanyDeleteById(companyId);
+        }
+        
+        public System.Threading.Tasks.Task CompanyDeleteByIdAsync(int companyId) {
+            return base.Channel.CompanyDeleteByIdAsync(companyId);
+        }
+        
+        public EPA.Consumer.Service.COMPANY CompanyFetchById(int companyId) {
+            return base.Channel.CompanyFetchById(companyId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyFetchByIdAsync(int companyId) {
+            return base.Channel.CompanyFetchByIdAsync(companyId);
         }
         
         public EPA.Consumer.Service.COMPANY CompanyFetch(string key) {
@@ -343,12 +3386,332 @@ namespace EPA.Consumer.Service {
             return base.Channel.CompanyFetchAsync(key);
         }
         
-        public string CompanyFetchTest(string key) {
-            return base.Channel.CompanyFetchTest(key);
+        public EPA.Consumer.Service.COMPANY CompanyModify(EPA.Consumer.Service.COMPANY company) {
+            return base.Channel.CompanyModify(company);
         }
         
-        public System.Threading.Tasks.Task<string> CompanyFetchTestAsync(string key) {
-            return base.Channel.CompanyFetchTestAsync(key);
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY> CompanyModifyAsync(EPA.Consumer.Service.COMPANY company) {
+            return base.Channel.CompanyModifyAsync(company);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_SUPPLIERS CompanySupplierCreate(string companyKey, int supplierId, string description) {
+            return base.Channel.CompanySupplierCreate(companyKey, supplierId, description);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_SUPPLIERS> CompanySupplierCreateAsync(string companyKey, int supplierId, string description) {
+            return base.Channel.CompanySupplierCreateAsync(companyKey, supplierId, description);
+        }
+        
+        public void CompanySupplierDelete(string companyKey, int supplierId) {
+            base.Channel.CompanySupplierDelete(companyKey, supplierId);
+        }
+        
+        public System.Threading.Tasks.Task CompanySupplierDeleteAsync(string companyKey, int supplierId) {
+            return base.Channel.CompanySupplierDeleteAsync(companyKey, supplierId);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_SUPPLIERS[] CompanySupplierFetch(string companyKey, System.Nullable<int> supplierId) {
+            return base.Channel.CompanySupplierFetch(companyKey, supplierId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_SUPPLIERS[]> CompanySupplierFetchAsync(string companyKey, System.Nullable<int> supplierId) {
+            return base.Channel.CompanySupplierFetchAsync(companyKey, supplierId);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_SUPPLIERS CompanySupplierModify(string companyKey, EPA.Consumer.Service.COMPANY_SUPPLIERS companySuppliers) {
+            return base.Channel.CompanySupplierModify(companyKey, companySuppliers);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_SUPPLIERS> CompanySupplierModifyAsync(string companyKey, EPA.Consumer.Service.COMPANY_SUPPLIERS companySuppliers) {
+            return base.Channel.CompanySupplierModifyAsync(companyKey, companySuppliers);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_USERS CompanyUserCreateByModel(EPA.Consumer.Service.COMPANY_USERS companyUser) {
+            return base.Channel.CompanyUserCreateByModel(companyUser);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS> CompanyUserCreateByModelAsync(EPA.Consumer.Service.COMPANY_USERS companyUser) {
+            return base.Channel.CompanyUserCreateByModelAsync(companyUser);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_USERS CompanyUserCreate(string companyKey, string descripton, string email) {
+            return base.Channel.CompanyUserCreate(companyKey, descripton, email);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS> CompanyUserCreateAsync(string companyKey, string descripton, string email) {
+            return base.Channel.CompanyUserCreateAsync(companyKey, descripton, email);
+        }
+        
+        public void CompanyUserDelete(string companyKey, int companyUserId) {
+            base.Channel.CompanyUserDelete(companyKey, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task CompanyUserDeleteAsync(string companyKey, int companyUserId) {
+            return base.Channel.CompanyUserDeleteAsync(companyKey, companyUserId);
+        }
+        
+        public bool CompanyUserExists(string companyKey, string email) {
+            return base.Channel.CompanyUserExists(companyKey, email);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CompanyUserExistsAsync(string companyKey, string email) {
+            return base.Channel.CompanyUserExistsAsync(companyKey, email);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_USERS[] CompanyUserFetch(string companyKey, System.Nullable<int> companyUserId) {
+            return base.Channel.CompanyUserFetch(companyKey, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS[]> CompanyUserFetchAsync(string companyKey, System.Nullable<int> companyUserId) {
+            return base.Channel.CompanyUserFetchAsync(companyKey, companyUserId);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_USERS CompanyUserModify(string companyKey, EPA.Consumer.Service.COMPANY_USERS companyUser) {
+            return base.Channel.CompanyUserModify(companyKey, companyUser);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USERS> CompanyUserModifyAsync(string companyKey, EPA.Consumer.Service.COMPANY_USERS companyUser) {
+            return base.Channel.CompanyUserModifyAsync(companyKey, companyUser);
+        }
+        
+        public EPA.Consumer.Service.COMPANY_USER_SUPPLIERS CompanyUsersSuppliersCreate(string companyKey, int supplierId, int companyUserId) {
+            return base.Channel.CompanyUsersSuppliersCreate(companyKey, supplierId, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY_USER_SUPPLIERS> CompanyUsersSuppliersCreateAsync(string companyKey, int supplierId, int companyUserId) {
+            return base.Channel.CompanyUsersSuppliersCreateAsync(companyKey, supplierId, companyUserId);
+        }
+        
+        public void CompanyUsersSuppliersDelete(string companyKey, int supplierId, int companyUserId) {
+            base.Channel.CompanyUsersSuppliersDelete(companyKey, supplierId, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task CompanyUsersSuppliersDeleteAsync(string companyKey, int supplierId, int companyUserId) {
+            return base.Channel.CompanyUsersSuppliersDeleteAsync(companyKey, supplierId, companyUserId);
+        }
+        
+        public bool CompanyUsersSuppliersExists(string companyKey, int supplierId, int companyUserId) {
+            return base.Channel.CompanyUsersSuppliersExists(companyKey, supplierId, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CompanyUsersSuppliersExistsAsync(string companyKey, int supplierId, int companyUserId) {
+            return base.Channel.CompanyUsersSuppliersExistsAsync(companyKey, supplierId, companyUserId);
+        }
+        
+        public void DoWork() {
+            base.Channel.DoWork();
+        }
+        
+        public System.Threading.Tasks.Task DoWorkAsync() {
+            return base.Channel.DoWorkAsync();
+        }
+        
+        public string GenerateAdjustmentReferenceNumber(string companyKey, int companyUserId) {
+            return base.Channel.GenerateAdjustmentReferenceNumber(companyKey, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GenerateAdjustmentReferenceNumberAsync(string companyKey, int companyUserId) {
+            return base.Channel.GenerateAdjustmentReferenceNumberAsync(companyKey, companyUserId);
+        }
+        
+        public string GenerateAgreementReferenceNumber(string companyKey, int companyUserId) {
+            return base.Channel.GenerateAgreementReferenceNumber(companyKey, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GenerateAgreementReferenceNumberAsync(string companyKey, int companyUserId) {
+            return base.Channel.GenerateAgreementReferenceNumberAsync(companyKey, companyUserId);
+        }
+        
+        public string GeneratePriceListReferenceNumber(string companyKey, int companyUserId) {
+            return base.Channel.GeneratePriceListReferenceNumber(companyKey, companyUserId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GeneratePriceListReferenceNumberAsync(string companyKey, int companyUserId) {
+            return base.Channel.GeneratePriceListReferenceNumberAsync(companyKey, companyUserId);
+        }
+        
+        public EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentCreate(string companyKey, int priceAgreementId) {
+            return base.Channel.PriceAgreementAdjustmentCreate(companyKey, priceAgreementId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS> PriceAgreementAdjustmentCreateAsync(string companyKey, int priceAgreementId) {
+            return base.Channel.PriceAgreementAdjustmentCreateAsync(companyKey, priceAgreementId);
+        }
+        
+        public void PriceAgreementAdjustmentDelete(string companyKey, int priceAgreementAdjustmentId) {
+            base.Channel.PriceAgreementAdjustmentDelete(companyKey, priceAgreementAdjustmentId);
+        }
+        
+        public System.Threading.Tasks.Task PriceAgreementAdjustmentDeleteAsync(string companyKey, int priceAgreementAdjustmentId) {
+            return base.Channel.PriceAgreementAdjustmentDeleteAsync(companyKey, priceAgreementAdjustmentId);
+        }
+        
+        public EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS[] PriceAgreementAdjustmentFetch(string companyKey, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementAdjustmentId) {
+            return base.Channel.PriceAgreementAdjustmentFetch(companyKey, priceAgreementId, priceAgreementAdjustmentId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS[]> PriceAgreementAdjustmentFetchAsync(string companyKey, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementAdjustmentId) {
+            return base.Channel.PriceAgreementAdjustmentFetchAsync(companyKey, priceAgreementId, priceAgreementAdjustmentId);
+        }
+        
+        public EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS PriceAgreementAdjustmentModify(string companyKey, EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust) {
+            return base.Channel.PriceAgreementAdjustmentModify(companyKey, priceAgreementAdjust);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS> PriceAgreementAdjustmentModifyAsync(string companyKey, EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS priceAgreementAdjust) {
+            return base.Channel.PriceAgreementAdjustmentModifyAsync(companyKey, priceAgreementAdjust);
+        }
+        
+        public EPA.Consumer.Service.PRICE_AGREEMENT[] PriceAgreementFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId) {
+            return base.Channel.PriceAgreementFetch(companyKey, companyUserId, priceListId, priceAgreementId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT[]> PriceAgreementFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId) {
+            return base.Channel.PriceAgreementFetchAsync(companyKey, companyUserId, priceListId, priceAgreementId);
+        }
+        
+        public EPA.Consumer.Service.PriceAgreementIUDResponse PriceAgreementIUD(string companyKey, EPA.Consumer.Service.PriceAgreementIUDWrapper priceAgreement, EPA.Consumer.Service.PriceAgreementMaterialIUDWrapper[] materials) {
+            return base.Channel.PriceAgreementIUD(companyKey, priceAgreement, materials);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PriceAgreementIUDResponse> PriceAgreementIUDAsync(string companyKey, EPA.Consumer.Service.PriceAgreementIUDWrapper priceAgreement, EPA.Consumer.Service.PriceAgreementMaterialIUDWrapper[] materials) {
+            return base.Channel.PriceAgreementIUDAsync(companyKey, priceAgreement, materials);
+        }
+        
+        public EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS[] PriceAgreementMaterialFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementMaterialId) {
+            return base.Channel.PriceAgreementMaterialFetch(companyKey, companyUserId, priceListId, priceAgreementId, priceAgreementMaterialId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS[]> PriceAgreementMaterialFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceAgreementId, System.Nullable<int> priceAgreementMaterialId) {
+            return base.Channel.PriceAgreementMaterialFetchAsync(companyKey, companyUserId, priceListId, priceAgreementId, priceAgreementMaterialId);
+        }
+        
+        public EPA.Consumer.Service.PRICE_LIST[] PriceListFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId) {
+            return base.Channel.PriceListFetch(companyKey, companyUserId, priceListId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_LIST[]> PriceListFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId) {
+            return base.Channel.PriceListFetchAsync(companyKey, companyUserId, priceListId);
+        }
+        
+        public EPA.Consumer.Service.ItemFilter[] PriceListGetItemFilters(string companyKey, int priceListId) {
+            return base.Channel.PriceListGetItemFilters(companyKey, priceListId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.ItemFilter[]> PriceListGetItemFiltersAsync(string companyKey, int priceListId) {
+            return base.Channel.PriceListGetItemFiltersAsync(companyKey, priceListId);
+        }
+        
+        public EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[] PriceListGetItemTypeFilters(string companyKey, int priceListId) {
+            return base.Channel.PriceListGetItemTypeFilters(companyKey, priceListId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[]> PriceListGetItemTypeFiltersAsync(string companyKey, int priceListId) {
+            return base.Channel.PriceListGetItemTypeFiltersAsync(companyKey, priceListId);
+        }
+        
+        public EPA.Consumer.Service.PriceListIUDResponse PriceListIUD(string companyKey, EPA.Consumer.Service.PriceListIUDWrapper priceList, EPA.Consumer.Service.PriceListMaterialIUDWrapper[] materials) {
+            return base.Channel.PriceListIUD(companyKey, priceList, materials);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PriceListIUDResponse> PriceListIUDAsync(string companyKey, EPA.Consumer.Service.PriceListIUDWrapper priceList, EPA.Consumer.Service.PriceListMaterialIUDWrapper[] materials) {
+            return base.Channel.PriceListIUDAsync(companyKey, priceList, materials);
+        }
+        
+        public EPA.Consumer.Service.PRICE_LIST_MATERIALS[] PriceListMaterialFetch(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceListMaterialId) {
+            return base.Channel.PriceListMaterialFetch(companyKey, companyUserId, priceListId, priceListMaterialId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_LIST_MATERIALS[]> PriceListMaterialFetchAsync(string companyKey, System.Nullable<int> companyUserId, System.Nullable<int> priceListId, System.Nullable<int> priceListMaterialId) {
+            return base.Channel.PriceListMaterialFetchAsync(companyKey, companyUserId, priceListId, priceListMaterialId);
+        }
+        
+        public void PriceListSetFilters(string companyKey, int priceListId, EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[] iTypeFilters, EPA.Consumer.Service.ItemFilter[] itemFilter) {
+            base.Channel.PriceListSetFilters(companyKey, priceListId, iTypeFilters, itemFilter);
+        }
+        
+        public System.Threading.Tasks.Task PriceListSetFiltersAsync(string companyKey, int priceListId, EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES[] iTypeFilters, EPA.Consumer.Service.ItemFilter[] itemFilter) {
+            return base.Channel.PriceListSetFiltersAsync(companyKey, priceListId, iTypeFilters, itemFilter);
+        }
+        
+        public EPA.Consumer.Service.COMPANY[] SupplierCompanyFetch(string email) {
+            return base.Channel.SupplierCompanyFetch(email);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.COMPANY[]> SupplierCompanyFetchAsync(string email) {
+            return base.Channel.SupplierCompanyFetchAsync(email);
+        }
+        
+        public EPA.Consumer.Service.SUPPLIER SupplierCreateByModel(EPA.Consumer.Service.SUPPLIER supplier) {
+            return base.Channel.SupplierCreateByModel(supplier);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER> SupplierCreateByModelAsync(EPA.Consumer.Service.SUPPLIER supplier) {
+            return base.Channel.SupplierCreateByModelAsync(supplier);
+        }
+        
+        public EPA.Consumer.Service.SUPPLIER SupplierCreate(string description, string email) {
+            return base.Channel.SupplierCreate(description, email);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER> SupplierCreateAsync(string description, string email) {
+            return base.Channel.SupplierCreateAsync(description, email);
+        }
+        
+        public void SupplierDelete(EPA.Consumer.Service.SUPPLIER supplier) {
+            base.Channel.SupplierDelete(supplier);
+        }
+        
+        public System.Threading.Tasks.Task SupplierDeleteAsync(EPA.Consumer.Service.SUPPLIER supplier) {
+            return base.Channel.SupplierDeleteAsync(supplier);
+        }
+        
+        public void SupplierDeleteById(int supplierId) {
+            base.Channel.SupplierDeleteById(supplierId);
+        }
+        
+        public System.Threading.Tasks.Task SupplierDeleteByIdAsync(int supplierId) {
+            return base.Channel.SupplierDeleteByIdAsync(supplierId);
+        }
+        
+        public EPA.Consumer.Service.SUPPLIER[] SupplierFetch(System.Nullable<int> supplierId) {
+            return base.Channel.SupplierFetch(supplierId);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER[]> SupplierFetchAsync(System.Nullable<int> supplierId) {
+            return base.Channel.SupplierFetchAsync(supplierId);
+        }
+        
+        public EPA.Consumer.Service.SUPPLIER[] SupplierFetchByEmail(string email) {
+            return base.Channel.SupplierFetchByEmail(email);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER[]> SupplierFetchByEmailAsync(string email) {
+            return base.Channel.SupplierFetchByEmailAsync(email);
+        }
+        
+        public EPA.Consumer.Service.SUPPLIER SupplierModify(EPA.Consumer.Service.SUPPLIER supplier) {
+            return base.Channel.SupplierModify(supplier);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.SUPPLIER> SupplierModifyAsync(EPA.Consumer.Service.SUPPLIER supplier) {
+            return base.Channel.SupplierModifyAsync(supplier);
+        }
+        
+        public EPA.Consumer.Service.PRICE_AGREEMENT[] SupplierPriceAgreementFetch(string email) {
+            return base.Channel.SupplierPriceAgreementFetch(email);
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.PRICE_AGREEMENT[]> SupplierPriceAgreementFetchAsync(string email) {
+            return base.Channel.SupplierPriceAgreementFetchAsync(email);
+        }
+        
+        public EPA.Consumer.Service.WINDEV_CLIENT_VERSION WinDevVersionFetchLatestVersion() {
+            return base.Channel.WinDevVersionFetchLatestVersion();
+        }
+        
+        public System.Threading.Tasks.Task<EPA.Consumer.Service.WINDEV_CLIENT_VERSION> WinDevVersionFetchLatestVersionAsync() {
+            return base.Channel.WinDevVersionFetchLatestVersionAsync();
         }
     }
 }

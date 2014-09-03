@@ -1,18 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EPA.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EPA.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="COMPANY">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://epa.plexxis.com/Jordan/JordanEPAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" />
+  <xs:complexType name="PriceAgreementIUDWrapper">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" base="q1:PRICE_AGREEMENT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Operation" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceAgreementIUDWrapper" nillable="true" type="tns:PriceAgreementIUDWrapper" />
+  <xs:complexType name="ArrayOfPriceAgreementMaterialIUDWrapper">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CODE" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="COMPANY_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="KEY" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PA_REFERENCE" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="PHONE1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PHONE2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ROW_VERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceAgreementMaterialIUDWrapper" nillable="true" type="tns:PriceAgreementMaterialIUDWrapper" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="COMPANY" nillable="true" type="tns:COMPANY" />
+  <xs:element name="ArrayOfPriceAgreementMaterialIUDWrapper" nillable="true" type="tns:ArrayOfPriceAgreementMaterialIUDWrapper" />
+  <xs:complexType name="PriceAgreementMaterialIUDWrapper">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" base="q2:PRICE_AGREEMENT_MATERIALS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Operation" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceAgreementMaterialIUDWrapper" nillable="true" type="tns:PriceAgreementMaterialIUDWrapper" />
+  <xs:complexType name="PriceAgreementIUDResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PRICE_AGREEMENT" nillable="true" type="q3:PRICE_AGREEMENT" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PRICE_AGREEMENT_MATERIALS" nillable="true" type="q4:ArrayOfPRICE_AGREEMENT_MATERIALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceAgreementIUDResponse" nillable="true" type="tns:PriceAgreementIUDResponse" />
+  <xs:complexType name="ArrayOfItemFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemFilter" nillable="true" type="tns:ItemFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemFilter" nillable="true" type="tns:ArrayOfItemFilter" />
+  <xs:complexType name="ItemFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITypeGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemId" type="xs:int" />
+      <xs:element minOccurs="0" name="Prop1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prop2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prop3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prop4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prop5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prop6" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemFilter" nillable="true" type="tns:ItemFilter" />
+  <xs:complexType name="PriceListIUDWrapper">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" base="q5:PRICE_LIST">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Operation" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceListIUDWrapper" nillable="true" type="tns:PriceListIUDWrapper" />
+  <xs:complexType name="ArrayOfPriceListMaterialIUDWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceListMaterialIUDWrapper" nillable="true" type="tns:PriceListMaterialIUDWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceListMaterialIUDWrapper" nillable="true" type="tns:ArrayOfPriceListMaterialIUDWrapper" />
+  <xs:complexType name="PriceListMaterialIUDWrapper">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" base="q6:PRICE_LIST_MATERIALS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Operation" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceListMaterialIUDWrapper" nillable="true" type="tns:PriceListMaterialIUDWrapper" />
+  <xs:complexType name="PriceListIUDResponse">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PRICE_LIST" nillable="true" type="q7:PRICE_LIST" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EPA.Dto.Models" minOccurs="0" name="PRICE_LIST_MATERIALS" nillable="true" type="q8:ArrayOfPRICE_LIST_MATERIALS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceListIUDResponse" nillable="true" type="tns:PriceListIUDResponse" />
 </xs:schema>

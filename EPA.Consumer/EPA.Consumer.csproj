@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="Client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Service\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -59,7 +62,46 @@
     <None Include="Service References\Service\EPA.Consumer.Service.COMPANY.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Service\EPA.Consumer.Service.CompositeType.datasource">
+    <None Include="Service References\Service\EPA.Consumer.Service.COMPANY_SUPPLIERS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.COMPANY_USERS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.COMPANY_USER_SUPPLIERS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.ItemFilter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PriceAgreementIUDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PriceListIUDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PRICE_AGREEMENT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PRICE_AGREEMENT_ADJUSTMENTS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PRICE_AGREEMENT_MATERIALS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PRICE_LIST.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PRICE_LIST_ITEM_TYPES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.PRICE_LIST_MATERIALS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.SUPPLIER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\EPA.Consumer.Service.WINDEV_CLIENT_VERSION.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\JordanEPAService.wsdl" />
