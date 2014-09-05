@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Ravka", "..\Ravka\_Ravka.csproj", "{B78E8625-6CB4-4E9F-A835-437E284D352B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickenService", "ChickenService\ChickenService.csproj", "{65FFCA85-E908-40E8-AF72-85BBBAA6DAE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPA.Consumer", "EPA.Consumer\EPA.Consumer.csproj", "{971E70BE-A95F-4A2A-97B2-CC085928251F}"
@@ -27,16 +25,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Debug|x86.ActiveCfg = Debug|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Debug|x86.Build.0 = Debug|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Release|Any CPU.ActiveCfg = Release|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Release|Mixed Platforms.Build.0 = Release|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Release|x86.ActiveCfg = Release|x86
-		{B78E8625-6CB4-4E9F-A835-437E284D352B}.Release|x86.Build.0 = Release|x86
 		{65FFCA85-E908-40E8-AF72-85BBBAA6DAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65FFCA85-E908-40E8-AF72-85BBBAA6DAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65FFCA85-E908-40E8-AF72-85BBBAA6DAE8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
